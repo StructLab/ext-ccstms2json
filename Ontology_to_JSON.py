@@ -54,8 +54,8 @@ from rdflib.collection import Collection
 
 # ------------------------------------------------------------------ settings
 ONTOLOGY_FILE = "ontology.ttl"
-SHACL_FOLDER = r"C:\Users\Ritty\db-internship\Ontology-Json\SHACL_shape"
-SKOS_FOLDER = "."
+SHACL_FOLDER = "SHACL_shape"
+SKOS_FOLDER = "skos"
 
 ERA = "http://data.europa.eu/949/"
 XSD = "http://www.w3.org/2001/XMLSchema#"
