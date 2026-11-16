@@ -1,55 +1,38 @@
 # Ontology to JSON
 
-`Ontology_to_JSON.py` reads the ERA/CCS-TMS ontology, the SHACL shape files and the SKOS value lists,
-and writes **one JSON file per domain** (INFRA, ENG, MAP, OPP, TP, ss026).
+Reads the CCS-TMS ontology, the SHACL shapes and the SKOS value lists, and writes **one JSON file per domain** (INFRA, ENG, MAP, OPP, TP, ss026).
 
-The program works in 11 small steps. Each step reads the file written by the step before,
-adds one thing, and writes a new file. You can start at any step and you can choose the domain.
 
-## What is in this repository
+## Quick start
 
-```
-Ontology-Json/
-  Ontology_to_JSON.py    the program
-  ontology.ttl           the ontology
-  SHACL_shape/           the SHACL shape files (*-shapes_*.ttl)
-  skos/                  the SKOS value lists (*.ttl)
-  Final_Output/          the final JSON files, one per domain (kinds_<DOMAIN>.json)
-```
+1. Install Python 3.8 or newer.
+2. Install the library: `pip install rdflib`
+3. Open a terminal in the repository folder.
+4. Run: `python Ontology_to_JSON.py`
+5. The result files are written into the folder where you start the program.
 
-## What you need
+## Usage
 
-- Python 3.8 or newer
-- the library `rdflib`:
+- `python Ontology_to_JSON.py` runs all 11 steps for all domains.
+- `python Ontology_to_JSON.py infra` writes only `kinds_INFRA.json`.
+- `python Ontology_to_JSON.py eng` writes only `kinds_ENG.json`.
+- `python Ontology_to_JSON.py infra eng` writes the files of INFRA and ENG.
+- `python Ontology_to_JSON.py 7` starts at step 7. It needs the file of step 6.
+- `python Ontology_to_JSON.py 7 eng` starts at step 7 and writes only `kinds_ENG.json`.
+- `python Ontology_to_JSON.py help` shows the instructions.
 
-```
-pip install rdflib
-```
+A number is the first step (1 to 11). A word is a domain name, and capital letters do not matter.
+Steps 1 to 10 always run for all domains, because some rules look at INFRA. Only the final files are limited to the domains you choose.
 
-## How to run
+## Repository
 
-Open a terminal in the repository folder and run:
+- `Ontology_to_JSON.py`: the program.
+- `ontology.ttl`: the ontology.
+- `SHACL_shape/`: the SHACL shape files (`*-shapes_*.ttl`).
+- `skos/`: the SKOS value lists.
+- `Final_Output/`: the final JSON files.
 
-```
-python Ontology_to_JSON.py              all 11 steps, all domains
-python Ontology_to_JSON.py 4            start at step 4, run steps 4 to 11
-python Ontology_to_JSON.py infra        all steps, write only kinds_INFRA.json
-python Ontology_to_JSON.py eng          all steps, write only kinds_ENG.json
-python Ontology_to_JSON.py 7 eng        start at step 7, write only kinds_ENG.json
-python Ontology_to_JSON.py infra eng    write the final files of INFRA and ENG
-python Ontology_to_JSON.py help         show the instructions
-```
-
-- A number is the first step to run (1 to 11).
-- A word is a domain name. Capital letters do not matter.
-- Steps 1 to 10 always work on all domains, because some rules look at INFRA
-  (for example `sameKeyAs`, and ENG does not repeat what INFRA already has).
-  Only the final files of step 11 are limited to the domains you chose.
-- To start at step N, the file of step N-1 must exist (see the table below).
-
-## The settings
-
-At the top of `Ontology_to_JSON.py` (lines 49 to 51):
+The folders are set at the top of `Ontology_to_JSON.py` (lines 49 to 51). The paths are relative to the folder where you start the program:
 
 ```python
 ONTOLOGY_FILE = "ontology.ttl"
@@ -57,64 +40,53 @@ SHACL_FOLDER = "SHACL_shape"
 SKOS_FOLDER = "skos"
 ```
 
-The paths are relative to the folder where you start the program.
-Change them if your files are somewhere else.
-
 ## The 11 steps
 
-| Step | What it does | File it writes |
-| --- | --- | --- |
-| 1 | find the domains | `step1_domains.json` |
-| 2 | find the classes of every domain | `step2_classes.json` |
-| 3 | find the attributes of every class | `step3_attributes.json` |
-| 4 | decide the kind of every attribute (reference, composition, enumType, dataType) | `step4_kinds.json` |
-| 5 | give the attribute `id` to every class that has no `sh:order 1` | `step5_ids.json` |
-| 6 | number the attributes (`intId`) | `step6_numbers.json` |
-| 7 | add the multiplicity (`1..1` is not written) | `step7_multiplicity.json` |
-| 8 | add the real data type, unit and range | `step8_details.json` |
-| 9 | add `ordered` and `formatNote` | `step9_order_notes.json` |
-| 10 | add info, label, key, exp, subsetName, ontology, sameKeyAs, sub-package, union | `step10_texts.json` |
-| 11 | fill in the value lists and write the final files | `kinds_<DOMAIN>.json` |
+Each step reads the file of the step before, adds one thing, and writes a new file.
 
-The step files and the final files are written into the folder where you start the program.
+1. Find the domains. Writes `step1_domains.json`.
+2. Find the classes of every domain. Writes `step2_classes.json`.
+3. Find the attributes of every class. Writes `step3_attributes.json`.
+4. Decide the kind of every attribute: reference, composition, enumType or dataType. Writes `step4_kinds.json`.
+5. Give the attribute `id`. Writes `step5_ids.json`.
+6. Number the attributes (`intId`). Writes `step6_numbers.json`.
+7. Add the multiplicity. Writes `step7_multiplicity.json`.
+8. Add the real data type, unit and range. Writes `step8_details.json`.
+9. Add `ordered` and `formatNote`. Writes `step9_order_notes.json`.
+10. Add info, label, key, exp, subsetName, ontology, sameKeyAs, sub-package and union. Writes `step10_texts.json`.
+11. Fill in the value lists and write the final files `kinds_<DOMAIN>.json`.
 
-## Where each piece of information comes from
+## Where the information comes from
 
-| Information | Source |
-| --- | --- |
-| domains, classes, attribute names | ontology (`era:ccsView` marks the domain) |
-| kind (reference, composition, enumType, dataType) | SHACL |
-| `intId` | SHACL `sh:order`, otherwise the next free number |
-| `multiplicity` | SHACL (`sh:minCount`, `sh:maxCount`, list item count rule) |
-| data type, `range` | SHACL (`sh:datatype`, `sh:minInclusive`, `sh:maxInclusive`) |
-| `unit`, `ordered`, `formatNote` | ontology (`ordered` is `byIndex` when the SHACL says so) |
-| `info` | SHACL `sh:description` |
-| `label`, `key`, `exp`, `subsetName` | ontology |
-| `ontology` (`subClassOf`, `subPropertyOf`, property types) | ontology |
-| `belongsToSubPackage`, `union` | SHACL |
-| values of a list and their order | SHACL `sh:in` |
-| name of a value | SKOS hidden label that starts with `CCSTMS_` |
+From the ontology:
+- the domains (`era:ccsView` marks the domain), the classes and the attribute names
+- `unit`, `ordered`, `formatNote`, `label`, `key`, `exp` and `subsetName`
+- the `ontology` field: `subClassOf`, `subPropertyOf` and the property types
+
+From the SHACL:
+- the kind of the attribute, `multiplicity`, the data type, `range` and `info` (`sh:description`)
+- `belongsToSubPackage` and `union`
+- `intId` (`sh:order`). If there is none, the next free number is used.
+- the values of a list and their order (`sh:in`)
+
+From the SKOS files:
+- the name of a value: the hidden label that starts with `CCSTMS_`
 
 Each domain uses the shapes file of its own domain (`infra-shapes_*.ttl` for INFRA and so on).
 
-## The rules in short
+## Rules
 
-- **id:** every class that has attributes gets the attribute `id` with `intId 1`,
-  except a class that has an attribute with `sh:order 1`. `id` is a global key.
-- **sameKeyAs:** only for a class in another domain that also has an `id` in INFRA
-  (`infra.<ClassName>`).
+- **`id`:** every class that has attributes gets `id` with `intId 1`, except a class that has an attribute with `sh:order 1`. `id` is a global key.
+- **`multiplicity`:** `1..1` is not written.
+- **`sameKeyAs`:** only for a class in another domain that also has an `id` in INFRA (`infra.<ClassName>`).
 - **Value lists:** every domain file has a full copy of every list it uses.
-  The values and their order come from the SHACL. The name of a value comes from the SKOS label,
-  without `CCSTMS_` and without the index at the end (`CCSTMS_CD_80mm_1` becomes `CD_80mm`).
-  If there is no label, the code at the end of the address is used.
-  Every value has `intId` (position in the list, counted from 0), `name` and `owl:sameAs` (its address).
-- **subsetName / subPropertyOf:** everything that is in the ontology is written.
-  With more than one value the output is a list.
-- **regex:** not written.
+  - A value has `intId` (its position in the list, counted from 0), `name` and `owl:sameAs` (its address).
+  - The name is the SKOS label without `CCSTMS_` and without the index at the end (`CCSTMS_CD_80mm_1` becomes `CD_80mm`).
+  - Without a label, the code at the end of the address is used.
+- **`subsetName`, `subPropertyOf`:** everything that is in the ontology is written. With more than one value the output is a list.
+- **`regex`:** not written.
 
-## The output
-
-Each `kinds_<DOMAIN>.json` file looks like this:
+## Output
 
 ```json
 {
@@ -122,10 +94,8 @@ Each `kinds_<DOMAIN>.json` file looks like this:
  "structs": [
   {
    "name": "BufferStop",
-   "info": "...",
    "attrs": [
-    {"intId": 1, "name": "id", "dataType": "string", "key": "global", "info": "..."},
-    {"intId": 2, "name": "...", "multiplicity": "0..1", "...": "..."}
+    {"intId": 1, "name": "id", "dataType": "string", "key": "global"}
    ]
   }
  ],
@@ -140,9 +110,8 @@ Each `kinds_<DOMAIN>.json` file looks like this:
 }
 ```
 
-`structs` are the classes with their attributes (`attrs`). `enums` are the value lists.
+`structs` are the classes with their attributes (`attrs`). `enums` are the value lists. The example is shortened.
 
-## If something looks wrong
+## Troubleshooting
 
-The first lines of the output show how many SHACL files and SKOS files were found.
-If a number is 0, check the folder names in the settings.
+The first lines of the output show how many SHACL files and SKOS files were found. If a number is 0, check the folder names in the settings.
