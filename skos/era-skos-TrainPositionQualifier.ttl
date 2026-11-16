@@ -1,0 +1,51 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-tpq: <http://data.europa.eu/949/concepts/train-position-qualifier/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-tpq:TrainPositionQualifier a skos:ConceptScheme ;
+    rdfs:label "Train Position Qualifier"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    skos:hiddenLabel "CCSTMS_TrainPositionQualifier"@en ;
+    skos:prefLabel "Train Position Qualifier"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-tpq:ambiguous a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_ambiguous_1"@en ;
+    skos:inScheme era-tpq:TrainPositionQualifier ;
+    skos:notation "ambiguous"^^xsd:string ;
+    skos:prefLabel "Ambiguous"@en ;
+    skos:topConceptOf era-tpq:TrainPositionQualifier .
+
+era-tpq:unknown a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_unknown_2"@en ;
+    skos:inScheme era-tpq:TrainPositionQualifier ;
+    skos:notation "unknown"^^xsd:string ;
+    skos:prefLabel "Unknown"@en ;
+    skos:topConceptOf era-tpq:TrainPositionQualifier .
+
+era-tpq:valid a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_valid_0"@en ;
+    skos:inScheme era-tpq:TrainPositionQualifier ;
+    skos:notation "valid"^^xsd:string ;
+    skos:prefLabel "Valid"@en ;
+    skos:topConceptOf era-tpq:TrainPositionQualifier .

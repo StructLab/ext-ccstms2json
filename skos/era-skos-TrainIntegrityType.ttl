@@ -1,0 +1,63 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-tit: <http://data.europa.eu/949/concepts/train-integrity-type/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-tit:TrainIntegrityType a skos:ConceptScheme ;
+    rdfs:label "Train Integrity Type"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "Qualifier for the train integrity status"@en ;
+    skos:hiddenLabel "CCSTMS_TrainIntegrityType"@en ;
+    skos:prefLabel "Train Integrity Type"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-tit:byDriver a skos:Concept ;
+    rdfs:comment "Train Integrity confirmed by driver"@en ;
+    skos:hiddenLabel "CCSTMS_byDriver_2"@en ;
+    skos:inScheme era-tit:TrainIntegrityType ;
+    skos:notation "byDriver"^^xsd:string ;
+    skos:prefLabel "By Driver"@en ;
+    skos:topConceptOf era-tit:TrainIntegrityType .
+
+era-tit:byMonitoringDevice a skos:Concept ;
+    rdfs:comment "Train integrity confirmed by integrity monitoring device"@en ;
+    skos:hiddenLabel "CCSTMS_byMonitoringDevice_1"@en ;
+    skos:inScheme era-tit:TrainIntegrityType ;
+    skos:notation "byMonitoringDevice"^^xsd:string ;
+    skos:prefLabel "By Monitoring Device"@en ;
+    skos:topConceptOf era-tit:TrainIntegrityType .
+
+era-tit:lost a skos:Concept ;
+    rdfs:comment "Train integrity lost"@en ;
+    skos:hiddenLabel "CCSTMS_lost_3"@en ;
+    skos:inScheme era-tit:TrainIntegrityType ;
+    skos:notation "lost"^^xsd:string ;
+    skos:prefLabel "Lost"@en ;
+    skos:topConceptOf era-tit:TrainIntegrityType .
+
+era-tit:noInfoAvailable a skos:Concept ;
+    rdfs:comment "No train integrity information available"@en ;
+    skos:hiddenLabel "CCSTMS_noInfoAvailable_0"@en ;
+    skos:inScheme era-tit:TrainIntegrityType ;
+    skos:notation "noInfoAvailable"^^xsd:string ;
+    skos:prefLabel "No Info Available"@en ;
+    skos:topConceptOf era-tit:TrainIntegrityType .

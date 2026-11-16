@@ -1,0 +1,66 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-t2ts: <http://data.europa.eu/949/concepts/train-train-side/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-t2ts:Train2TrainSide a skos:ConceptScheme ;
+    rdfs:label "Train2Train Side"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "the first part = myTrain, the second part = other train"@en ;
+    skos:hiddenLabel "CCSTMS_Train2TrainSide"@en ;
+    skos:prefLabel "Train2Train Side"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-t2ts:head2head a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_head2head_1"@en ;
+    skos:inScheme era-t2ts:Train2TrainSide ;
+    skos:notation "head2head"^^xsd:string ;
+    skos:prefLabel "Head2Head"@en ;
+    skos:topConceptOf era-t2ts:Train2TrainSide .
+
+era-t2ts:head2tail a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_head2tail_0"@en ;
+    skos:inScheme era-t2ts:Train2TrainSide ;
+    skos:notation "head2tail"^^xsd:string ;
+    skos:prefLabel "Head2Tail"@en ;
+    skos:topConceptOf era-t2ts:Train2TrainSide .
+
+era-t2ts:tail2head a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_tail2head_2"@en ;
+    skos:inScheme era-t2ts:Train2TrainSide ;
+    skos:notation "tail2head"^^xsd:string ;
+    skos:prefLabel "Tail2Head"@en ;
+    skos:topConceptOf era-t2ts:Train2TrainSide .
+
+era-t2ts:tail2tail a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_tail2tail_3"@en ;
+    skos:inScheme era-t2ts:Train2TrainSide ;
+    skos:notation "tail2tail"^^xsd:string ;
+    skos:prefLabel "Tail2Tail"@en ;
+    skos:topConceptOf era-t2ts:Train2TrainSide .
+
+era-t2ts:unknown a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_unknown_4"@en ;
+    skos:inScheme era-t2ts:Train2TrainSide ;
+    skos:notation "unknown"^^xsd:string ;
+    skos:prefLabel "Unknown"@en ;
+    skos:topConceptOf era-t2ts:Train2TrainSide .

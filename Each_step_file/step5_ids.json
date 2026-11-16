@@ -1,0 +1,6952 @@
+{
+ "domains": [
+  {
+   "name": "INFRA",
+   "classes": [
+    {
+     "name": "AtoTSInstance",
+     "attributes": [
+      {
+       "name": "atotsNidC",
+       "dataType": true
+      },
+      {
+       "name": "nidATOTS",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "AxleLoadSpeedProfile",
+     "attributes": [
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "axleLoadSpeedRestriction",
+       "dataType": true
+      },
+      {
+       "name": "endPos",
+       "dataType": true
+      },
+      {
+       "name": "startPos",
+       "dataType": true
+      },
+      {
+       "name": "trainEndApplicability",
+       "enumType": "TrainEndApplicability"
+      }
+     ]
+    },
+    {
+     "name": "Balise",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "BaliseGroup",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "balises",
+       "composition": "Balise"
+      },
+      {
+       "name": "bgFunction",
+       "enumType": "BaliseGroupFunction"
+      },
+      {
+       "name": "etcsMarker",
+       "reference": "ETCSMarker"
+      },
+      {
+       "name": "linkOrientationDirection",
+       "enumType": "OrientationDirections"
+      },
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Bridge",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "areaReference",
+       "composition": "NetAreaReference"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "BufferStop",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "netPointReference",
+       "composition": "NetPointReference"
+      }
+     ]
+    },
+    {
+     "name": "CantPoint",
+     "attributes": [
+      {
+       "name": "appliedCant",
+       "dataType": true
+      },
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "CantSamplePoint",
+     "attributes": [
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "samplePointCant",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Crossing",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "isSwitchable",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "topologicalCoordinates",
+       "composition": "TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "CurrentLimitation",
+     "attributes": [
+      {
+       "name": "linearElementSections",
+       "composition": "LinearElementSection"
+      },
+      {
+       "name": "maxCurrent",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "CurveSamplePoint",
+     "attributes": [
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "sampleCurveRadius",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Derailer",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "derailToRight",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "netPointReference",
+       "composition": "NetPointReference"
+      },
+      {
+       "name": "reversalTime",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSMarker",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "markerFunctionStop",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "netPointReference",
+       "composition": "NetPointReference"
+      }
+     ]
+    },
+    {
+     "name": "FunctionalArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "baliseGroups",
+       "composition": "BaliseGroup"
+      },
+      {
+       "name": "bridges",
+       "composition": "Bridge"
+      },
+      {
+       "name": "bufferStops",
+       "composition": "BufferStop"
+      },
+      {
+       "name": "crossings",
+       "composition": "Crossing"
+      },
+      {
+       "name": "derailers",
+       "composition": "Derailer"
+      },
+      {
+       "name": "etcsMarkers",
+       "composition": "ETCSMarker"
+      },
+      {
+       "name": "faVersionTimestamp",
+       "dataType": true
+      },
+      {
+       "name": "levelCrossings",
+       "composition": "LevelCrossing"
+      },
+      {
+       "name": "nationalBorders",
+       "composition": "NationalBorder"
+      },
+      {
+       "name": "opPoints",
+       "composition": "OperationalPoint"
+      },
+      {
+       "name": "segmentProfile",
+       "composition": "SegmentProfile"
+      },
+      {
+       "name": "slipCrossings",
+       "composition": "SlipCrossing"
+      },
+      {
+       "name": "stopLocations",
+       "composition": "StopLocation"
+      },
+      {
+       "name": "switches",
+       "composition": "Switch"
+      },
+      {
+       "name": "timingPoints",
+       "composition": "TimingPoint"
+      },
+      {
+       "name": "topoArea",
+       "reference": "TopoArea"
+      },
+      {
+       "name": "trainDetectors",
+       "composition": "TrainDetectionSystem"
+      },
+      {
+       "name": "tunnels",
+       "composition": "Tunnel"
+      },
+      {
+       "name": "tvps",
+       "composition": "TvpSection"
+      },
+      {
+       "name": "underpasses",
+       "composition": "Underpass"
+      }
+     ]
+    },
+    {
+     "name": "GeometryArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "alignment3d",
+       "dataType": true
+      },
+      {
+       "name": "gaVersionTimestamp",
+       "dataType": true
+      },
+      {
+       "name": "linearElementGeometries",
+       "composition": "LinearElementGeometry"
+      },
+      {
+       "name": "topoArea",
+       "reference": "TopoArea"
+      }
+     ]
+    },
+    {
+     "name": "HorizontalArc",
+     "attributes": [
+      {
+       "name": "azimuth",
+       "dataType": true
+      },
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "radius",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "HorizontalLine",
+     "attributes": [
+      {
+       "name": "azimuth",
+       "dataType": true
+      },
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "HorizontalSegment",
+     "attributes": [
+      {
+       "name": "horizontalSegmentArc",
+       "composition": "HorizontalArc"
+      },
+      {
+       "name": "horizontalSegmentLine",
+       "composition": "HorizontalLine"
+      },
+      {
+       "name": "horizontalSegmentTransition",
+       "composition": "HorizontalTransition"
+      }
+     ]
+    },
+    {
+     "name": "HorizontalTransition",
+     "attributes": [
+      {
+       "name": "azimuth",
+       "dataType": true
+      },
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "radius",
+       "dataType": true
+      },
+      {
+       "name": "transitionType",
+       "enumType": "TransitionType"
+      }
+     ]
+    },
+    {
+     "name": "Infrastructure",
+     "attributes": [
+      {
+       "name": "functionalAreas",
+       "composition": "FunctionalArea"
+      },
+      {
+       "name": "geometryAreas",
+       "composition": "GeometryArea"
+      },
+      {
+       "name": "propertiesAreas",
+       "composition": "PropertiesArea"
+      },
+      {
+       "name": "sampledGeometryAreas",
+       "composition": "SampledGeometryArea"
+      },
+      {
+       "name": "topoAreas",
+       "composition": "TopoArea"
+      },
+      {
+       "name": "trackUsageAreas",
+       "composition": "TrackUsageArea"
+      }
+     ]
+    },
+    {
+     "name": "LevelCrossing",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "areaReference",
+       "composition": "NetAreaReference"
+      },
+      {
+       "name": "isProtected",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LimitedDynamicBrakeForce",
+     "attributes": [
+      {
+       "name": "dynamicBrakeForceLimit",
+       "dataType": true
+      },
+      {
+       "name": "linearElementSection",
+       "composition": "LinearElementSection"
+      }
+     ]
+    },
+    {
+     "name": "LinearElement",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "lengthOfNetLinearElement",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LinearElementGauge",
+     "attributes": [
+      {
+       "name": "gauge",
+       "enumType": "NominalTrackGauges"
+      },
+      {
+       "name": "linearElementSections",
+       "composition": "LinearElementSection"
+      }
+     ]
+    },
+    {
+     "name": "LinearElementGeometry",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "cantPoints",
+       "composition": "CantPoint"
+      },
+      {
+       "name": "horizontalAlignments",
+       "composition": "HorizontalSegment"
+      },
+      {
+       "name": "linearElement",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "verticalAlignments",
+       "composition": "VerticalSegment"
+      }
+     ]
+    },
+    {
+     "name": "LinearElementLoadingGauge",
+     "attributes": [
+      {
+       "name": "linearElementSections",
+       "composition": "LinearElementSection"
+      },
+      {
+       "name": "loadingGaugeType",
+       "enumType": "LoadingGaugeType"
+      }
+     ]
+    },
+    {
+     "name": "LinearElementSection",
+     "attributes": [
+      {
+       "name": "appliesInBothDirections",
+       "dataType": true
+      },
+      {
+       "name": "endOffsetFromOrigin",
+       "dataType": true
+      },
+      {
+       "name": "onElement",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "startOffsetFromOrigin",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LinearElementSpeedProfile",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linearElement",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "oppositeDirProfile",
+       "composition": "SpeedProfile"
+      },
+      {
+       "name": "sameDirProfile",
+       "composition": "SpeedProfile"
+      }
+     ]
+    },
+    {
+     "name": "NationalBorder",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "fromCountryCode",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "toCountryCode",
+       "dataType": true
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "NetAreaReference",
+     "attributes": [
+      {
+       "name": "includes",
+       "composition": "NetLinearReference"
+      }
+     ]
+    },
+    {
+     "name": "NetLinearReference",
+     "attributes": [
+      {
+       "name": "endsAt",
+       "composition": "NetPointReference"
+      },
+      {
+       "name": "hasSequence",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "startsAt",
+       "composition": "NetPointReference"
+      }
+     ]
+    },
+    {
+     "name": "NetPointReference",
+     "attributes": [
+      {
+       "name": "appliesToDirection",
+       "enumType": "OrientationDirections"
+      },
+      {
+       "name": "hasTopoCoordinate",
+       "composition": "TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "NetRelation",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "elementA",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "elementB",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "isOnOriginOfElementA",
+       "dataType": true
+      },
+      {
+       "name": "isOnOriginOfElementB",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "OperationalPoint",
+     "attributes": [
+      {
+       "name": "opName",
+       "dataType": true
+      },
+      {
+       "name": "opType",
+       "enumType": "OperationalPointTypes"
+      },
+      {
+       "name": "platforms",
+       "composition": "Platform"
+      },
+      {
+       "name": "travelTimeMeasurementPoints",
+       "composition": "TravelTimeMeasurementPoint"
+      },
+      {
+       "name": "uopid",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "PermittedBrakingDistance",
+     "attributes": [
+      {
+       "name": "byEmergencyBrake",
+       "dataType": true
+      },
+      {
+       "name": "distance",
+       "dataType": true
+      },
+      {
+       "name": "gradientValue",
+       "dataType": true
+      },
+      {
+       "name": "linearElementSections",
+       "composition": "LinearElementSection"
+      },
+      {
+       "name": "sameDir",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Platform",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "platformEdges",
+       "composition": "PlatformEdge"
+      }
+     ]
+    },
+    {
+     "name": "PlatformEdge",
+     "attributes": [
+      {
+       "name": "linearReference",
+       "composition": "NetLinearReference"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "platformHeight",
+       "enumType": "PlatformHeights"
+      },
+      {
+       "name": "platformId",
+       "dataType": true
+      },
+      {
+       "name": "stopLocations",
+       "reference": "StopLocation"
+      }
+     ]
+    },
+    {
+     "name": "PropertiesArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "currentLimitations",
+       "composition": "CurrentLimitation"
+      },
+      {
+       "name": "defaultMaxCurrent",
+       "dataType": true
+      },
+      {
+       "name": "defaultVoltage",
+       "enumType": "EnergySupplySystems"
+      },
+      {
+       "name": "dynamicBrakeForceInhibitionAreas",
+       "composition": "LinearElementSection"
+      },
+      {
+       "name": "gauge",
+       "enumType": "NominalTrackGauges"
+      },
+      {
+       "name": "limitedDynamicBrakeForces",
+       "composition": "LimitedDynamicBrakeForce"
+      },
+      {
+       "name": "linearElementGauges",
+       "composition": "LinearElementGauge"
+      },
+      {
+       "name": "linearElementLoadingGauges",
+       "composition": "LinearElementLoadingGauge"
+      },
+      {
+       "name": "linearElementSpeedProfiles",
+       "composition": "LinearElementSpeedProfile"
+      },
+      {
+       "name": "loadingGaugeTypes",
+       "enumType": "LoadingGaugeType"
+      },
+      {
+       "name": "paVersionTimestamp",
+       "dataType": true
+      },
+      {
+       "name": "permittedBrakingDistances",
+       "composition": "PermittedBrakingDistance"
+      },
+      {
+       "name": "topoArea",
+       "reference": "TopoArea"
+      },
+      {
+       "name": "trackConditions",
+       "composition": "TrackCondition"
+      },
+      {
+       "name": "tractionSystems",
+       "composition": "TractionSystem"
+      }
+     ]
+    },
+    {
+     "name": "SampledGeometryArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "sampledLinearElementGeometries",
+       "composition": "SampledLinearElementGeometry"
+      },
+      {
+       "name": "sgaVersionTimestamp",
+       "dataType": true
+      },
+      {
+       "name": "topoArea",
+       "reference": "TopoArea"
+      }
+     ]
+    },
+    {
+     "name": "SampledLinearElementGeometry",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "cants",
+       "composition": "CantSamplePoint"
+      },
+      {
+       "name": "curves",
+       "composition": "CurveSamplePoint"
+      },
+      {
+       "name": "linearElement",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "slopes",
+       "composition": "SlopeSamplePoint"
+      }
+     ]
+    },
+    {
+     "name": "SegmentProfile",
+     "attributes": [
+      {
+       "name": "adjacentAtotsInstance",
+       "composition": "AtoTSInstance"
+      },
+      {
+       "name": "atotsInstance",
+       "composition": "AtoTSInstance"
+      },
+      {
+       "name": "eoaOffset",
+       "dataType": true
+      },
+      {
+       "name": "nidSP",
+       "dataType": true
+      },
+      {
+       "name": "onLinearElement",
+       "reference": "LinearElement"
+      }
+     ]
+    },
+    {
+     "name": "SlipCrossing",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "crossing",
+       "reference": "Crossing"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "switches",
+       "reference": "Switch"
+      }
+     ]
+    },
+    {
+     "name": "SlopeSamplePoint",
+     "attributes": [
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "samplePointSlope",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SpecificStaticSpeedLimit",
+     "attributes": [
+      {
+       "name": "absolutePositiveSpeed",
+       "dataType": true
+      },
+      {
+       "name": "speedLimitCategory",
+       "composition": "SpeedLimitCategory"
+      }
+     ]
+    },
+    {
+     "name": "SpeedLimitCategory",
+     "attributes": [
+      {
+       "name": "cantDeficiencyCategory",
+       "enumType": "CantDeficiencies"
+      },
+      {
+       "name": "otherCategoryDoesNotReplaceCantDeficiencySSP",
+       "enumType": "OtherSpecificStaticSpeedProfileCategory"
+      },
+      {
+       "name": "otherCategoryReplacesCantDeficiencySSP",
+       "enumType": "OtherSpecificStaticSpeedProfileCategory"
+      }
+     ]
+    },
+    {
+     "name": "SpeedProfile",
+     "attributes": [
+      {
+       "name": "axleLoadSpeedProfiles",
+       "composition": "AxleLoadSpeedProfile"
+      },
+      {
+       "name": "staticSpeedProfile",
+       "composition": "StaticSpeedLimit"
+      }
+     ]
+    },
+    {
+     "name": "StaticSpeedLimit",
+     "attributes": [
+      {
+       "name": "pos",
+       "dataType": true
+      },
+      {
+       "name": "specificStaticSpeedLimits",
+       "composition": "SpecificStaticSpeedLimit"
+      },
+      {
+       "name": "speed",
+       "dataType": true
+      },
+      {
+       "name": "trainEndApplicability",
+       "enumType": "TrainEndApplicability"
+      }
+     ]
+    },
+    {
+     "name": "StopLocation",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "doorOpeningSide",
+       "enumType": "DoorOpeningSide"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "netPointReference",
+       "composition": "NetPointReference"
+      },
+      {
+       "name": "stopTrainLimit",
+       "composition": "StopTrainLimit"
+      },
+      {
+       "name": "trainLoadType",
+       "enumType": "TrainLoadType"
+      }
+     ]
+    },
+    {
+     "name": "StopTrainLimit",
+     "attributes": [
+      {
+       "name": "trainMaxAxles",
+       "dataType": true
+      },
+      {
+       "name": "trainMaxLength",
+       "dataType": true
+      },
+      {
+       "name": "trainMaxSize",
+       "enumType": "TrainSize"
+      },
+      {
+       "name": "trainMaxWagons",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Switch",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "leftBranch",
+       "reference": "NetRelation"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "reversalTime",
+       "dataType": true
+      },
+      {
+       "name": "rightBranch",
+       "reference": "NetRelation"
+      }
+     ]
+    },
+    {
+     "name": "TPActiveObject",
+     "attributes": [
+      {
+       "name": "etcsMarker",
+       "reference": "ETCSMarker"
+      },
+      {
+       "name": "stopLocation",
+       "reference": "StopLocation"
+      },
+      {
+       "name": "timeMeasurePoint",
+       "reference": "TravelTimeMeasurementPoint"
+      }
+     ]
+    },
+    {
+     "name": "TimingPoint",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "activeObject",
+       "composition": "TPActiveObject"
+      },
+      {
+       "name": "nidTP",
+       "dataType": true
+      },
+      {
+       "name": "stopLocationTolerance",
+       "enumType": "StopLocationTolerance"
+      },
+      {
+       "name": "stoppingPointReachDistance",
+       "enumType": "StopLocationTolerance"
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "TopologicalCoordinate"
+      },
+      {
+       "name": "tpName",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TopoArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linearElements",
+       "composition": "LinearElement"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "netRelations",
+       "composition": "NetRelation"
+      },
+      {
+       "name": "taVersionTimestamp",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TopologicalCoordinate",
+     "attributes": [
+      {
+       "name": "offsetFromOrigin",
+       "dataType": true
+      },
+      {
+       "name": "onLinearElement",
+       "reference": "LinearElement"
+      }
+     ]
+    },
+    {
+     "name": "TrackCondition",
+     "attributes": [
+      {
+       "name": "conditionType",
+       "enumType": "TransmittedTrackConditions"
+      },
+      {
+       "name": "linearElementSections",
+       "composition": "LinearElementSection"
+      }
+     ]
+    },
+    {
+     "name": "TrackUsageArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "preferredOppositeDir",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "preferredSameDir",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "secondaryTracks",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "shuntingTracks",
+       "reference": "LinearElement"
+      },
+      {
+       "name": "topoArea",
+       "reference": "TopoArea"
+      },
+      {
+       "name": "tuaVersionTimestamp",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TractionSystem",
+     "attributes": [
+      {
+       "name": "linearElementSections",
+       "composition": "LinearElementSection"
+      },
+      {
+       "name": "voltageType",
+       "enumType": "EnergySupplySystems"
+      }
+     ]
+    },
+    {
+     "name": "TrainDetectionSystem",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "referenceDir",
+       "enumType": "OrientationDirections"
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "TopologicalCoordinate"
+      },
+      {
+       "name": "trainDetectionSystemType",
+       "enumType": "TrainDetectionSystems"
+      }
+     ]
+    },
+    {
+     "name": "TravelTimeMeasurementPoint",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "Tunnel",
+     "attributes": [
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "tunnelIdentification",
+       "dataType": true
+      },
+      {
+       "name": "tunnelTubes",
+       "composition": "TunnelTube"
+      }
+     ]
+    },
+    {
+     "name": "TunnelTube",
+     "attributes": [
+      {
+       "name": "areaReference",
+       "composition": "NetAreaReference"
+      },
+      {
+       "name": "crossSection",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TvpSection",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linkedArea",
+       "composition": "NetAreaReference"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "trainDetectors",
+       "reference": "TrainDetectionSystem"
+      }
+     ]
+    },
+    {
+     "name": "Underpass",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "areaReference",
+       "composition": "NetAreaReference"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "VerticalArc",
+     "attributes": [
+      {
+       "name": "arcType",
+       "enumType": "ArcType"
+      },
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "radius",
+       "dataType": true
+      },
+      {
+       "name": "slope",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "VerticalLine",
+     "attributes": [
+      {
+       "name": "elementGeometryPos",
+       "dataType": true
+      },
+      {
+       "name": "slope",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "VerticalSegment",
+     "attributes": [
+      {
+       "name": "verticalSegmentArc",
+       "composition": "VerticalArc"
+      },
+      {
+       "name": "verticalSegmentLine",
+       "composition": "VerticalLine"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "ENG",
+   "classes": [
+    {
+     "name": "Balise",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "baliseMountingSystem",
+       "dataType": true
+      },
+      {
+       "name": "designType",
+       "dataType": true
+      },
+      {
+       "name": "etcsPackets",
+       "composition": "ss026.ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "fixed",
+       "dataType": true
+      },
+      {
+       "name": "m_dup",
+       "enumType": "DuplicationType"
+      },
+      {
+       "name": "m_mcount",
+       "dataType": true
+      },
+      {
+       "name": "n_pig",
+       "dataType": true
+      },
+      {
+       "name": "q_updown",
+       "dataType": true
+      },
+      {
+       "name": "sleeperFastening",
+       "dataType": true
+      },
+      {
+       "name": "sleepersType",
+       "enumType": "SleepersType"
+      },
+      {
+       "name": "standardSize",
+       "dataType": true
+      },
+      {
+       "name": "telegram",
+       "dataType": true
+      },
+      {
+       "name": "telegramChecksum",
+       "dataType": true
+      },
+      {
+       "name": "verticallyOriented",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "BaliseGroup",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "etcsMVersion",
+       "enumType": "ETCSMVersions"
+      },
+      {
+       "name": "q_link",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "BufferStop",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "bsType",
+       "enumType": "BufferStopType"
+      },
+      {
+       "name": "dangerPoint",
+       "reference": "DangerPoint"
+      },
+      {
+       "name": "lengthOfBufferStop",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Crossing",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "foulingPoints",
+       "reference": "FoulingPoint"
+      }
+     ]
+    },
+    {
+     "name": "DangerPoint",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "infra.TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "ETCSEngineering",
+     "attributes": [
+      {
+       "name": "engAreas",
+       "composition": "EngArea"
+      },
+      {
+       "name": "kmAreas",
+       "composition": "KmArea"
+      },
+      {
+       "name": "locationAccuracyAreas",
+       "composition": "LocationAccuracyArea"
+      }
+     ]
+    },
+    {
+     "name": "EngArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "baliseGroups",
+       "composition": "BaliseGroup"
+      },
+      {
+       "name": "bufferStops",
+       "composition": "BufferStop"
+      },
+      {
+       "name": "crossings",
+       "composition": "Crossing"
+      },
+      {
+       "name": "dangerPoints",
+       "composition": "DangerPoint"
+      },
+      {
+       "name": "defaultSleepersType",
+       "enumType": "SleepersType"
+      },
+      {
+       "name": "foulingPoints",
+       "composition": "FoulingPoint"
+      },
+      {
+       "name": "levelCrossings",
+       "composition": "LevelCrossing"
+      },
+      {
+       "name": "sleepers",
+       "composition": "Sleepers"
+      },
+      {
+       "name": "switches",
+       "composition": "Switch"
+      },
+      {
+       "name": "topoArea",
+       "reference": "infra.TopoArea"
+      },
+      {
+       "name": "trackUsagePaths",
+       "composition": "TrackUsagePath"
+      }
+     ]
+    },
+    {
+     "name": "FoulingPoint",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "topologicalCoordinate",
+       "composition": "infra.TopologicalCoordinate"
+      }
+     ]
+    },
+    {
+     "name": "KilometricPost",
+     "attributes": [
+      {
+       "name": "kilometer",
+       "dataType": true
+      },
+      {
+       "name": "kmPostName",
+       "dataType": true
+      },
+      {
+       "name": "pos",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "KmArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linearElementKm",
+       "composition": "LinearElementKm"
+      },
+      {
+       "name": "topoArea",
+       "reference": "infra.TopoArea"
+      }
+     ]
+    },
+    {
+     "name": "LevelCrossing",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "dangerPoints",
+       "reference": "DangerPoint"
+      }
+     ]
+    },
+    {
+     "name": "LinearElementAccuracyProfile",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linearElement",
+       "reference": "infra.LinearElement"
+      },
+      {
+       "name": "offsetAccuracies",
+       "composition": "OffsetAccuracy"
+      }
+     ]
+    },
+    {
+     "name": "LinearElementKm",
+     "attributes": [
+      {
+       "name": "kilometricPosts",
+       "composition": "KilometricPost"
+      },
+      {
+       "name": "linearElement",
+       "reference": "infra.LinearElement"
+      }
+     ]
+    },
+    {
+     "name": "LocationAccuracyArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "accuracyProfiles",
+       "composition": "LinearElementAccuracyProfile"
+      },
+      {
+       "name": "topoArea",
+       "reference": "infra.TopoArea"
+      }
+     ]
+    },
+    {
+     "name": "OffsetAccuracy",
+     "attributes": [
+      {
+       "name": "accuracy",
+       "dataType": true
+      },
+      {
+       "name": "offset",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "Sleepers",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linearElementSections",
+       "composition": "infra.LinearElementSection"
+      },
+      {
+       "name": "sleepersType",
+       "enumType": "SleepersType"
+      }
+     ]
+    },
+    {
+     "name": "Switch",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "bladeLength",
+       "dataType": true
+      },
+      {
+       "name": "foulingPoints",
+       "reference": "FoulingPoint"
+      },
+      {
+       "name": "routeRequiresPointLeft",
+       "reference": "TrackUsagePath"
+      },
+      {
+       "name": "routeRequiresPointRight",
+       "reference": "TrackUsagePath"
+      },
+      {
+       "name": "tipShift",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TrackUsagePath",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "derailers",
+       "reference": "infra.Derailer"
+      },
+      {
+       "name": "levelCrossings",
+       "reference": "LevelCrossing"
+      },
+      {
+       "name": "pathBody",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "precedingTrackUsagePath",
+       "reference": "TrackUsagePath"
+      },
+      {
+       "name": "switches",
+       "reference": "Switch"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "MAP",
+   "classes": [
+    {
+     "name": "FunctionalElementProjection",
+     "attributes": [
+      {
+       "name": "accX",
+       "dataType": true
+      },
+      {
+       "name": "accY",
+       "dataType": true
+      },
+      {
+       "name": "accZ",
+       "dataType": true
+      },
+      {
+       "name": "elementRef",
+       "composition": "FunctionalElementRef"
+      },
+      {
+       "name": "x",
+       "dataType": true
+      },
+      {
+       "name": "y",
+       "dataType": true
+      },
+      {
+       "name": "z",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "FunctionalElementRef",
+     "attributes": [
+      {
+       "name": "balise",
+       "reference": "infra.Balise"
+      },
+      {
+       "name": "bufferStop",
+       "reference": "infra.BufferStop"
+      },
+      {
+       "name": "derailer",
+       "reference": "infra.Derailer"
+      },
+      {
+       "name": "etcsMarker",
+       "reference": "infra.ETCSMarker"
+      },
+      {
+       "name": "operationalPoint",
+       "reference": "infra.OperationalPoint"
+      },
+      {
+       "name": "stopLocation",
+       "reference": "infra.StopLocation"
+      },
+      {
+       "name": "switch",
+       "reference": "infra.Switch"
+      },
+      {
+       "name": "timingPoint",
+       "reference": "infra.TimingPoint"
+      },
+      {
+       "name": "trainDetector",
+       "reference": "infra.TrainDetectionSystem"
+      }
+     ]
+    },
+    {
+     "name": "LinearElementCoordinate",
+     "attributes": [
+      {
+       "name": "accPos",
+       "dataType": true
+      },
+      {
+       "name": "accX",
+       "dataType": true
+      },
+      {
+       "name": "accY",
+       "dataType": true
+      },
+      {
+       "name": "accZ",
+       "dataType": true
+      },
+      {
+       "name": "pos",
+       "dataType": true
+      },
+      {
+       "name": "x",
+       "dataType": true
+      },
+      {
+       "name": "y",
+       "dataType": true
+      },
+      {
+       "name": "z",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LinearElementProjection",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "coordinates",
+       "composition": "LinearElementCoordinate"
+      },
+      {
+       "name": "linearElement",
+       "reference": "infra.LinearElement"
+      }
+     ]
+    },
+    {
+     "name": "Map",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "areaId",
+       "dataType": true
+      },
+      {
+       "name": "epsg",
+       "dataType": true
+      },
+      {
+       "name": "functionalElements",
+       "composition": "FunctionalElementProjection"
+      },
+      {
+       "name": "linearElementProjections",
+       "composition": "LinearElementProjection"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "versionTimestamp",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "MapSet",
+     "attributes": [
+      {
+       "name": "maps",
+       "composition": "Map"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OPP",
+   "classes": [
+    {
+     "name": "AdditionalEventTime",
+     "attributes": [
+      {
+       "name": "timeType",
+       "enumType": "TimeType"
+      },
+      {
+       "name": "timeValue",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "AdditionalTrainData",
+     "attributes": [
+      {
+       "name": "additionalData",
+       "dataType": true
+      },
+      {
+       "name": "adhesionIndependentBrakeState",
+       "enumType": "ActiveState"
+      },
+      {
+       "name": "availableAdhesionCategory",
+       "enumType": "AdhesionCategory"
+      },
+      {
+       "name": "availableAdhesionPhysicalValue",
+       "dataType": true
+      },
+      {
+       "name": "eddyCurrentBrakeState",
+       "enumType": "ActiveState"
+      },
+      {
+       "name": "electroPneumaticBrakeState",
+       "enumType": "ActiveState"
+      },
+      {
+       "name": "magneticShoeBrakeState",
+       "enumType": "ActiveState"
+      },
+      {
+       "name": "maxAvailableDynamicBrakeForce",
+       "dataType": true
+      },
+      {
+       "name": "maxAvailableDynamicBrakePower",
+       "dataType": true
+      },
+      {
+       "name": "maxAvailableServiceBrakeForce",
+       "dataType": true
+      },
+      {
+       "name": "maxAvailableTractiveEffort",
+       "dataType": true
+      },
+      {
+       "name": "maxAvailableTractivePower",
+       "dataType": true
+      },
+      {
+       "name": "regenerativeBrakeState",
+       "enumType": "ActiveState"
+      }
+     ]
+    },
+    {
+     "name": "CooperativeShorteningRequest",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "newMpEnd",
+       "composition": "infra.NetPointReference"
+      },
+      {
+       "name": "riskBuffer",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "trainObjectReference",
+       "reference": "TrainObject"
+      }
+     ]
+    },
+    {
+     "name": "DoorActivity",
+     "attributes": [
+      {
+       "name": "automaticClosing",
+       "dataType": true
+      },
+      {
+       "name": "centralisedOpening",
+       "dataType": true
+      },
+      {
+       "name": "openingDoorSide",
+       "enumType": "DoorSide"
+      }
+     ]
+    },
+    {
+     "name": "DoorData",
+     "attributes": [
+      {
+       "name": "doorState",
+       "enumType": "DoorState"
+      },
+      {
+       "name": "lastPassengerExchangeTime",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "EtcsDataAto",
+     "attributes": [
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "brakePercentage",
+       "dataType": true
+      },
+      {
+       "name": "brakePosition",
+       "enumType": "BrakePosition"
+      },
+      {
+       "name": "cantDeficiencyCategory",
+       "enumType": "CantDeficiencies"
+      },
+      {
+       "name": "maxSpeed",
+       "dataType": true
+      },
+      {
+       "name": "nominalRotatingMass",
+       "dataType": true
+      },
+      {
+       "name": "otherInternationalCategory",
+       "enumType": "OtherSpecificStaticSpeedProfileCategory"
+      },
+      {
+       "name": "preconfiguredBrakingModel",
+       "dataType": true
+      },
+      {
+       "name": "trainLength",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "EventEstimation",
+     "attributes": [
+      {
+       "name": "arrival",
+       "dataType": true
+      },
+      {
+       "name": "event",
+       "reference": "MovementEvent"
+      }
+     ]
+    },
+    {
+     "name": "EventHandling",
+     "attributes": [
+      {
+       "name": "event",
+       "reference": "MovementEvent"
+      },
+      {
+       "name": "passStopDepart",
+       "enumType": "MovementEventAction"
+      }
+     ]
+    },
+    {
+     "name": "MovementEvent",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "alignment",
+       "enumType": "AlignmentType"
+      },
+      {
+       "name": "pathToNextEvent",
+       "reference": "infra.LinearElement"
+      },
+      {
+       "name": "plannedType",
+       "enumType": "MovementEventType"
+      },
+      {
+       "name": "position",
+       "composition": "infra.NetPointReference"
+      },
+      {
+       "name": "scheduledArrival",
+       "dataType": true
+      },
+      {
+       "name": "scheduledArrivalWindow",
+       "dataType": true
+      },
+      {
+       "name": "scheduledType",
+       "enumType": "MovementEventType"
+      },
+      {
+       "name": "startsAfterEvents",
+       "composition": "OperationalEventRef"
+      },
+      {
+       "name": "stopDescription",
+       "composition": "StopDescription"
+      }
+     ]
+    },
+    {
+     "name": "MovementEventActivity",
+     "attributes": [
+      {
+       "name": "joinActivity",
+       "composition": "MovementEventActivityJoin"
+      },
+      {
+       "name": "meetActivity",
+       "composition": "MovementEventActivityMeet"
+      },
+      {
+       "name": "splitActivity",
+       "composition": "MovementEventActivitySplit"
+      },
+      {
+       "name": "trainUnitActivity",
+       "composition": "TrainUnitActivity"
+      }
+     ]
+    },
+    {
+     "name": "MovementEventActivityJoin",
+     "attributes": [
+      {
+       "name": "joiningMovement",
+       "reference": "MovementEvent"
+      },
+      {
+       "name": "trainSides",
+       "enumType": "Train2TrainSide"
+      }
+     ]
+    },
+    {
+     "name": "MovementEventActivityMeet",
+     "attributes": [
+      {
+       "name": "meetMovement",
+       "reference": "MovementEvent"
+      },
+      {
+       "name": "trainSides",
+       "enumType": "Train2TrainSide"
+      }
+     ]
+    },
+    {
+     "name": "MovementEventActivitySplit",
+     "attributes": [
+      {
+       "name": "splittingMovement",
+       "reference": "MovementEvent"
+      }
+     ]
+    },
+    {
+     "name": "MovementEventExecutionReport",
+     "attributes": [
+      {
+       "name": "executionState",
+       "enumType": "EventExecutionState"
+      },
+      {
+       "name": "failureReason",
+       "dataType": true
+      },
+      {
+       "name": "info",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "movementEvent",
+       "reference": "MovementEvent"
+      },
+      {
+       "name": "operationalPlanIssuedAt",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "MovementPermission",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "currentEoA",
+       "composition": "infra.NetPointReference"
+      },
+      {
+       "name": "excludedSTAForFlankProtection",
+       "reference": "tp.SwitchableTracksideAsset"
+      },
+      {
+       "name": "mpOnboardOperatingModes",
+       "composition": "MpOnboardOperatingMode"
+      },
+      {
+       "name": "mpSpeeds",
+       "composition": "MpSpeed"
+      },
+      {
+       "name": "pendingCooperativeShorteningRequests",
+       "composition": "CooperativeShorteningRequest"
+      },
+      {
+       "name": "permissionExtent",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "riskBuffer",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "riskPaths",
+       "composition": "infra.NetLinearReference"
+      }
+     ]
+    },
+    {
+     "name": "MovementResponseCode",
+     "attributes": [
+      {
+       "name": "operationalPlanMovement",
+       "reference": "OperationalPlanMovement"
+      },
+      {
+       "name": "responseCodeMovement",
+       "enumType": "ResponseCodeMovement"
+      }
+     ]
+    },
+    {
+     "name": "MovementRestriction",
+     "attributes": [
+      {
+       "name": "restrictedPath",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "specificRestriction",
+       "composition": "SpecificMovementRestriction"
+      }
+     ]
+    },
+    {
+     "name": "MpOnboardOperatingMode",
+     "attributes": [
+      {
+       "name": "linkedPath",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "onboardOperatingMode",
+       "enumType": "OnboardOperatingMode"
+      }
+     ]
+    },
+    {
+     "name": "MpSpeed",
+     "attributes": [
+      {
+       "name": "linkedPath",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "vMax",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "OnBoardExtension",
+     "attributes": [
+      {
+       "name": "content",
+       "dataType": true
+      },
+      {
+       "name": "contentType",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "OperationalConsist",
+     "attributes": [
+      {
+       "name": "supportedOnBoardEquipment",
+       "composition": "SupportedOnBoardEquipment"
+      }
+     ]
+    },
+    {
+     "name": "OperationalEventRef",
+     "attributes": [
+      {
+       "name": "movementEvent",
+       "reference": "MovementEvent"
+      },
+      {
+       "name": "restrictionEvent",
+       "reference": "UsageRestrictionEvent"
+      },
+      {
+       "name": "warningMeasureEvent",
+       "reference": "WarningMeasureEvent"
+      }
+     ]
+    },
+    {
+     "name": "OperationalPlanEventExecutionReport",
+     "attributes": [
+      {
+       "name": "activationRestrictionReport",
+       "composition": "UsageRestrictionEventExecutionReport"
+      },
+      {
+       "name": "activationWarningMeasureReport",
+       "composition": "WarningMeasureEventExecutionReport"
+      },
+      {
+       "name": "arrivalReport",
+       "composition": "MovementEventExecutionReport"
+      },
+      {
+       "name": "deactivationRestrictionReport",
+       "composition": "UsageRestrictionEventExecutionReport"
+      },
+      {
+       "name": "deactivationWarningMeasureReport",
+       "composition": "WarningMeasureEventExecutionReport"
+      },
+      {
+       "name": "departureReport",
+       "composition": "MovementEventExecutionReport"
+      }
+     ]
+    },
+    {
+     "name": "OperationalPlanExecutionResponse",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "operationalPlanIssuedAt",
+       "dataType": true
+      },
+      {
+       "name": "rejectReason",
+       "dataType": true
+      },
+      {
+       "name": "response",
+       "composition": "OperationalPlanResponse"
+      }
+     ]
+    },
+    {
+     "name": "OperationalPlanMovement",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "configurationDataVersionRef",
+       "dataType": true
+      },
+      {
+       "name": "includesEndOfJourney",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "movementEvents",
+       "composition": "MovementEvent"
+      },
+      {
+       "name": "movementRestrictions",
+       "composition": "MovementRestriction"
+      },
+      {
+       "name": "operationalTrainUnits",
+       "composition": "TrainUnit"
+      }
+     ]
+    },
+    {
+     "name": "OperationalPlanResponse",
+     "attributes": [
+      {
+       "name": "movementResponse",
+       "composition": "MovementResponseCode"
+      },
+      {
+       "name": "usageRestrictionResponse",
+       "composition": "UsageRestrictionResponseCode"
+      },
+      {
+       "name": "warningMeasureResponse",
+       "composition": "WarningMeasureResponseCode"
+      }
+     ]
+    },
+    {
+     "name": "OperationalPlanUsageRestriction",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "configurationDataVersionRef",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "restrictionEvents",
+       "composition": "UsageRestrictionEvent"
+      }
+     ]
+    },
+    {
+     "name": "OperationalPlanWarningMeasure",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "configurationDataVersionRef",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "warningMeasureEvents",
+       "composition": "WarningMeasureEvent"
+      }
+     ]
+    },
+    {
+     "name": "OperationalTrafficPlan",
+     "attributes": [
+      {
+       "name": "operationalPlanMovements",
+       "composition": "OperationalPlanMovement"
+      },
+      {
+       "name": "operationalPlanUsageRestrictions",
+       "composition": "OperationalPlanUsageRestriction"
+      },
+      {
+       "name": "operationalPlanWarningMeasures",
+       "composition": "OperationalPlanWarningMeasure"
+      }
+     ]
+    },
+    {
+     "name": "OperationalTrainCategory",
+     "attributes": [
+      {
+       "name": "description",
+       "dataType": true
+      },
+      {
+       "name": "trainCategoryType",
+       "enumType": "TrainCategoryType"
+      },
+      {
+       "name": "trainUsage",
+       "enumType": "TrainUsageType"
+      }
+     ]
+    },
+    {
+     "name": "PhysicalConsist",
+     "attributes": [
+      {
+       "name": "evnIdentifier",
+       "dataType": true
+      },
+      {
+       "name": "mass",
+       "dataType": true
+      },
+      {
+       "name": "maxCurrentConsumption",
+       "dataType": true
+      },
+      {
+       "name": "passengerLoad",
+       "dataType": true
+      },
+      {
+       "name": "physicalVehicles",
+       "composition": "PhysicalVehicle"
+      }
+     ]
+    },
+    {
+     "name": "PhysicalTrainUnitIdentifier",
+     "attributes": [
+      {
+       "name": "additionalTrainNumber",
+       "dataType": true
+      },
+      {
+       "name": "companyId",
+       "dataType": true
+      },
+      {
+       "name": "dailyReferenceTrainId",
+       "dataType": true
+      },
+      {
+       "name": "leadingNidEngine",
+       "dataType": true
+      },
+      {
+       "name": "startDate",
+       "dataType": true
+      },
+      {
+       "name": "trainRunningNumber",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "PhysicalVehicle",
+     "attributes": [
+      {
+       "name": "doorDataLeft",
+       "composition": "DoorData"
+      },
+      {
+       "name": "doorDataRight",
+       "composition": "DoorData"
+      },
+      {
+       "name": "evnIdentifier",
+       "dataType": true
+      },
+      {
+       "name": "mass",
+       "dataType": true
+      },
+      {
+       "name": "pantographsStates",
+       "enumType": "PantographState"
+      },
+      {
+       "name": "passengerLoad",
+       "dataType": true
+      },
+      {
+       "name": "vehicleOrientation",
+       "enumType": "VehicleOrientation"
+      }
+     ]
+    },
+    {
+     "name": "RestrictedAspect",
+     "attributes": [
+      {
+       "name": "allowedDrivingModes",
+       "enumType": "OnboardOperatingMode"
+      },
+      {
+       "name": "atoInhibition",
+       "dataType": true
+      },
+      {
+       "name": "manualOperationOnly",
+       "dataType": true
+      },
+      {
+       "name": "maxAdhesion",
+       "enumType": "AdhesionCategory"
+      },
+      {
+       "name": "maxCurrent",
+       "dataType": true
+      },
+      {
+       "name": "nonStandstill",
+       "dataType": true
+      },
+      {
+       "name": "nonSwitchability",
+       "dataType": true
+      },
+      {
+       "name": "operationalRadioHole",
+       "dataType": true
+      },
+      {
+       "name": "operationallyNonStandstill",
+       "dataType": true
+      },
+      {
+       "name": "safetyCriticalCommandOnly",
+       "dataType": true
+      },
+      {
+       "name": "soundHorn",
+       "dataType": true
+      },
+      {
+       "name": "speedRestriction",
+       "composition": "SpeedRestriction"
+      },
+      {
+       "name": "trackClosure",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SafeTrainExtent",
+     "attributes": [
+      {
+       "name": "linearReference",
+       "composition": "infra.NetLinearReference"
+      },
+      {
+       "name": "trainPositionQualifier",
+       "enumType": "TrainPositionQualifier"
+      }
+     ]
+    },
+    {
+     "name": "SpecificMovementRestriction",
+     "attributes": [
+      {
+       "name": "adhesionCategory",
+       "enumType": "AdhesionCategory"
+      },
+      {
+       "name": "atoInhibition",
+       "dataType": true
+      },
+      {
+       "name": "dasInhibition",
+       "dataType": true
+      },
+      {
+       "name": "excludedSwitchableTracksideAssetsForFlankProtection",
+       "reference": "tp.SwitchableTracksideAsset"
+      },
+      {
+       "name": "maxCurrent",
+       "dataType": true
+      },
+      {
+       "name": "speedRestriction",
+       "composition": "SpeedRestriction"
+      }
+     ]
+    },
+    {
+     "name": "SpeedRestriction",
+     "attributes": [
+      {
+       "name": "maxSpeed",
+       "dataType": true
+      },
+      {
+       "name": "restrictionEndsAtTrainFront",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "StopDescription",
+     "attributes": [
+      {
+       "name": "activities",
+       "composition": "MovementEventActivity"
+      },
+      {
+       "name": "additionalEventTimes",
+       "composition": "AdditionalEventTime"
+      },
+      {
+       "name": "doorActivity",
+       "composition": "DoorActivity"
+      },
+      {
+       "name": "holdTrain",
+       "dataType": true
+      },
+      {
+       "name": "relaxedCoupler",
+       "dataType": true
+      },
+      {
+       "name": "scheduledDeparture",
+       "dataType": true
+      },
+      {
+       "name": "scheduledMinDwellTime",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SupportedOnBoardEquipment",
+     "attributes": [
+      {
+       "name": "etcsSystemVersions",
+       "dataType": true
+      },
+      {
+       "name": "onboardExtensions",
+       "composition": "OnBoardExtension"
+      },
+      {
+       "name": "trainProtectionType",
+       "enumType": "TrainProtectionType"
+      }
+     ]
+    },
+    {
+     "name": "SwitchableTracksideAssetSectionState",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "currentDriveability",
+       "enumType": "SwitchableTracksideAssetSectionDriveability"
+      },
+      {
+       "name": "requestedDriveability",
+       "enumType": "SwitchableTracksideAssetSectionDriveability"
+      },
+      {
+       "name": "switchableTracksideAssetSection",
+       "reference": "tp.SwitchableTracksideAssetSection"
+      }
+     ]
+    },
+    {
+     "name": "SwitchableTracksideAssetState",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "switchableTracksideAsset",
+       "reference": "tp.SwitchableTracksideAsset"
+      },
+      {
+       "name": "switchableTracksideAssetSectionState",
+       "composition": "SwitchableTracksideAssetSectionState"
+      },
+      {
+       "name": "switchableTracksideAssetStateValue",
+       "enumType": "SwitchableTracksideAssetStateValue"
+      }
+     ]
+    },
+    {
+     "name": "TractionVoltage",
+     "attributes": [
+      {
+       "name": "countryTractionId",
+       "dataType": true
+      },
+      {
+       "name": "mVoltage",
+       "enumType": "EnergySupplySystems"
+      }
+     ]
+    },
+    {
+     "name": "TrainGroupFilter",
+     "attributes": [
+      {
+       "name": "axleLoadCategories",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "cantDeficiencyCategories",
+       "enumType": "CantDeficiencies"
+      }
+     ]
+    },
+    {
+     "name": "TrainObject",
+     "attributes": [
+      {
+       "name": "communicationActive",
+       "dataType": true
+      },
+      {
+       "name": "maRequestedByTrain",
+       "enumType": "MaRequestedByTrain"
+      },
+      {
+       "name": "movementPermission",
+       "composition": "MovementPermission"
+      },
+      {
+       "name": "obuIdentifier",
+       "dataType": true
+      },
+      {
+       "name": "onboardOperatingMode",
+       "enumType": "OnboardOperatingMode"
+      },
+      {
+       "name": "runningDirection",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "safeTrainExtent",
+       "composition": "SafeTrainExtent"
+      },
+      {
+       "name": "safeTrainLength",
+       "dataType": true
+      },
+      {
+       "name": "speed",
+       "dataType": true
+      },
+      {
+       "name": "trainRunningNumber",
+       "dataType": true
+      },
+      {
+       "name": "validatedTrainData",
+       "composition": "ValidatedTrainData"
+      }
+     ]
+    },
+    {
+     "name": "TrainUnit",
+     "attributes": [
+      {
+       "name": "atoGradeAutomation",
+       "enumType": "ATOGradeOfAutomation"
+      },
+      {
+       "name": "brakeModelType",
+       "enumType": "BrakeModelType"
+      },
+      {
+       "name": "brakePosition",
+       "enumType": "BrakePosition"
+      },
+      {
+       "name": "emergencyBrakeWeightPercentage",
+       "dataType": true
+      },
+      {
+       "name": "nominalRotatingMass",
+       "dataType": true
+      },
+      {
+       "name": "operationalConsists",
+       "composition": "OperationalConsist"
+      },
+      {
+       "name": "operationalTrainCategory",
+       "composition": "OperationalTrainCategory"
+      },
+      {
+       "name": "physicalTrainUnit",
+       "composition": "PhysicalTrainUnitIdentifier"
+      },
+      {
+       "name": "regularBrakeWeightPercentage",
+       "dataType": true
+      },
+      {
+       "name": "scheduledTrainLength",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TrainUnitActivity",
+     "attributes": [
+      {
+       "name": "actualTrainUnitIndex",
+       "dataType": true
+      },
+      {
+       "name": "targetTrainUnitIndex",
+       "dataType": true
+      },
+      {
+       "name": "trainUnitActivityType",
+       "enumType": "TrainUnitActivityType"
+      }
+     ]
+    },
+    {
+     "name": "TrainUnitReportAtoCapabilities",
+     "attributes": [
+      {
+       "name": "additionalTrainData",
+       "composition": "AdditionalTrainData"
+      },
+      {
+       "name": "elapsedStartPassengerExchange",
+       "dataType": true
+      },
+      {
+       "name": "etcsData",
+       "composition": "EtcsDataAto"
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "lastPassengerExchangeTime",
+       "dataType": true
+      },
+      {
+       "name": "mass",
+       "dataType": true
+      },
+      {
+       "name": "operationalPlanMovement",
+       "reference": "OperationalPlanMovement"
+      },
+      {
+       "name": "outsideTemperature",
+       "dataType": true
+      },
+      {
+       "name": "passengerLoad",
+       "dataType": true
+      },
+      {
+       "name": "physicalConsists",
+       "composition": "PhysicalConsist"
+      },
+      {
+       "name": "trainUnitIdentifier",
+       "composition": "PhysicalTrainUnitIdentifier"
+      }
+     ]
+    },
+    {
+     "name": "TrainUnitReportAtoStatus",
+     "attributes": [
+      {
+       "name": "atoState",
+       "enumType": "AtoState"
+      },
+      {
+       "name": "driverId",
+       "dataType": true
+      },
+      {
+       "name": "eventEstimations",
+       "composition": "EventEstimation"
+      },
+      {
+       "name": "eventHandling",
+       "composition": "EventHandling"
+      },
+      {
+       "name": "frontPosition",
+       "composition": "infra.NetPointReference"
+      },
+      {
+       "name": "isMoving",
+       "dataType": true
+      },
+      {
+       "name": "isSlipping",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "lowAdhesionReportedByDriver",
+       "dataType": true
+      },
+      {
+       "name": "nextStoppingPointSkip",
+       "dataType": true
+      },
+      {
+       "name": "operationalConditionsFulfillment",
+       "dataType": true
+      },
+      {
+       "name": "operationalPlanMovement",
+       "reference": "OperationalPlanMovement"
+      },
+      {
+       "name": "routingError",
+       "dataType": true
+      },
+      {
+       "name": "speed",
+       "dataType": true
+      },
+      {
+       "name": "trainLength",
+       "dataType": true
+      },
+      {
+       "name": "trainUnitIdentifier",
+       "composition": "PhysicalTrainUnitIdentifier"
+      },
+      {
+       "name": "unableToStopAtNextStoppingPoint",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TrainUnitReportPES",
+     "attributes": [
+      {
+       "name": "cmdTrainObject",
+       "composition": "TrainObject"
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "operationalPlanMovement",
+       "reference": "OperationalPlanMovement"
+      }
+     ]
+    },
+    {
+     "name": "UnresolvedTrackboundObject",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "associatedTrainObject",
+       "dataType": true
+      },
+      {
+       "name": "recordedTrainLength",
+       "dataType": true
+      },
+      {
+       "name": "utoCreationReason",
+       "enumType": "UtoCreationReason"
+      },
+      {
+       "name": "utoExtent",
+       "composition": "infra.NetAreaReference"
+      }
+     ]
+    },
+    {
+     "name": "UnresolvedTrackboundObjectState",
+     "attributes": [
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "unresolvedTrackBoundObject",
+       "composition": "UnresolvedTrackboundObject"
+      }
+     ]
+    },
+    {
+     "name": "UsageRestriction",
+     "attributes": [
+      {
+       "name": "appliedToTrains",
+       "composition": "TrainGroupFilter"
+      },
+      {
+       "name": "linearElementSections",
+       "composition": "infra.LinearElementSection"
+      },
+      {
+       "name": "restrictedAspect",
+       "composition": "RestrictedAspect"
+      }
+     ]
+    },
+    {
+     "name": "UsageRestrictionEvent",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "activationTime",
+       "dataType": true
+      },
+      {
+       "name": "deactivationTime",
+       "dataType": true
+      },
+      {
+       "name": "startsAfterEvents",
+       "composition": "OperationalEventRef"
+      },
+      {
+       "name": "usageRestriction",
+       "composition": "UsageRestriction"
+      }
+     ]
+    },
+    {
+     "name": "UsageRestrictionEventExecutionReport",
+     "attributes": [
+      {
+       "name": "executionState",
+       "enumType": "EventExecutionState"
+      },
+      {
+       "name": "failureReason",
+       "dataType": true
+      },
+      {
+       "name": "info",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "operationalPlanIssuedAt",
+       "dataType": true
+      },
+      {
+       "name": "restrictionEvent",
+       "reference": "UsageRestrictionEvent"
+      }
+     ]
+    },
+    {
+     "name": "UsageRestrictionEventState",
+     "attributes": [
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "usageRestrictionEvent",
+       "reference": "UsageRestrictionEvent"
+      },
+      {
+       "name": "usageRestrictionState",
+       "composition": "UsageRestrictionState"
+      }
+     ]
+    },
+    {
+     "name": "UsageRestrictionResponseCode",
+     "attributes": [
+      {
+       "name": "operationalPlanUsageRestriction",
+       "reference": "OperationalPlanUsageRestriction"
+      },
+      {
+       "name": "responseCodeRestriction",
+       "enumType": "ResponseCodeRestriction"
+      }
+     ]
+    },
+    {
+     "name": "UsageRestrictionState",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "unsupervisedTrainsInRestrictionArea",
+       "dataType": true
+      },
+      {
+       "name": "usageRestriction",
+       "composition": "UsageRestriction"
+      },
+      {
+       "name": "usageRestrictionState",
+       "enumType": "EventState"
+      }
+     ]
+    },
+    {
+     "name": "ValidatedTrainData",
+     "attributes": [
+      {
+       "name": "airtight",
+       "enumType": "AirtightType"
+      },
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "axleNumber",
+       "dataType": true
+      },
+      {
+       "name": "cantDeficiencyCategory",
+       "enumType": "CantDeficiencies"
+      },
+      {
+       "name": "loadingGaugeType",
+       "enumType": "LoadingGaugeType"
+      },
+      {
+       "name": "nidNtc",
+       "dataType": true
+      },
+      {
+       "name": "otherTrainCategory",
+       "enumType": "OtherInternationalTrainCategory"
+      },
+      {
+       "name": "tractionVoltage",
+       "composition": "TractionVoltage"
+      },
+      {
+       "name": "trainLength",
+       "dataType": true
+      },
+      {
+       "name": "vMaxTrain",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "WarningArea",
+     "attributes": [
+      {
+       "name": "trackArea",
+       "composition": "infra.NetAreaReference"
+      },
+      {
+       "name": "warningDevices",
+       "composition": "WarningDevice"
+      }
+     ]
+    },
+    {
+     "name": "WarningAreaState",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "warningArea",
+       "composition": "WarningArea"
+      },
+      {
+       "name": "warningState",
+       "enumType": "EventState"
+      }
+     ]
+    },
+    {
+     "name": "WarningDevice",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "deviceType",
+       "enumType": "DeviceType"
+      }
+     ]
+    },
+    {
+     "name": "WarningMeasureEvent",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "activationTime",
+       "dataType": true
+      },
+      {
+       "name": "deactivationTime",
+       "dataType": true
+      },
+      {
+       "name": "startsAfterEvents",
+       "composition": "OperationalEventRef"
+      },
+      {
+       "name": "warningArea",
+       "composition": "WarningArea"
+      }
+     ]
+    },
+    {
+     "name": "WarningMeasureEventExecutionReport",
+     "attributes": [
+      {
+       "name": "executionState",
+       "enumType": "EventExecutionState"
+      },
+      {
+       "name": "failureReason",
+       "dataType": true
+      },
+      {
+       "name": "info",
+       "dataType": true
+      },
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "operationalPlanIssuedAt",
+       "dataType": true
+      },
+      {
+       "name": "warningMeasureEvent",
+       "reference": "WarningMeasureEvent"
+      }
+     ]
+    },
+    {
+     "name": "WarningMeasureEventState",
+     "attributes": [
+      {
+       "name": "issuedAt",
+       "dataType": true
+      },
+      {
+       "name": "warningAreaState",
+       "composition": "WarningAreaState"
+      },
+      {
+       "name": "warningMeasureEvent",
+       "reference": "WarningMeasureEvent"
+      }
+     ]
+    },
+    {
+     "name": "WarningMeasureResponseCode",
+     "attributes": [
+      {
+       "name": "operationalPlanWarningMeasure",
+       "reference": "OperationalPlanWarningMeasure"
+      },
+      {
+       "name": "responseCodeWarningMeasure",
+       "enumType": "ResponseCodeWarningMeasure"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "TP",
+   "classes": [
+    {
+     "name": "AreaOfControl",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "area",
+       "composition": "infra.NetAreaReference"
+      },
+      {
+       "name": "controlledBy",
+       "composition": "Controller"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ControlledInfraElement",
+     "attributes": [
+      {
+       "name": "levelCrossing",
+       "reference": "LxConfigurationData"
+      },
+      {
+       "name": "switchConfigurationData",
+       "reference": "SwitchConfigurationData"
+      },
+      {
+       "name": "trainDetector",
+       "reference": "TrainDetectionSystemConfigurationData"
+      },
+      {
+       "name": "tvpSection",
+       "reference": "TvpSectionConfigurationData"
+      }
+     ]
+    },
+    {
+     "name": "Controller",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "eulynxBaseline",
+       "dataType": true
+      },
+      {
+       "name": "iPAddress",
+       "dataType": true
+      },
+      {
+       "name": "ocVersion",
+       "dataType": true
+      },
+      {
+       "name": "portNumber",
+       "dataType": true
+      },
+      {
+       "name": "rastaId",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSMarker",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "acknowledgementDistance",
+       "dataType": true
+      },
+      {
+       "name": "markerType",
+       "enumType": "MarkerFunction"
+      },
+      {
+       "name": "maxTransitionSpeed",
+       "dataType": true
+      },
+      {
+       "name": "offsetTransitionUnreachable",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "FieldObjectController",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "belongsToAoc",
+       "reference": "AreaOfControl"
+      },
+      {
+       "name": "controlledBy",
+       "composition": "Controller"
+      },
+      {
+       "name": "controlledInfraElements",
+       "composition": "ControlledInfraElement"
+      }
+     ]
+    },
+    {
+     "name": "FoulingSection",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "dependencies",
+       "reference": "FoulingSection"
+      },
+      {
+       "name": "linearReferences",
+       "composition": "infra.LinearElementSection"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "GenericIOConfigurationData",
+     "attributes": [
+      {
+       "name": "conTFlashPeriod",
+       "dataType": true
+      },
+      {
+       "name": "inputChannelConfigurationData",
+       "composition": "InputChannelConfigurationData"
+      },
+      {
+       "name": "outputChannelConfigurationData",
+       "composition": "OutputChannelConfigurationData"
+      }
+     ]
+    },
+    {
+     "name": "InputChannelConfigurationData",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "conTMaxSwitchingPeriod",
+       "dataType": true
+      },
+      {
+       "name": "conTMessageDelayTime",
+       "dataType": true
+      },
+      {
+       "name": "debouncingTime",
+       "dataType": true
+      },
+      {
+       "name": "physicalOutputMonitored",
+       "dataType": true
+      },
+      {
+       "name": "type",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LxConfigurationData",
+     "attributes": [
+      {
+       "name": "closureTimeUsed",
+       "dataType": true
+      },
+      {
+       "name": "conTPdiLossDeactivationTimer",
+       "dataType": true
+      },
+      {
+       "name": "conTmaxClosureTimer",
+       "dataType": true
+      },
+      {
+       "name": "detectionElementUsed",
+       "dataType": true
+      },
+      {
+       "name": "detectionElementsNumber",
+       "dataType": true
+      },
+      {
+       "name": "indexDetectionElemtents",
+       "dataType": true
+      },
+      {
+       "name": "indexLocalDeactivationRequests",
+       "dataType": true
+      },
+      {
+       "name": "indexLocalOperationsHandovers",
+       "dataType": true
+      },
+      {
+       "name": "lcIsolationFunctionUsed",
+       "dataType": true
+      },
+      {
+       "name": "levelCrossing",
+       "composition": "infra.LevelCrossing"
+      },
+      {
+       "name": "localDeactivationRequests",
+       "dataType": true
+      },
+      {
+       "name": "localOperationHandover",
+       "dataType": true
+      },
+      {
+       "name": "obstacleDetectionUsed",
+       "dataType": true
+      },
+      {
+       "name": "preActivation",
+       "dataType": true
+      },
+      {
+       "name": "triggersCriticalFailure",
+       "dataType": true
+      },
+      {
+       "name": "triggersNonCriticalFailure",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "OutputChannelConfigurationData",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "conTActivationDelayOff",
+       "dataType": true
+      },
+      {
+       "name": "conTActivationDelayOn",
+       "dataType": true
+      },
+      {
+       "name": "conTFlashDutyCycle",
+       "dataType": true
+      },
+      {
+       "name": "flashing",
+       "dataType": true
+      },
+      {
+       "name": "physicalOutputMonitored",
+       "dataType": true
+      },
+      {
+       "name": "type",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ProtectedInfraElement",
+     "attributes": [
+      {
+       "name": "crossing",
+       "reference": "infra.Crossing"
+      },
+      {
+       "name": "derailer",
+       "reference": "infra.Derailer"
+      },
+      {
+       "name": "levelCrossing",
+       "reference": "infra.LevelCrossing"
+      },
+      {
+       "name": "slipCrossing",
+       "reference": "infra.SlipCrossing"
+      },
+      {
+       "name": "switch",
+       "reference": "infra.Switch"
+      }
+     ]
+    },
+    {
+     "name": "SwitchConfigurationData",
+     "attributes": [
+      {
+       "name": "conTmaxPointOperation",
+       "dataType": true
+      },
+      {
+       "name": "numberPointMachine",
+       "dataType": true
+      },
+      {
+       "name": "redrive",
+       "dataType": true
+      },
+      {
+       "name": "switch",
+       "composition": "infra.Switch"
+      },
+      {
+       "name": "switchMachineConfiguration",
+       "composition": "SwitchMachineConfiguration"
+      },
+      {
+       "name": "unintended",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SwitchMachineConfiguration",
+     "attributes": [
+      {
+       "name": "crucial",
+       "dataType": true
+      },
+      {
+       "name": "interfaceType",
+       "dataType": true
+      },
+      {
+       "name": "switchMachineType",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SwitchableTracksideAsset",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "dependenciesType",
+       "enumType": "DependencyType"
+      },
+      {
+       "name": "name",
+       "dataType": true
+      },
+      {
+       "name": "protectedInfraElements",
+       "composition": "ProtectedInfraElement"
+      },
+      {
+       "name": "runTime",
+       "dataType": true
+      },
+      {
+       "name": "switchableTracksideAssetSections",
+       "composition": "SwitchableTracksideAssetSection"
+      },
+      {
+       "name": "switchableTracksideAssetsDependencies",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SwitchableTracksideAssetSection",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "linearElementSection",
+       "composition": "infra.LinearElementSection"
+      },
+      {
+       "name": "maxFlankProtectionSpeed",
+       "dataType": true
+      },
+      {
+       "name": "name",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TrainDetectionSystemConfigurationData",
+     "attributes": [
+      {
+       "name": "abilityToForceTvpsClear",
+       "dataType": true
+      },
+      {
+       "name": "trainDetectorConfigurationData",
+       "composition": "TrainDetectorConfigurationData"
+      },
+      {
+       "name": "tvpSectionConfigurationData",
+       "composition": "TvpSectionConfigurationData"
+      }
+     ]
+    },
+    {
+     "name": "TrainDetectorConfigurationData",
+     "attributes": [
+      {
+       "name": "directionOfPassing",
+       "dataType": true
+      },
+      {
+       "name": "trainDetector",
+       "composition": "infra.TrainDetectionSystem"
+      }
+     ]
+    },
+    {
+     "name": "TrainProtection",
+     "attributes": [
+      {
+       "name": "tpArea",
+       "composition": "TrainProtectionArea"
+      }
+     ]
+    },
+    {
+     "name": "TrainProtectionArea",
+     "attributes": [
+      {
+       "name": "id",
+       "dataType": true
+      },
+      {
+       "name": "allocationSections",
+       "composition": "FoulingSection"
+      },
+      {
+       "name": "areaOfControl",
+       "composition": "AreaOfControl"
+      },
+      {
+       "name": "controllers",
+       "composition": "Controller"
+      },
+      {
+       "name": "etcsMarkers",
+       "composition": "ETCSMarker"
+      },
+      {
+       "name": "fieldObjectControllers",
+       "composition": "FieldObjectController"
+      },
+      {
+       "name": "switchableTracksideAssets",
+       "composition": "SwitchableTracksideAsset"
+      },
+      {
+       "name": "topoArea",
+       "reference": "infra.TopoArea"
+      }
+     ]
+    },
+    {
+     "name": "TvpSectionConfigurationData",
+     "attributes": [
+      {
+       "name": "conTDealyOfNotificationOfAvailability",
+       "dataType": true
+      },
+      {
+       "name": "conTInhibitionTimer",
+       "dataType": true
+      },
+      {
+       "name": "conTMaxfcPOrFcPA",
+       "dataType": true
+      },
+      {
+       "name": "conTMinfcPOrFcPA",
+       "dataType": true
+      },
+      {
+       "name": "conTTdpDelay",
+       "dataType": true
+      },
+      {
+       "name": "conTTdpUnidentifiedPatternDelay",
+       "dataType": true
+      },
+      {
+       "name": "drfcCommandUsed",
+       "dataType": true
+      },
+      {
+       "name": "permissibleFcModes",
+       "dataType": true
+      },
+      {
+       "name": "tvpSection",
+       "composition": "infra.TvpSection"
+      },
+      {
+       "name": "uflCommandUsed",
+       "dataType": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "ss026",
+   "classes": [
+    {
+     "name": "AxleLoadRestriction",
+     "attributes": [
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "v_axleLoad",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "AxleLoadSelection",
+     "attributes": [
+      {
+       "name": "axleLoadRestrictions",
+       "composition": "AxleLoadRestriction"
+      },
+      {
+       "name": "d_axleload",
+       "dataType": true
+      },
+      {
+       "name": "l_axleload",
+       "dataType": true
+      },
+      {
+       "name": "q_front",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "CorrectionFactor",
+     "attributes": [
+      {
+       "name": "l_nvkrint",
+       "dataType": true
+      },
+      {
+       "name": "m_nvkrint",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "CountryBalise",
+     "attributes": [
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "DLMCondition",
+     "attributes": [
+      {
+       "name": "d_trackcond",
+       "dataType": true
+      },
+      {
+       "name": "l_trackcond",
+       "dataType": true
+      },
+      {
+       "name": "m_trackcond",
+       "enumType": "TransmittedTrackConditions"
+      }
+     ]
+    },
+    {
+     "name": "DLTrackCond",
+     "attributes": [
+      {
+       "name": "d_trackcond",
+       "dataType": true
+      },
+      {
+       "name": "l_trackcond",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket",
+     "attributes": [
+      {
+       "name": "packetId",
+       "dataType": true
+      },
+      {
+       "name": "q_dir",
+       "enumType": "QDir"
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      },
+      {
+       "name": "trackToTrainPacket",
+       "composition": "TrackToTrainPacket"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_0",
+     "attributes": [
+      {
+       "name": "nid_vbcmk",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_131",
+     "attributes": [
+      {
+       "name": "d_rbctr",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_rbc",
+       "dataType": true
+      },
+      {
+       "name": "q_sleepsession",
+       "dataType": true
+      },
+      {
+       "name": "rbcPhone",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_132",
+     "attributes": [
+      {
+       "name": "q_aspect",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_133",
+     "attributes": [
+      {
+       "name": "d_infill",
+       "dataType": true
+      },
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_c_next",
+       "dataType": true
+      },
+      {
+       "name": "nid_riu",
+       "dataType": true
+      },
+      {
+       "name": "q_riu",
+       "dataType": true
+      },
+      {
+       "name": "rbcPhone",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_134",
+     "attributes": [
+      {
+       "name": "d_loop",
+       "dataType": true
+      },
+      {
+       "name": "l_loop",
+       "dataType": true
+      },
+      {
+       "name": "nid_loop",
+       "dataType": true
+      },
+      {
+       "name": "q_loopdir",
+       "dataType": true
+      },
+      {
+       "name": "q_sscode",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_135",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_136",
+     "attributes": [
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_137",
+     "attributes": [
+      {
+       "name": "q_srstop",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_138",
+     "attributes": [
+      {
+       "name": "d_startreverse",
+       "dataType": true
+      },
+      {
+       "name": "l_reversearea",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_139",
+     "attributes": [
+      {
+       "name": "d_reverse",
+       "dataType": true
+      },
+      {
+       "name": "v_reverse",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_140",
+     "attributes": [
+      {
+       "name": "nid_operational",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_141",
+     "attributes": [
+      {
+       "name": "g_tsr",
+       "dataType": true
+      },
+      {
+       "name": "q_gdir",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_145",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_15",
+     "attributes": [
+      {
+       "name": "d_dp",
+       "dataType": true
+      },
+      {
+       "name": "d_endTimerStartLoc",
+       "dataType": true
+      },
+      {
+       "name": "d_ol",
+       "dataType": true
+      },
+      {
+       "name": "d_startOL",
+       "dataType": true
+      },
+      {
+       "name": "hasSectionTimer",
+       "composition": "SectionTimer"
+      },
+      {
+       "name": "q_dangerPoint",
+       "dataType": true
+      },
+      {
+       "name": "q_endTimer",
+       "dataType": true
+      },
+      {
+       "name": "q_overlap",
+       "dataType": true
+      },
+      {
+       "name": "t_ema",
+       "dataType": true
+      },
+      {
+       "name": "t_endTimer",
+       "dataType": true
+      },
+      {
+       "name": "t_ol",
+       "dataType": true
+      },
+      {
+       "name": "v_ema",
+       "dataType": true
+      },
+      {
+       "name": "v_releaseDP",
+       "dataType": true
+      },
+      {
+       "name": "v_releaseOL",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_16",
+     "attributes": [
+      {
+       "name": "l_section",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_180",
+     "attributes": [
+      {
+       "name": "q_lssma",
+       "dataType": true
+      },
+      {
+       "name": "t_lssma",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_181",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_2",
+     "attributes": [
+      {
+       "name": "etcsMVersion",
+       "enumType": "ETCSMVersions"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_21",
+     "attributes": [
+      {
+       "name": "hasTransmittedGradient",
+       "composition": "TransmittedGradient"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_254",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_255",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_27",
+     "attributes": [
+      {
+       "name": "hasTransmittedStaticSpeed",
+       "composition": "TransmittedStaticSpeed"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_3",
+     "attributes": [
+      {
+       "name": "a_nvmaxredadh1",
+       "dataType": true
+      },
+      {
+       "name": "a_nvmaxredadh2",
+       "dataType": true
+      },
+      {
+       "name": "a_nvmaxredadh3",
+       "dataType": true
+      },
+      {
+       "name": "d_nvovtrp",
+       "dataType": true
+      },
+      {
+       "name": "d_nvpotrp",
+       "dataType": true
+      },
+      {
+       "name": "d_nvroll",
+       "dataType": true
+      },
+      {
+       "name": "d_nvstff",
+       "dataType": true
+      },
+      {
+       "name": "d_validnv",
+       "dataType": true
+      },
+      {
+       "name": "mNvcontact",
+       "enumType": "ETCSReactionsNVContact"
+      },
+      {
+       "name": "m_nvavadh",
+       "dataType": true
+      },
+      {
+       "name": "m_nvderun",
+       "dataType": true
+      },
+      {
+       "name": "m_nvebcl",
+       "dataType": true
+      },
+      {
+       "name": "nVKs",
+       "composition": "NVK"
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_c_next",
+       "dataType": true
+      },
+      {
+       "name": "q_nvdriver_adhes",
+       "dataType": true
+      },
+      {
+       "name": "q_nvemrrls",
+       "dataType": true
+      },
+      {
+       "name": "q_nvguiperm",
+       "dataType": true
+      },
+      {
+       "name": "q_nvinhsmicperm",
+       "dataType": true
+      },
+      {
+       "name": "q_nvkint",
+       "dataType": true
+      },
+      {
+       "name": "q_nvlocacc",
+       "dataType": true
+      },
+      {
+       "name": "q_nvsbfbperm",
+       "dataType": true
+      },
+      {
+       "name": "q_nvsbtsmperm",
+       "dataType": true
+      },
+      {
+       "name": "t_nvcontact",
+       "dataType": true
+      },
+      {
+       "name": "t_nvovtrp",
+       "dataType": true
+      },
+      {
+       "name": "v_nvallowovtrp",
+       "dataType": true
+      },
+      {
+       "name": "v_nvlimsuperv",
+       "dataType": true
+      },
+      {
+       "name": "v_nvonsight",
+       "dataType": true
+      },
+      {
+       "name": "v_nvrel",
+       "dataType": true
+      },
+      {
+       "name": "v_nvshunt",
+       "dataType": true
+      },
+      {
+       "name": "v_nvstff",
+       "dataType": true
+      },
+      {
+       "name": "v_nvsupovtrp",
+       "dataType": true
+      },
+      {
+       "name": "v_nvunfit",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_31",
+     "attributes": [
+      {
+       "name": "d_rbctr",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_rbc",
+       "dataType": true
+      },
+      {
+       "name": "q_sleepsession",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_32",
+     "attributes": [
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_rbc",
+       "dataType": true
+      },
+      {
+       "name": "q_rbc",
+       "dataType": true
+      },
+      {
+       "name": "q_sleepsession",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_39",
+     "attributes": [
+      {
+       "name": "d_traction",
+       "dataType": true
+      },
+      {
+       "name": "m_voltage",
+       "enumType": "EnergySupplySystems"
+      },
+      {
+       "name": "nid_ctraction",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_40",
+     "attributes": [
+      {
+       "name": "d_current",
+       "dataType": true
+      },
+      {
+       "name": "m_current",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_41",
+     "attributes": [
+      {
+       "name": "d_leveltr",
+       "dataType": true
+      },
+      {
+       "name": "l_ackleveltr",
+       "dataType": true
+      },
+      {
+       "name": "levelTransitionWithAck",
+       "composition": "LevelTransitionWithAck"
+      },
+      {
+       "name": "m_leveltr",
+       "enumType": "ETCSLevels"
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_42",
+     "attributes": [
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_rbc",
+       "dataType": true
+      },
+      {
+       "name": "q_rbc",
+       "dataType": true
+      },
+      {
+       "name": "q_sleepsession",
+       "dataType": true
+      },
+      {
+       "name": "rbcPhone",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_44",
+     "attributes": [
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      },
+      {
+       "name": "nid_xuser",
+       "dataType": true
+      },
+      {
+       "name": "otherData",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_45",
+     "attributes": [
+      {
+       "name": "nid_mn",
+       "dataType": true
+      },
+      {
+       "name": "q_networktype",
+       "enumType": "NetworkType"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_46",
+     "attributes": [
+      {
+       "name": "levelTransitions",
+       "composition": "LevelTransition"
+      },
+      {
+       "name": "m_leveltr",
+       "enumType": "ETCSLevels"
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_49",
+     "attributes": [
+      {
+       "name": "hasCountryBalise",
+       "composition": "CountryBalise"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_5",
+     "attributes": [
+      {
+       "name": "links",
+       "composition": "LinkItem"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_51",
+     "attributes": [
+      {
+       "name": "axleLoadRestrictions",
+       "composition": "AxleLoadRestriction"
+      },
+      {
+       "name": "axleLoadSelections",
+       "composition": "AxleLoadSelection"
+      },
+      {
+       "name": "d_axleload",
+       "dataType": true
+      },
+      {
+       "name": "d_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "l_axleload",
+       "dataType": true
+      },
+      {
+       "name": "q_front",
+       "dataType": true
+      },
+      {
+       "name": "q_trackinit",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_52",
+     "attributes": [
+      {
+       "name": "d_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "pbdSelection",
+       "composition": "PBDSelection"
+      },
+      {
+       "name": "q_trackinit",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_57",
+     "attributes": [
+      {
+       "name": "t_cycrqst",
+       "dataType": true
+      },
+      {
+       "name": "t_mar",
+       "dataType": true
+      },
+      {
+       "name": "t_timeoutrqst",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_58",
+     "attributes": [
+      {
+       "name": "d_cycloc",
+       "dataType": true
+      },
+      {
+       "name": "hasPositionReportLocation",
+       "composition": "PositionReportLocation"
+      },
+      {
+       "name": "m_loc",
+       "enumType": "PositionReportLocationType"
+      },
+      {
+       "name": "t_cycloc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_6",
+     "attributes": [
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_vbcmk",
+       "dataType": true
+      },
+      {
+       "name": "q_vbco",
+       "dataType": true
+      },
+      {
+       "name": "t_vbc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_63",
+     "attributes": [
+      {
+       "name": "hasCountryBalise",
+       "composition": "CountryBalise"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_64",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_65",
+     "attributes": [
+      {
+       "name": "d_tsr",
+       "dataType": true
+      },
+      {
+       "name": "l_tsr",
+       "dataType": true
+      },
+      {
+       "name": "nid_tsr",
+       "dataType": true
+      },
+      {
+       "name": "q_front",
+       "dataType": true
+      },
+      {
+       "name": "v_tsr",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_66",
+     "attributes": [
+      {
+       "name": "nid_tsr",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_67",
+     "attributes": [
+      {
+       "name": "dlTrackConditions",
+       "composition": "DLTrackCond"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_68",
+     "attributes": [
+      {
+       "name": "d_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "q_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "trackCondSelection",
+       "composition": "DLMCondition"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_69",
+     "attributes": [
+      {
+       "name": "d_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "q_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "trackCondPlatformSelection",
+       "composition": "TCSPCondition"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_70",
+     "attributes": [
+      {
+       "name": "d_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "q_trackinit",
+       "dataType": true
+      },
+      {
+       "name": "routeSuitabilities",
+       "composition": "RouteSuitability"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_71",
+     "attributes": [
+      {
+       "name": "d_adhesion",
+       "dataType": true
+      },
+      {
+       "name": "l_adhesion",
+       "dataType": true
+      },
+      {
+       "name": "m_adhesion",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_73",
+     "attributes": [
+      {
+       "name": "l_text",
+       "dataType": true
+      },
+      {
+       "name": "textMessageConfig",
+       "composition": "TextMessageConfig"
+      },
+      {
+       "name": "x_text",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_74",
+     "attributes": [
+      {
+       "name": "q_text",
+       "dataType": true
+      },
+      {
+       "name": "textMessageConfig",
+       "composition": "TextMessageConfig"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_79",
+     "attributes": [
+      {
+       "name": "geoPosItems",
+       "composition": "GeoPosItem"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_80",
+     "attributes": [
+      {
+       "name": "modeProfiles",
+       "composition": "ModeProfileItem"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_88",
+     "attributes": [
+      {
+       "name": "d_lx",
+       "dataType": true
+      },
+      {
+       "name": "l_lx",
+       "dataType": true
+      },
+      {
+       "name": "lx_Status",
+       "composition": "LXStatus"
+      },
+      {
+       "name": "nid_lx",
+       "dataType": true
+      },
+      {
+       "name": "q_lxstatus",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainPacket_90",
+     "attributes": [
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM",
+     "attributes": [
+      {
+       "name": "l_message",
+       "dataType": true
+      },
+      {
+       "name": "m_ack",
+       "dataType": true
+      },
+      {
+       "name": "msgId",
+       "dataType": true
+      },
+      {
+       "name": "nid_lrbg",
+       "dataType": true
+      },
+      {
+       "name": "t_train",
+       "dataType": true
+      },
+      {
+       "name": "trackToTrainRM",
+       "composition": "TrackToTrainRM"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_15",
+     "attributes": [
+      {
+       "name": "d_emergencyStop",
+       "dataType": true
+      },
+      {
+       "name": "d_ref",
+       "dataType": true
+      },
+      {
+       "name": "nid_em",
+       "dataType": true
+      },
+      {
+       "name": "q_dir",
+       "enumType": "QDir"
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_16",
+     "attributes": [
+      {
+       "name": "nid_em",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_18",
+     "attributes": [
+      {
+       "name": "nid_em",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_2",
+     "attributes": [
+      {
+       "name": "d_sr",
+       "dataType": true
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      },
+      {
+       "name": "trackToTrainPacket_63",
+       "composition": "ETCSTrackToTrainPacket_63"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_24",
+     "attributes": [
+      {
+       "name": "hasOptionalTrackToTrainPackets",
+       "composition": "ETCSTrackToTrainPacket"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_27",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_28",
+     "attributes": [
+      {
+       "name": "hasOptionalTrackToTrainPackets",
+       "composition": "ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "t_train",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_3",
+     "attributes": [
+      {
+       "name": "hasOptionalTrackToTrainPackets",
+       "composition": "ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "trackToTrainPacket_15",
+       "composition": "ETCSTrackToTrainPacket_15"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_32",
+     "attributes": [
+      {
+       "name": "etcsMVersion",
+       "enumType": "ETCSMVersions"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_33",
+     "attributes": [
+      {
+       "name": "d_ref",
+       "dataType": true
+      },
+      {
+       "name": "hasOptionalTrackToTrainPackets",
+       "composition": "ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      },
+      {
+       "name": "trackToTrainPacket_15",
+       "composition": "ETCSTrackToTrainPacket_15"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_34",
+     "attributes": [
+      {
+       "name": "d_ref",
+       "dataType": true
+      },
+      {
+       "name": "d_tafDisplay",
+       "dataType": true
+      },
+      {
+       "name": "l_tafDisplay",
+       "dataType": true
+      },
+      {
+       "name": "q_dir",
+       "enumType": "QDir"
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_38",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainRM_39",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainRM_4",
+     "attributes": [
+      {
+       "name": "d_ref",
+       "dataType": true
+      },
+      {
+       "name": "hasOptionalTrackToTrainPackets",
+       "composition": "ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      },
+      {
+       "name": "t_train",
+       "dataType": true
+      },
+      {
+       "name": "trackToTrainPacket_15",
+       "composition": "ETCSTrackToTrainPacket_15"
+      },
+      {
+       "name": "trackToTrainPacket_21",
+       "composition": "ETCSTrackToTrainPacket_21"
+      },
+      {
+       "name": "trackToTrainPacket_27",
+       "composition": "ETCSTrackToTrainPacket_27"
+      },
+      {
+       "name": "v_sm",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_40",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainRM_41",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainRM_43",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainRM_45",
+     "attributes": [
+      {
+       "name": "q_orientation",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_5",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_6",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrackToTrainRM_7",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_8",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrackToTrainRM_9",
+     "attributes": [
+      {
+       "name": "hasOptionalTrackToTrainPackets",
+       "composition": "ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "trackToTrainPacket_15",
+       "composition": "ETCSTrackToTrainPacket_15"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket",
+     "attributes": [
+      {
+       "name": "packetId",
+       "dataType": true
+      },
+      {
+       "name": "q_scale",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket",
+       "composition": "TrainToTrackPacket"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_0",
+     "attributes": [
+      {
+       "name": "d_lrbg",
+       "dataType": true
+      },
+      {
+       "name": "l_doubtover",
+       "dataType": true
+      },
+      {
+       "name": "l_doubtunder",
+       "dataType": true
+      },
+      {
+       "name": "l_trainint",
+       "dataType": true
+      },
+      {
+       "name": "m_level",
+       "enumType": "ETCSLevels"
+      },
+      {
+       "name": "m_mode",
+       "enumType": "OnboardOperatingMode"
+      },
+      {
+       "name": "nid_lrbg",
+       "dataType": true
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      },
+      {
+       "name": "q_dirlrbg",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "q_dirtrain",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "q_dlrbg",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "q_integrity",
+       "enumType": "TrainIntegrityType"
+      },
+      {
+       "name": "vTrain",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_1",
+     "attributes": [
+      {
+       "name": "d_lrbg",
+       "dataType": true
+      },
+      {
+       "name": "l_doubtover",
+       "dataType": true
+      },
+      {
+       "name": "l_doubtunder",
+       "dataType": true
+      },
+      {
+       "name": "l_trainint",
+       "dataType": true
+      },
+      {
+       "name": "m_level",
+       "enumType": "ETCSLevels"
+      },
+      {
+       "name": "m_mode",
+       "enumType": "OnboardOperatingMode"
+      },
+      {
+       "name": "nid_lrbg",
+       "dataType": true
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      },
+      {
+       "name": "nid_prvlrbg",
+       "dataType": true
+      },
+      {
+       "name": "q_dirlrbg",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "q_dirtrain",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "q_dlrbg",
+       "enumType": "RunningDirection"
+      },
+      {
+       "name": "q_integrity",
+       "enumType": "TrainIntegrityType"
+      },
+      {
+       "name": "vTrain",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_10",
+     "attributes": [
+      {
+       "name": "q_safeconsistlength",
+       "dataType": true
+      },
+      {
+       "name": "safeConsistInfo",
+       "composition": "SafeConsist"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_11",
+     "attributes": [
+      {
+       "name": "airtight",
+       "enumType": "AirtightType"
+      },
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "axleNumber",
+       "dataType": true
+      },
+      {
+       "name": "cantDeficiencyCategory",
+       "enumType": "CantDeficiencies"
+      },
+      {
+       "name": "loadingGaugeType",
+       "enumType": "LoadingGaugeType"
+      },
+      {
+       "name": "nidNtc",
+       "dataType": true
+      },
+      {
+       "name": "otherTrainCategory",
+       "enumType": "OtherInternationalTrainCategory"
+      },
+      {
+       "name": "tractionVoltage",
+       "composition": "TractionVoltage"
+      },
+      {
+       "name": "trainLength",
+       "dataType": true
+      },
+      {
+       "name": "vMaxTrain",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_12",
+     "attributes": [
+      {
+       "name": "airtight",
+       "enumType": "AirtightType"
+      },
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "axleNumber",
+       "dataType": true
+      },
+      {
+       "name": "cantDeficiencyCategory",
+       "enumType": "CantDeficiencies"
+      },
+      {
+       "name": "loadingGaugeType",
+       "enumType": "LoadingGaugeType"
+      },
+      {
+       "name": "otherTrainCategory",
+       "enumType": "OtherInternationalTrainCategory"
+      },
+      {
+       "name": "tractionVoltage",
+       "composition": "TractionVoltage"
+      },
+      {
+       "name": "vMaxTrain",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_2",
+     "attributes": [
+      {
+       "name": "hasSystemVersion",
+       "composition": "SystemVersion"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_4",
+     "attributes": [
+      {
+       "name": "m_error",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_44",
+     "attributes": [
+      {
+       "name": "nid_xuser",
+       "dataType": true
+      },
+      {
+       "name": "otherData",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_5",
+     "attributes": [
+      {
+       "name": "nid_operational",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackPacket_9",
+     "attributes": [
+      {
+       "name": "nid_ltrbg",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM",
+     "attributes": [
+      {
+       "name": "l_message",
+       "dataType": true
+      },
+      {
+       "name": "msgId",
+       "dataType": true
+      },
+      {
+       "name": "nid_engine",
+       "dataType": true
+      },
+      {
+       "name": "t_train",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackRM",
+       "composition": "TrainToTrackRM"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_129",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      },
+      {
+       "name": "trainToTrackPacket_11",
+       "composition": "ETCSTrainToTrackPacket_11"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_130",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_131",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      },
+      {
+       "name": "trainToTrackPacket_10",
+       "composition": "ETCSTrainToTrackPacket_10"
+      },
+      {
+       "name": "trainToTrackPacket_12",
+       "composition": "ETCSTrainToTrackPacket_12"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_132",
+     "attributes": [
+      {
+       "name": "q_marqstreason",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      },
+      {
+       "name": "trainToTrackPacket_10",
+       "composition": "ETCSTrainToTrackPacket_10"
+      },
+      {
+       "name": "trainToTrackPacket_9",
+       "composition": "ETCSTrainToTrackPacket_9"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_133",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      },
+      {
+       "name": "trainToTrackPacket_10",
+       "composition": "ETCSTrainToTrackPacket_10"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_136",
+     "attributes": [
+      {
+       "name": "hasOptionalTrainToTrackPackets",
+       "composition": "ETCSTrainToTrackPacket"
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_137",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_138",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_146",
+     "attributes": [
+      {
+       "name": "t_train",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_147",
+     "attributes": [
+      {
+       "name": "nid_em",
+       "dataType": true
+      },
+      {
+       "name": "q_emergencyStop",
+       "enumType": "EmergencyStopAcknowledgementType"
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_149",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_150",
+     "attributes": [
+      {
+       "name": "q_desk",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_153",
+     "attributes": [
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "q_infill",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_154",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrainToTrackRM_155",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrainToTrackRM_156",
+     "attributes": []
+    },
+    {
+     "name": "ETCSTrainToTrackRM_157",
+     "attributes": [
+      {
+       "name": "hasOptionalTrainToTrackPackets",
+       "composition": "ETCSTrainToTrackPacket"
+      },
+      {
+       "name": "q_statusLRBG",
+       "enumType": "LRBGPositionStatus"
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_158",
+     "attributes": [
+      {
+       "name": "nid_textMessage",
+       "dataType": true
+      },
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      }
+     ]
+    },
+    {
+     "name": "ETCSTrainToTrackRM_159",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_2",
+       "composition": "ETCSTrainToTrackPacket_2"
+      }
+     ]
+    },
+    {
+     "name": "GeoPosItem",
+     "attributes": [
+      {
+       "name": "d_posoff",
+       "dataType": true
+      },
+      {
+       "name": "m_position",
+       "dataType": true
+      },
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "q_mposition",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LXStatus",
+     "attributes": [
+      {
+       "name": "l_stoplx",
+       "dataType": true
+      },
+      {
+       "name": "q_stoplx",
+       "dataType": true
+      },
+      {
+       "name": "v_lx",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LevelTransition",
+     "attributes": [
+      {
+       "name": "m_leveltr",
+       "enumType": "ETCSLevels"
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LevelTransitionWithAck",
+     "attributes": [
+      {
+       "name": "l_ackleveltr",
+       "dataType": true
+      },
+      {
+       "name": "m_leveltr",
+       "enumType": "ETCSLevels"
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "LinkItem",
+     "attributes": [
+      {
+       "name": "d_link",
+       "dataType": true
+      },
+      {
+       "name": "nid_bg",
+       "dataType": true
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "q_linkorientation",
+       "dataType": true
+      },
+      {
+       "name": "q_linkreaction",
+       "enumType": "ETCSReactionsNVContact"
+      },
+      {
+       "name": "q_locacc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "ModeProfileItem",
+     "attributes": [
+      {
+       "name": "d_mamode",
+       "dataType": true
+      },
+      {
+       "name": "l_ackmamode",
+       "dataType": true
+      },
+      {
+       "name": "l_mamode",
+       "dataType": true
+      },
+      {
+       "name": "m_mamode",
+       "enumType": "MAMode"
+      },
+      {
+       "name": "q_mamode",
+       "dataType": true
+      },
+      {
+       "name": "v_mamode",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "NVK",
+     "attributes": [
+      {
+       "name": "correctionFactors",
+       "composition": "CorrectionFactor"
+      },
+      {
+       "name": "l_nvkrint",
+       "dataType": true
+      },
+      {
+       "name": "m_nvkrint",
+       "dataType": true
+      },
+      {
+       "name": "m_nvktint",
+       "dataType": true
+      },
+      {
+       "name": "nvkItems",
+       "composition": "NVKItem"
+      }
+     ]
+    },
+    {
+     "name": "NVKItem",
+     "attributes": [
+      {
+       "name": "a_nvp12",
+       "dataType": true
+      },
+      {
+       "name": "a_nvp23",
+       "dataType": true
+      },
+      {
+       "name": "m_nvkvint",
+       "dataType": true
+      },
+      {
+       "name": "m_nvkvint_2",
+       "dataType": true
+      },
+      {
+       "name": "nvkSubItems",
+       "composition": "NVKSubItem"
+      },
+      {
+       "name": "q_nvkvintset",
+       "dataType": true
+      },
+      {
+       "name": "v_nvkvint",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "NVKSubItem",
+     "attributes": [
+      {
+       "name": "m_nvkvint",
+       "dataType": true
+      },
+      {
+       "name": "m_nvkvint_2",
+       "dataType": true
+      },
+      {
+       "name": "v_nvkvint",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "PBDSelection",
+     "attributes": [
+      {
+       "name": "d_pbd",
+       "dataType": true
+      },
+      {
+       "name": "d_pbdsr",
+       "dataType": true
+      },
+      {
+       "name": "g_pbdsr",
+       "dataType": true
+      },
+      {
+       "name": "l_pbdsr",
+       "dataType": true
+      },
+      {
+       "name": "q_gdir",
+       "dataType": true
+      },
+      {
+       "name": "q_pbdsr",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "PacketMgmt",
+     "attributes": [
+      {
+       "name": "hasETCSTrackToTrainPacket",
+       "composition": "ETCSTrackToTrainPacket"
+      },
+      {
+       "name": "hasETCSTrainToTrackPackets",
+       "composition": "ETCSTrainToTrackPacket"
+      }
+     ]
+    },
+    {
+     "name": "PositionReportLocation",
+     "attributes": [
+      {
+       "name": "d_loc",
+       "dataType": true
+      },
+      {
+       "name": "q_lgtloc",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "RouteSuitability",
+     "attributes": [
+      {
+       "name": "axleLoadCategory",
+       "enumType": "LoadCapabilityLineCategories"
+      },
+      {
+       "name": "d_suitability",
+       "dataType": true
+      },
+      {
+       "name": "m_lineGauge",
+       "enumType": "LineGauge"
+      },
+      {
+       "name": "m_voltage",
+       "enumType": "EnergySupplySystems"
+      },
+      {
+       "name": "nid_ctraction",
+       "dataType": true
+      },
+      {
+       "name": "q_suitability",
+       "enumType": "Q_Suitability"
+      }
+     ]
+    },
+    {
+     "name": "SafeConsist",
+     "attributes": [
+      {
+       "name": "l_consistFrontEngineMax",
+       "dataType": true
+      },
+      {
+       "name": "l_consistFrontEngineMin",
+       "dataType": true
+      },
+      {
+       "name": "l_consistFrontEngineNom",
+       "dataType": true
+      },
+      {
+       "name": "l_consistRearEngineMax",
+       "dataType": true
+      },
+      {
+       "name": "l_consistRearEngineMin",
+       "dataType": true
+      },
+      {
+       "name": "l_consistRearEngineNom",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SectionTimer",
+     "attributes": [
+      {
+       "name": "d_sectionTimerStopLoc",
+       "dataType": true
+      },
+      {
+       "name": "l_section",
+       "dataType": true
+      },
+      {
+       "name": "q_sectionTimer",
+       "dataType": true
+      },
+      {
+       "name": "t_sectionTimer",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "SystemVersion",
+     "attributes": [
+      {
+       "name": "etcsMVersion",
+       "enumType": "ETCSMVersions"
+      }
+     ]
+    },
+    {
+     "name": "TCSPCondition",
+     "attributes": [
+      {
+       "name": "d_trackcond",
+       "dataType": true
+      },
+      {
+       "name": "l_trackcond",
+       "dataType": true
+      },
+      {
+       "name": "m_platform",
+       "dataType": true
+      },
+      {
+       "name": "q_platform",
+       "enumType": "PlatformPosition"
+      }
+     ]
+    },
+    {
+     "name": "TextMessageConfig",
+     "attributes": [
+      {
+       "name": "d_textdisplay",
+       "dataType": true
+      },
+      {
+       "name": "l_textdisplay",
+       "dataType": true
+      },
+      {
+       "name": "m_leveltextdisplay",
+       "enumType": "DisplayOperatingLevel"
+      },
+      {
+       "name": "m_leveltextdisplay_e",
+       "enumType": "DisplayOperatingLevel"
+      },
+      {
+       "name": "m_modetextdisplay",
+       "enumType": "DisplayOperatingMode"
+      },
+      {
+       "name": "m_modetextdisplay_e",
+       "enumType": "DisplayOperatingMode"
+      },
+      {
+       "name": "nid_c",
+       "dataType": true
+      },
+      {
+       "name": "nid_ntc",
+       "dataType": true
+      },
+      {
+       "name": "nid_ntc_e",
+       "dataType": true
+      },
+      {
+       "name": "nid_rbc",
+       "dataType": true
+      },
+      {
+       "name": "nid_textmessage",
+       "dataType": true
+      },
+      {
+       "name": "q_conftextdisplay",
+       "dataType": true
+      },
+      {
+       "name": "q_textclass",
+       "enumType": "TextClass"
+      },
+      {
+       "name": "q_textconfirm",
+       "dataType": true
+      },
+      {
+       "name": "q_textdisplay",
+       "dataType": true
+      },
+      {
+       "name": "q_textreport",
+       "dataType": true
+      },
+      {
+       "name": "t_textdisplay",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TrackToTrainPacket",
+     "attributes": [
+      {
+       "name": "trackToTrainPacket_0",
+       "composition": "ETCSTrackToTrainPacket_0"
+      },
+      {
+       "name": "trackToTrainPacket_131",
+       "composition": "ETCSTrackToTrainPacket_131"
+      },
+      {
+       "name": "trackToTrainPacket_132",
+       "composition": "ETCSTrackToTrainPacket_132"
+      },
+      {
+       "name": "trackToTrainPacket_133",
+       "composition": "ETCSTrackToTrainPacket_133"
+      },
+      {
+       "name": "trackToTrainPacket_134",
+       "composition": "ETCSTrackToTrainPacket_134"
+      },
+      {
+       "name": "trackToTrainPacket_135",
+       "composition": "ETCSTrackToTrainPacket_135"
+      },
+      {
+       "name": "trackToTrainPacket_136",
+       "composition": "ETCSTrackToTrainPacket_136"
+      },
+      {
+       "name": "trackToTrainPacket_137",
+       "composition": "ETCSTrackToTrainPacket_137"
+      },
+      {
+       "name": "trackToTrainPacket_138",
+       "composition": "ETCSTrackToTrainPacket_138"
+      },
+      {
+       "name": "trackToTrainPacket_139",
+       "composition": "ETCSTrackToTrainPacket_139"
+      },
+      {
+       "name": "trackToTrainPacket_140",
+       "composition": "ETCSTrackToTrainPacket_140"
+      },
+      {
+       "name": "trackToTrainPacket_141",
+       "composition": "ETCSTrackToTrainPacket_141"
+      },
+      {
+       "name": "trackToTrainPacket_145",
+       "composition": "ETCSTrackToTrainPacket_145"
+      },
+      {
+       "name": "trackToTrainPacket_15",
+       "composition": "ETCSTrackToTrainPacket_15"
+      },
+      {
+       "name": "trackToTrainPacket_16",
+       "composition": "ETCSTrackToTrainPacket_16"
+      },
+      {
+       "name": "trackToTrainPacket_180",
+       "composition": "ETCSTrackToTrainPacket_180"
+      },
+      {
+       "name": "trackToTrainPacket_181",
+       "composition": "ETCSTrackToTrainPacket_181"
+      },
+      {
+       "name": "trackToTrainPacket_2",
+       "composition": "ETCSTrackToTrainPacket_2"
+      },
+      {
+       "name": "trackToTrainPacket_21",
+       "composition": "ETCSTrackToTrainPacket_21"
+      },
+      {
+       "name": "trackToTrainPacket_254",
+       "composition": "ETCSTrackToTrainPacket_254"
+      },
+      {
+       "name": "trackToTrainPacket_255",
+       "composition": "ETCSTrackToTrainPacket_255"
+      },
+      {
+       "name": "trackToTrainPacket_27",
+       "composition": "ETCSTrackToTrainPacket_27"
+      },
+      {
+       "name": "trackToTrainPacket_3",
+       "composition": "ETCSTrackToTrainPacket_3"
+      },
+      {
+       "name": "trackToTrainPacket_31",
+       "composition": "ETCSTrackToTrainPacket_31"
+      },
+      {
+       "name": "trackToTrainPacket_32",
+       "composition": "ETCSTrackToTrainPacket_32"
+      },
+      {
+       "name": "trackToTrainPacket_39",
+       "composition": "ETCSTrackToTrainPacket_39"
+      },
+      {
+       "name": "trackToTrainPacket_40",
+       "composition": "ETCSTrackToTrainPacket_40"
+      },
+      {
+       "name": "trackToTrainPacket_41",
+       "composition": "ETCSTrackToTrainPacket_41"
+      },
+      {
+       "name": "trackToTrainPacket_42",
+       "composition": "ETCSTrackToTrainPacket_42"
+      },
+      {
+       "name": "trackToTrainPacket_44",
+       "composition": "ETCSTrackToTrainPacket_44"
+      },
+      {
+       "name": "trackToTrainPacket_45",
+       "composition": "ETCSTrackToTrainPacket_45"
+      },
+      {
+       "name": "trackToTrainPacket_46",
+       "composition": "ETCSTrackToTrainPacket_46"
+      },
+      {
+       "name": "trackToTrainPacket_49",
+       "composition": "ETCSTrackToTrainPacket_49"
+      },
+      {
+       "name": "trackToTrainPacket_5",
+       "composition": "ETCSTrackToTrainPacket_5"
+      },
+      {
+       "name": "trackToTrainPacket_51",
+       "composition": "ETCSTrackToTrainPacket_51"
+      },
+      {
+       "name": "trackToTrainPacket_52",
+       "composition": "ETCSTrackToTrainPacket_52"
+      },
+      {
+       "name": "trackToTrainPacket_57",
+       "composition": "ETCSTrackToTrainPacket_57"
+      },
+      {
+       "name": "trackToTrainPacket_58",
+       "composition": "ETCSTrackToTrainPacket_58"
+      },
+      {
+       "name": "trackToTrainPacket_6",
+       "composition": "ETCSTrackToTrainPacket_6"
+      },
+      {
+       "name": "trackToTrainPacket_63",
+       "composition": "ETCSTrackToTrainPacket_63"
+      },
+      {
+       "name": "trackToTrainPacket_64",
+       "composition": "ETCSTrackToTrainPacket_64"
+      },
+      {
+       "name": "trackToTrainPacket_65",
+       "composition": "ETCSTrackToTrainPacket_65"
+      },
+      {
+       "name": "trackToTrainPacket_66",
+       "composition": "ETCSTrackToTrainPacket_66"
+      },
+      {
+       "name": "trackToTrainPacket_67",
+       "composition": "ETCSTrackToTrainPacket_67"
+      },
+      {
+       "name": "trackToTrainPacket_68",
+       "composition": "ETCSTrackToTrainPacket_68"
+      },
+      {
+       "name": "trackToTrainPacket_69",
+       "composition": "ETCSTrackToTrainPacket_69"
+      },
+      {
+       "name": "trackToTrainPacket_70",
+       "composition": "ETCSTrackToTrainPacket_70"
+      },
+      {
+       "name": "trackToTrainPacket_71",
+       "composition": "ETCSTrackToTrainPacket_71"
+      },
+      {
+       "name": "trackToTrainPacket_73",
+       "composition": "ETCSTrackToTrainPacket_73"
+      },
+      {
+       "name": "trackToTrainPacket_74",
+       "composition": "ETCSTrackToTrainPacket_74"
+      },
+      {
+       "name": "trackToTrainPacket_79",
+       "composition": "ETCSTrackToTrainPacket_79"
+      },
+      {
+       "name": "trackToTrainPacket_80",
+       "composition": "ETCSTrackToTrainPacket_80"
+      },
+      {
+       "name": "trackToTrainPacket_88",
+       "composition": "ETCSTrackToTrainPacket_88"
+      },
+      {
+       "name": "trackToTrainPacket_90",
+       "composition": "ETCSTrackToTrainPacket_90"
+      }
+     ]
+    },
+    {
+     "name": "TrackToTrainRM",
+     "attributes": [
+      {
+       "name": "trackToTrainRM_15",
+       "composition": "ETCSTrackToTrainRM_15"
+      },
+      {
+       "name": "trackToTrainRM_16",
+       "composition": "ETCSTrackToTrainRM_16"
+      },
+      {
+       "name": "trackToTrainRM_18",
+       "composition": "ETCSTrackToTrainRM_18"
+      },
+      {
+       "name": "trackToTrainRM_2",
+       "composition": "ETCSTrackToTrainRM_2"
+      },
+      {
+       "name": "trackToTrainRM_24",
+       "composition": "ETCSTrackToTrainRM_24"
+      },
+      {
+       "name": "trackToTrainRM_27",
+       "composition": "ETCSTrackToTrainRM_27"
+      },
+      {
+       "name": "trackToTrainRM_28",
+       "composition": "ETCSTrackToTrainRM_28"
+      },
+      {
+       "name": "trackToTrainRM_3",
+       "composition": "ETCSTrackToTrainRM_3"
+      },
+      {
+       "name": "trackToTrainRM_32",
+       "composition": "ETCSTrackToTrainRM_32"
+      },
+      {
+       "name": "trackToTrainRM_33",
+       "composition": "ETCSTrackToTrainRM_33"
+      },
+      {
+       "name": "trackToTrainRM_34",
+       "composition": "ETCSTrackToTrainRM_34"
+      },
+      {
+       "name": "trackToTrainRM_38",
+       "composition": "ETCSTrackToTrainRM_38"
+      },
+      {
+       "name": "trackToTrainRM_39",
+       "composition": "ETCSTrackToTrainRM_39"
+      },
+      {
+       "name": "trackToTrainRM_4",
+       "composition": "ETCSTrackToTrainRM_4"
+      },
+      {
+       "name": "trackToTrainRM_40",
+       "composition": "ETCSTrackToTrainRM_40"
+      },
+      {
+       "name": "trackToTrainRM_41",
+       "composition": "ETCSTrackToTrainRM_41"
+      },
+      {
+       "name": "trackToTrainRM_43",
+       "composition": "ETCSTrackToTrainRM_43"
+      },
+      {
+       "name": "trackToTrainRM_45",
+       "composition": "ETCSTrackToTrainRM_45"
+      },
+      {
+       "name": "trackToTrainRM_5",
+       "composition": "ETCSTrackToTrainRM_5"
+      },
+      {
+       "name": "trackToTrainRM_6",
+       "composition": "ETCSTrackToTrainRM_6"
+      },
+      {
+       "name": "trackToTrainRM_7",
+       "composition": "ETCSTrackToTrainRM_7"
+      },
+      {
+       "name": "trackToTrainRM_8",
+       "composition": "ETCSTrackToTrainRM_8"
+      },
+      {
+       "name": "trackToTrainRM_9",
+       "composition": "ETCSTrackToTrainRM_9"
+      }
+     ]
+    },
+    {
+     "name": "TractionVoltage",
+     "attributes": [
+      {
+       "name": "countryTractionId",
+       "dataType": true
+      },
+      {
+       "name": "mVoltage",
+       "enumType": "EnergySupplySystems"
+      }
+     ]
+    },
+    {
+     "name": "TrainToTrackPacket",
+     "attributes": [
+      {
+       "name": "trainToTrackPacket_0",
+       "composition": "ETCSTrainToTrackPacket_0"
+      },
+      {
+       "name": "trainToTrackPacket_1",
+       "composition": "ETCSTrainToTrackPacket_1"
+      },
+      {
+       "name": "trainToTrackPacket_10",
+       "composition": "ETCSTrainToTrackPacket_10"
+      },
+      {
+       "name": "trainToTrackPacket_11",
+       "composition": "ETCSTrainToTrackPacket_11"
+      },
+      {
+       "name": "trainToTrackPacket_12",
+       "composition": "ETCSTrainToTrackPacket_12"
+      },
+      {
+       "name": "trainToTrackPacket_2",
+       "composition": "ETCSTrainToTrackPacket_2"
+      },
+      {
+       "name": "trainToTrackPacket_4",
+       "composition": "ETCSTrainToTrackPacket_4"
+      },
+      {
+       "name": "trainToTrackPacket_44",
+       "composition": "ETCSTrainToTrackPacket_44"
+      },
+      {
+       "name": "trainToTrackPacket_5",
+       "composition": "ETCSTrainToTrackPacket_5"
+      },
+      {
+       "name": "trainToTrackPacket_9",
+       "composition": "ETCSTrainToTrackPacket_9"
+      }
+     ]
+    },
+    {
+     "name": "TrainToTrackRM",
+     "attributes": [
+      {
+       "name": "trainToTrackRM_129",
+       "composition": "ETCSTrainToTrackRM_129"
+      },
+      {
+       "name": "trainToTrackRM_130",
+       "composition": "ETCSTrainToTrackRM_130"
+      },
+      {
+       "name": "trainToTrackRM_131",
+       "composition": "ETCSTrainToTrackRM_131"
+      },
+      {
+       "name": "trainToTrackRM_132",
+       "composition": "ETCSTrainToTrackRM_132"
+      },
+      {
+       "name": "trainToTrackRM_133",
+       "composition": "ETCSTrainToTrackRM_133"
+      },
+      {
+       "name": "trainToTrackRM_136",
+       "composition": "ETCSTrainToTrackRM_136"
+      },
+      {
+       "name": "trainToTrackRM_137",
+       "composition": "ETCSTrainToTrackRM_137"
+      },
+      {
+       "name": "trainToTrackRM_138",
+       "composition": "ETCSTrainToTrackRM_138"
+      },
+      {
+       "name": "trainToTrackRM_146",
+       "composition": "ETCSTrainToTrackRM_146"
+      },
+      {
+       "name": "trainToTrackRM_147",
+       "composition": "ETCSTrainToTrackRM_147"
+      },
+      {
+       "name": "trainToTrackRM_149",
+       "composition": "ETCSTrainToTrackRM_149"
+      },
+      {
+       "name": "trainToTrackRM_150",
+       "composition": "ETCSTrainToTrackRM_150"
+      },
+      {
+       "name": "trainToTrackRM_153",
+       "composition": "ETCSTrainToTrackRM_153"
+      },
+      {
+       "name": "trainToTrackRM_154",
+       "composition": "ETCSTrainToTrackRM_154"
+      },
+      {
+       "name": "trainToTrackRM_155",
+       "composition": "ETCSTrainToTrackRM_155"
+      },
+      {
+       "name": "trainToTrackRM_156",
+       "composition": "ETCSTrainToTrackRM_156"
+      },
+      {
+       "name": "trainToTrackRM_157",
+       "composition": "ETCSTrainToTrackRM_157"
+      },
+      {
+       "name": "trainToTrackRM_158",
+       "composition": "ETCSTrainToTrackRM_158"
+      },
+      {
+       "name": "trainToTrackRM_159",
+       "composition": "ETCSTrainToTrackRM_159"
+      }
+     ]
+    },
+    {
+     "name": "TransmittedGradient",
+     "attributes": [
+      {
+       "name": "d_gradient",
+       "dataType": true
+      },
+      {
+       "name": "g_a",
+       "dataType": true
+      },
+      {
+       "name": "q_gdir",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TransmittedSpecificStaticSpeed",
+     "attributes": [
+      {
+       "name": "nc_cddiff",
+       "enumType": "CantDeficiencies"
+      },
+      {
+       "name": "nc_diff",
+       "enumType": "OtherSpecificStaticSpeedProfileCategory"
+      },
+      {
+       "name": "q_diff",
+       "dataType": true
+      },
+      {
+       "name": "v_diff",
+       "dataType": true
+      }
+     ]
+    },
+    {
+     "name": "TransmittedStaticSpeed",
+     "attributes": [
+      {
+       "name": "d_static",
+       "dataType": true
+      },
+      {
+       "name": "hasTransmittedSpecificStaticSpeed",
+       "composition": "TransmittedSpecificStaticSpeed"
+      },
+      {
+       "name": "q_front",
+       "dataType": true
+      },
+      {
+       "name": "v_static",
+       "dataType": true
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

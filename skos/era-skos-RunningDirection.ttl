@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix era: <http://data.europa.eu/949/> .
+@prefix era-skos: <http://data.europa.eu/949/concepts/> .
+
+@prefix era-running-direction: <http://data.europa.eu/949/concepts/running-direction/> .
+
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+
+era-running-direction:RunningDirection a skos:ConceptScheme ;
+    dct:issued "2025-02-19"^^xsd:date ;
+    dct:modified "2026-07-24"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Orientation of the train in relation to the direction of the LRBG."@en ;
+    rdfs:label "Running Direction"@en ;
+    skos:prefLabel "Running Direction"@en ;
+    skos:hiddenLabel "CCSTMS_RunningDirection"@en ;
+    dct:title "Concept scheme grouping running direction"@en .
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+########## Running direction ##########
+
+era-running-direction:nominal a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_nominal_1"@en ;
+    skos:inScheme era-running-direction:RunningDirection ;
+    skos:notation "nominal"^^xsd:string ;
+    skos:prefLabel "Nominal"@en ;
+    skos:topConceptOf era-running-direction:RunningDirection .
+
+era-running-direction:reverse a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_reverse_0"@en ;
+    skos:inScheme era-running-direction:RunningDirection ;
+    skos:notation "reverse"^^xsd:string ;
+    skos:prefLabel "Reverse"@en ;
+    skos:topConceptOf era-running-direction:RunningDirection .
+
+era-running-direction:unknown a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_unknown_2"@en ;
+    skos:inScheme era-running-direction:RunningDirection ;
+    skos:notation "unknown"^^xsd:string ;
+    skos:prefLabel "Unknown"@en ;
+    skos:topConceptOf era-running-direction:RunningDirection .

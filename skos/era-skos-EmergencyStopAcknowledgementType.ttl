@@ -1,0 +1,63 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-esat: <http://data.europa.eu/949/concepts/esat/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-esat:EmergencyStopAcknowledgementType a skos:ConceptScheme ;
+    rdfs:label "Emergency Stop Acknowledgement Type"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "Qualifier for emergency stop acknowledgement. Informs the RBC about the use of a conditional emergency stop by the on-board equipment. For an unconditional emergency stop, it is set to 'not relevant'."@en ;
+    skos:hiddenLabel "CCSTMS_EmergencyStopAcknowledgementType"@en ;
+    skos:prefLabel "Emergency Stop Acknowledgement Type"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-esat:acceptedNoUpdate a skos:Concept ;
+    rdfs:comment "Conditional Emergency Stop accepted, with no update of current EOA/LOA (ref 3.10.2.2 b) 2nd and 3rd bullets)."@en ;
+    skos:hiddenLabel "CCSTMS_acceptedNoUpdate_1"@en ;
+    skos:inScheme era-esat:EmergencyStopAcknowledgementType ;
+    skos:notation "acceptedNoUpdate"^^xsd:string ;
+    skos:prefLabel "Accepted No Update"@en ;
+    skos:topConceptOf era-esat:EmergencyStopAcknowledgementType .
+
+era-esat:acceptedWithUpdate a skos:Concept ;
+    rdfs:comment "Conditional Emergency Stop accepted, with update of current EOA/LOA (ref 3.10.2.2 b) 1st and 4th bullets)."@en ;
+    skos:hiddenLabel "CCSTMS_acceptedWithUpdate_0"@en ;
+    skos:inScheme era-esat:EmergencyStopAcknowledgementType ;
+    skos:notation "acceptedWithUpdate"^^xsd:string ;
+    skos:prefLabel "Accepted With Update"@en ;
+    skos:topConceptOf era-esat:EmergencyStopAcknowledgementType .
+
+era-esat:notRelevant a skos:Concept ;
+    rdfs:comment "Not relevant (Unconditional Emergency Stop) (ref 3.10.2.3)."@en ;
+    skos:hiddenLabel "CCSTMS_notRelevant_2"@en ;
+    skos:inScheme era-esat:EmergencyStopAcknowledgementType ;
+    skos:notation "notRelevant"^^xsd:string ;
+    skos:prefLabel "Not Relevant"@en ;
+    skos:topConceptOf era-esat:EmergencyStopAcknowledgementType .
+
+era-esat:rejected a skos:Concept ;
+    rdfs:comment "Conditional Emergency Stop rejected because train has passed the emergency stop location (ref 3.10.2.2 a))."@en ;
+    skos:hiddenLabel "CCSTMS_rejected_3"@en ;
+    skos:inScheme era-esat:EmergencyStopAcknowledgementType ;
+    skos:notation "rejected"^^xsd:string ;
+    skos:prefLabel "Rejected"@en ;
+    skos:topConceptOf era-esat:EmergencyStopAcknowledgementType .

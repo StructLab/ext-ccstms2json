@@ -1,0 +1,155 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-oom: <http://data.europa.eu/949/concepts/onboard-operating-mode/> .
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+era-oom:OnboardOperatingMode a skos:ConceptScheme ;
+    rdfs:label "On board Operating Mode"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2025-02-19"^^xsd:date ;
+    dct:modified "2025-03-06"^^xsd:date ,
+                 "2026-07-24"^^xsd:date ;
+    skos:hiddenLabel "CCSTMS_OnboardOperatingMode" ;
+    skos:prefLabel "On board Operating Mode"@en .
+	
+	
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+era-oom:automaticDriving a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_automaticDriving_16" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "automaticDriving"^^xsd:string ;
+    skos:prefLabel "Automatic Driving"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:fullSupervision a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_fullSupervision_0" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "fullSupervision"^^xsd:string ;
+    skos:prefLabel "Full Supervision"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:isolation a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_isolation_10" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "isolation"^^xsd:string ;
+    skos:prefLabel "Isolation"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:limitedSupervision a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_limitedSupervision_12" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "limitedSupervision"^^xsd:string ;
+    skos:prefLabel "Limited Supervision"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:nationalSystem a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_nationalSystem_13" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "nationalSystem"^^xsd:string ;
+    skos:prefLabel "National System"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:nonLeading a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_nonLeading_11" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "nonLeading"^^xsd:string ;
+    skos:prefLabel "Non Leading"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:onSight a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_onSight_1" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "onSight"^^xsd:string ;
+    skos:prefLabel "On Sight"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:passiveShunting a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_passiveShunting_15" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "passiveShunting"^^xsd:string ;
+    skos:prefLabel "Passive Shunting"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:postTrip a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_postTrip_8" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "postTrip"^^xsd:string ;
+    skos:prefLabel "Post Trip"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:reversing a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_reversing_14" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "reversing"^^xsd:string ;
+    skos:prefLabel "Reversing"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:shunting a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_shunting_3" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "shunting"^^xsd:string ;
+    skos:prefLabel "Shunting"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:sleeping a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_sleeping_5" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "sleeping"^^xsd:string ;
+    skos:prefLabel "Sleeping"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:staffResponsible a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_staffResponsible_2" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "staffResponsible"^^xsd:string ;
+    skos:prefLabel "Staff Responsible"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:standBy a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_standBy_6" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "standBy"^^xsd:string ;
+    skos:prefLabel "Stand By"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:supervisedManoeuvre a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_supervisedManoeuvre_17" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "supervisedManoeuvre"^^xsd:string ;
+    skos:prefLabel "Supervised Manoeuvre"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:systemFailure a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_systemFailure_9" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "systemFailure"^^xsd:string ;
+    skos:prefLabel "System Failure"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:trip a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_trip_7" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "trip"^^xsd:string ;
+    skos:prefLabel "Trip"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .
+
+era-oom:unfitted a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_unfitted_4" ;
+    skos:inScheme era-oom:OnboardOperatingMode ;
+    skos:notation "unfitted"^^xsd:string ;
+    skos:prefLabel "Unfitted"@en ;
+    skos:topConceptOf era-oom:OnboardOperatingMode .

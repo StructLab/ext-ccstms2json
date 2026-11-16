@@ -1,0 +1,117 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix era: <http://data.europa.eu/949/> .
+@prefix era-skos: <http://data.europa.eu/949/concepts/> .
+@prefix era-ntg: <http://data.europa.eu/949/concepts/nominal-track-gauges/> .
+@prefix era-ntg-eratv: <http://data.europa.eu/949/concepts/nominal-track-gauges/eratv/> .
+
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+	
+	
+era-ntg:NominalTrackGauges a skos:ConceptScheme ; 
+    dct:issued "2020-09-01"^^xsd:date ;
+    dct:modified "2022-09-09"^^xsd:date ,
+                 "2024-12-12"^^xsd:date ,
+                 "2026-03-20"^^xsd:date ,
+                 "2026-06-02"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Controlled SKOS-based vocabularies defined by the European Union Agency for Railways to describe concepts related to the European railway infrastructure and the vehicles authorized to operate over it."@en ;
+    rdfs:label "Nominal Track Gauges"@en ;
+    era:unitOfMeasure <http://qudt.org/vocab/unit/MilliM> ;
+    era:rinfIndex "1.1.1.1.4.1"; 
+    skos:hiddenLabel "CCSTMS_NominalTrackGauges"@en ;
+    skos:prefLabel "Nominal Track Gauges"@en ;
+    skos:changeNote """ 
+    Revision 10-12-2024: 
+	- removed "other" from the list of SKOS
+	- removed eratv concepts and merged with altLabels in RINF concepts
+	- added unit of measure annotations
+	Revision 12-12-2024:
+	- add altLabel for CCSTMS 
+	- add value for the unknown Track Gauge type
+	Revision 02-06-2026:
+	- added nominal track gauge 760 mm
+	- harmonized CCSTMS hiddenLabel for 1668 mm from "CCSTMS_tg1668mm_6" to "CCSTMS_tg1668mm_7"
+	- harmonized altLabel for 750 mm to "750mm"
+  """@en ;
+    dct:title "Concept scheme grouping nominal track gauges"@en .
+
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+
+########## Nominal track gauges ##########
+# RINF values #
+era-ntg:20 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges; 
+  skos:prefLabel "1000"@en  ;
+  skos:altLabel "1000mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg1000mm_2" ;
+  skos:notation "1000"^^xsd:string .
+
+era-ntg:30 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges; 
+  skos:prefLabel "1435"@en ;
+  skos:notation "1435"^^xsd:string ;
+  skos:hiddenLabel "CCSTMS_tg1435mm_3" ;
+  skos:altLabel "1435mm"@en .
+
+era-ntg:40 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges;
+  skos:prefLabel "1520"@en ;
+  skos:altLabel "1520mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg1520mm_4" ;
+  skos:notation  "1520"^^xsd:string.
+
+era-ntg:50 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges; 
+  skos:prefLabel "1524"@en ;
+  skos:altLabel "1524mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg1524mm_5" ;
+  skos:notation "1524"^^xsd:string .
+
+era-ntg:60 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges; 
+  skos:prefLabel "1600"@en ;
+  skos:altLabel "1600mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg1600mm_6" ;
+  skos:notation "1600"^^xsd:string .
+
+era-ntg:70 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges;
+  skos:prefLabel "1668"@en ;
+  skos:altLabel "1668mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg1668mm_7" ;
+  skos:notation "1668"^^xsd:string .
+
+era-ntg:10 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges; 
+  skos:prefLabel "750"@en ;
+  skos:altLabel "750mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg750mm_0"@en ;
+  skos:notation "750"^^xsd:string .
+
+era-ntg:80 a skos:Concept;
+  skos:inScheme era-ntg:NominalTrackGauges; skos:topConceptOf era-ntg:NominalTrackGauges;
+  skos:prefLabel "760"@en ;
+  skos:altLabel "760mm"@en ;
+  skos:hiddenLabel "CCSTMS_tg760mm_1"@en ;
+  skos:notation "760"^^xsd:string .

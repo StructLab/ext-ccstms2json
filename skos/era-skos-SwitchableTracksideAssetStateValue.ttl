@@ -1,0 +1,62 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-stasv: <http://data.europa.eu/949/concepts/stasv/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-stasv:SwitchableTracksideAssetStateValue a skos:ConceptScheme ;
+    rdfs:label "Switchable Trackside Asset State Value"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    skos:hiddenLabel "CCSTMS_SwitchableTracksideAssetStateValue"@en ;
+    skos:prefLabel "Switchable Trackside Asset State Value"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-stasv:disturbed a skos:Concept ;
+    rdfs:comment "STA can not be used or is degraded"@en ;
+    skos:hiddenLabel "CCSTMS_disturbed_0"@en ;
+    skos:inScheme era-stasv:SwitchableTracksideAssetStateValue ;
+    skos:notation "disturbed"^^xsd:string ;
+    skos:prefLabel "Disturbed"@en ;
+    skos:topConceptOf era-stasv:SwitchableTracksideAssetStateValue .
+
+era-stasv:processing a skos:Concept ;
+    rdfs:comment "STA is changing its driveability"@en ;
+    skos:hiddenLabel "CCSTMS_processing_2"@en ;
+    skos:inScheme era-stasv:SwitchableTracksideAssetStateValue ;
+    skos:notation "processing"^^xsd:string ;
+    skos:prefLabel "Processing"@en ;
+    skos:topConceptOf era-stasv:SwitchableTracksideAssetStateValue .
+
+era-stasv:ready a skos:Concept ;
+    rdfs:comment "STA is ready to change its driveability on request"@en ;
+    skos:hiddenLabel "CCSTMS_ready_3"@en ;
+    skos:inScheme era-stasv:SwitchableTracksideAssetStateValue ;
+    skos:notation "ready"^^xsd:string ;
+    skos:prefLabel "Ready"@en ;
+    skos:topConceptOf era-stasv:SwitchableTracksideAssetStateValue .
+
+era-stasv:trailed a skos:Concept ;
+    rdfs:comment "STA is trailed (only possible if STA is a point)"@en ;
+    skos:hiddenLabel "CCSTMS_trailed_1"@en ;
+    skos:inScheme era-stasv:SwitchableTracksideAssetStateValue ;
+    skos:notation "trailed"^^xsd:string ;
+    skos:prefLabel "Trailed"@en ;
+    skos:topConceptOf era-stasv:SwitchableTracksideAssetStateValue .

@@ -1,0 +1,65 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-utocr: <http://data.europa.eu/949/concepts/uto-creation-reason/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-utocr:UtoCreationReason a skos:ConceptScheme ;
+    rdfs:label "Uto Creation Reason"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    skos:hiddenLabel "CCSTMS_UtoCreationReason"@en ;
+    skos:prefLabel "Uto Creation Reason"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-utocr:shorterLTrain a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_shorterLTrain_2"@en ;
+    skos:inScheme era-utocr:UtoCreationReason ;
+    skos:notation "shorterLTrain"^^xsd:string ;
+    skos:prefLabel "Shorter L Train"@en ;
+    skos:topConceptOf era-utocr:UtoCreationReason .
+
+era-utocr:systemInit a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_systemInit_1"@en ;
+    skos:inScheme era-utocr:UtoCreationReason ;
+    skos:notation "systemInit"^^xsd:string ;
+    skos:prefLabel "System Init"@en ;
+    skos:topConceptOf era-utocr:UtoCreationReason .
+
+era-utocr:toCommLoss a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_toCommLoss_3"@en ;
+    skos:inScheme era-utocr:UtoCreationReason ;
+    skos:notation "toCommLoss"^^xsd:string ;
+    skos:prefLabel "To Comm Loss"@en ;
+    skos:topConceptOf era-utocr:UtoCreationReason .
+
+era-utocr:ttdFree a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_ttdFree_0"@en ;
+    skos:inScheme era-utocr:UtoCreationReason ;
+    skos:notation "ttdFree"^^xsd:string ;
+    skos:prefLabel "Ttd Free"@en ;
+    skos:topConceptOf era-utocr:UtoCreationReason .
+
+era-utocr:ttdOccupation a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_ttdOccupation_4"@en ;
+    skos:inScheme era-utocr:UtoCreationReason ;
+    skos:notation "ttdOccupation"^^xsd:string ;
+    skos:prefLabel "Ttd Occupation"@en ;
+    skos:topConceptOf era-utocr:UtoCreationReason .

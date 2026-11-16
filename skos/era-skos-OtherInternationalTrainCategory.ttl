@@ -1,0 +1,63 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-oitc: <http://data.europa.eu/949/concepts/other-international-train-category/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-oitc:OtherInternationalTrainCategory a skos:ConceptScheme ;
+    rdfs:label "Other International Train Category"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "Other train category (different from Cant Deficiency) to which the train belongs."@en ;
+    skos:hiddenLabel "CCSTMS_OtherInternationalTrainCategory"@en ;
+    skos:prefLabel "Other International Train Category"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-oitc:freightTrainG a skos:Concept ;
+    rdfs:comment "Freight train braked in 'G' position"@en ;
+    skos:hiddenLabel "CCSTMS_freightTrainG_2"@en ;
+    skos:inScheme era-oitc:OtherInternationalTrainCategory ;
+    skos:notation "freightTrainG"^^xsd:string ;
+    skos:prefLabel "Freight Train G"@en ;
+    skos:topConceptOf era-oitc:OtherInternationalTrainCategory .
+
+era-oitc:freightTrainP a skos:Concept ;
+    rdfs:comment "Freight train braked in 'P' position"@en ;
+    skos:hiddenLabel "CCSTMS_freightTrainP_1"@en ;
+    skos:inScheme era-oitc:OtherInternationalTrainCategory ;
+    skos:notation "freightTrainP"^^xsd:string ;
+    skos:prefLabel "Freight Train P"@en ;
+    skos:topConceptOf era-oitc:OtherInternationalTrainCategory .
+
+era-oitc:noCategory a skos:Concept ;
+    rdfs:comment "Train does not belong to any of the 'Other International' Train Category"@en ;
+    skos:hiddenLabel "CCSTMS_noCategory_0"@en ;
+    skos:inScheme era-oitc:OtherInternationalTrainCategory ;
+    skos:notation "noCategory"^^xsd:string ;
+    skos:prefLabel "No Category"@en ;
+    skos:topConceptOf era-oitc:OtherInternationalTrainCategory .
+
+era-oitc:passengerTrain a skos:Concept ;
+    rdfs:comment "Passenger train"@en ;
+    skos:hiddenLabel "CCSTMS_passengerTrain_3"@en ;
+    skos:inScheme era-oitc:OtherInternationalTrainCategory ;
+    skos:notation "passengerTrain"^^xsd:string ;
+    skos:prefLabel "Passenger Train"@en ;
+    skos:topConceptOf era-oitc:OtherInternationalTrainCategory .

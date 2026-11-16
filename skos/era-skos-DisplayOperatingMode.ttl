@@ -1,0 +1,113 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-dom: <http://data.europa.eu/949/concepts/display-operating-mode/> .
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+era-dom:DisplayOperatingMode a skos:ConceptScheme ;
+    rdfs:label "Display Operating Mode"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2025-02-19"^^xsd:date ;
+    dct:modified "2025-03-06"^^xsd:date ;
+    rdfs:comment "Onboard operating mode for text display.The text is displayed when entering / as long as in the defined mode. "@en ;
+    skos:hiddenLabel "CCSTMS_DisplayOperatingMode" ;
+    skos:prefLabel "Display Operating Mode"@en .
+	
+	
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+era-dom:fullSupervision a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_fullSupervision_0" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "fullSupervision"^^xsd:string ;
+    skos:prefLabel "full Supervision"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:limitedSupervision a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_limitedSupervision_9" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "limitedSupervision"^^xsd:string ;
+    skos:prefLabel "limited Supervision"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:notLimitedByMode a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_notLimitedByMode_11" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "notLimitedByMode"^^xsd:string ;
+    skos:prefLabel "not Limited-By-Mode"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:onSight a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_onSight_1" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "onSight"^^xsd:string ;
+    skos:prefLabel "on Sight"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:postTrip a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_postTrip_8" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "postTrip"^^xsd:string ;
+    skos:prefLabel "post Trip"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:reversing a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_reversing_10" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "reversing"^^xsd:string ;
+    skos:prefLabel "Reversing"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:staffResponsible a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_staffResponsible_2" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "staffResponsible"^^xsd:string ;
+    skos:prefLabel "staff Responsible"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:standBy a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_standBy_6" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "standBy"^^xsd:string ;
+    skos:prefLabel "stand By"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:trip a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_trip_7" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "trip"^^xsd:string ;
+    skos:prefLabel "Trip"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+
+era-dom:unfitted a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_unfitted_4" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "unfitted"^^xsd:string ;
+    skos:prefLabel "Unfitted"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+	
+era-dom:automaticDriving a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_automaticDriving_3" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "automaticDriving"^^xsd:string ;
+    skos:prefLabel "automatic Driving"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .
+	
+era-dom:supervisedManoeuvre a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_supervisedManoeuvre_5" ;
+    skos:inScheme era-dom:DisplayOperatingMode ;
+    skos:notation "supervisedManoeuvre"^^xsd:string ;
+    skos:prefLabel "supervised Manoeuvre"@en ;
+    skos:topConceptOf era-dom:DisplayOperatingMode .

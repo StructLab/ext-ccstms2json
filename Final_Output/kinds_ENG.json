@@ -1,0 +1,888 @@
+{
+ "domain": "ENG",
+ "structs": [
+  {
+   "name": "Balise",
+   "info": "Defines a technical device on the railway trackbed.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.Balise"
+    },
+    {
+     "intId": 2,
+     "name": "fixed",
+     "dataType": "boolean",
+     "info": "Defines if the balise is fixed or virtual",
+     "label": "Fixed"
+    },
+    {
+     "intId": 3,
+     "name": "m_dup",
+     "enumType": "DuplicationType",
+     "info": "Defines whether the information of the balise is a duplicate of the balise before or after",
+     "label": "M_Dup"
+    },
+    {
+     "intId": 4,
+     "name": "m_mcount",
+     "dataType": "uint32",
+     "range": "0..255",
+     "info": "the purpose of message counter is to make it possible for the ERTMS/ETCS on-board to detect which balise group message the telegram belongs to.",
+     "label": "M_Mcount"
+    },
+    {
+     "intId": 5,
+     "name": "n_pig",
+     "dataType": "uint32",
+     "range": "0..7",
+     "info": "position in the group. Defines the position of the balise in the balise group.",
+     "label": "N_Pig"
+    },
+    {
+     "intId": 6,
+     "name": "q_updown",
+     "dataType": "boolean",
+     "info": "Balise telegram transmission direction. This defines the direction of the information in the balise telegram. True when it is Up-link (Track-to-Train) and false when it is Down-link (Train-to-Track)",
+     "label": "Q_Updown"
+    },
+    {
+     "intId": 7,
+     "name": "verticallyOriented",
+     "dataType": "boolean",
+     "info": "Defines the orientation of the balise. false when oriented parallel to the sleepers",
+     "label": "Vertically Oriented"
+    },
+    {
+     "intId": 8,
+     "name": "standardSize",
+     "dataType": "boolean",
+     "info": "Defines if the balise is of standard size. false when balise is of reduced size",
+     "label": "Standard Size"
+    },
+    {
+     "intId": 9,
+     "name": "etcsPackets",
+     "composition": "ss026.ETCSTrackToTrainPacket",
+     "multiplicity": "0..*",
+     "info": "Defines the ETCS packets associates to the Balise Group.",
+     "label": "ETCS Packets"
+    },
+    {
+     "intId": 10,
+     "name": "telegram",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "formatNote": "Binary bit string representing the encoded ETCS telegram. The value shall consist of either exactly 341 bits (short telegram) or exactly 1023 bits (long telegram).",
+     "info": "Defines the encoded ETCS telegram content of the balise",
+     "label": "Telegram"
+    },
+    {
+     "intId": 11,
+     "name": "telegramChecksum",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "Defines the checksum to verify the integrity of the stored telegram",
+     "label": "Telegram Checksum"
+    },
+    {
+     "intId": 12,
+     "name": "sleeperFastening",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "Defines the fastening system used for the balise on the sleeper",
+     "label": "Sleeper Fastening"
+    },
+    {
+     "intId": 13,
+     "name": "baliseMountingSystem",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "Defines the mounting system used for the balise",
+     "label": "Balise Mounting System"
+    },
+    {
+     "intId": 14,
+     "name": "designType",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "Defines the manufacturer type for the balise",
+     "label": "Design Type"
+    },
+    {
+     "intId": 15,
+     "name": "sleepersType",
+     "enumType": "SleepersType",
+     "info": "Defines the sleepersType on which the Balise was mounted",
+     "label": "Sleepers Type"
+    }
+   ]
+  },
+  {
+   "name": "BaliseGroup",
+   "info": "Defines a group of balises on the railway trackbed.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.BaliseGroup"
+    },
+    {
+     "intId": 2,
+     "name": "etcsMVersion",
+     "enumType": "ETCSMVersions",
+     "info": "This gives the version of the ETCS system. Each part indicates the first and second number of the version respectively: The first number distinguishes not compatible versions (The three MSBs)_ The second number indicates compatibility within a version X. (The four LSBs)",
+     "label": "ETCS M_version",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/tsiCompliantTrainProtectionSystemObjParameter"
+     }
+    },
+    {
+     "intId": 3,
+     "name": "q_link",
+     "dataType": "boolean",
+     "info": "true when the balise group is linked, otherwise, false (unlinked)",
+     "label": "Q_Link"
+    }
+   ]
+  },
+  {
+   "name": "BufferStop",
+   "info": "An infrastructure element installed at the end of a track to prevent rolling stock from moving beyond the track termination. It serves as the physical end point of the track and may provide energy absorption in the event of a train overrun.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.BufferStop"
+    },
+    {
+     "intId": 2,
+     "name": "dangerPoint",
+     "reference": "DangerPoint",
+     "multiplicity": "0..1",
+     "info": "refers to the associated danger point",
+     "label": "Danger Point"
+    },
+    {
+     "intId": 3,
+     "name": "lengthOfBufferStop",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the length of the buffer stop from the buffer along the LinearElement.",
+     "label": "LengthOfBufferStop",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/length"
+     }
+    },
+    {
+     "intId": 4,
+     "name": "bsType",
+     "enumType": "BufferStopType",
+     "info": "Defines buffer stop type",
+     "label": "Buffer Stop Type"
+    }
+   ]
+  },
+  {
+   "name": "Crossing",
+   "info": "Defines the physical track asset Crossing without possibility to switch between two linear elements",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.Crossing"
+    },
+    {
+     "intId": 2,
+     "name": "foulingPoints",
+     "reference": "FoulingPoint",
+     "multiplicity": "1..*",
+     "info": "refers to fouling points",
+     "label": "Fouling Points"
+    }
+   ]
+  },
+  {
+   "name": "DangerPoint",
+   "info": "a specific location on the railway where a potential conflict or danger may arise between trains or between trains and other object",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "topologicalCoordinate",
+     "composition": "infra.TopologicalCoordinate",
+     "info": "Defines the point location on the linear element",
+     "label": "Topological Coordinate"
+    }
+   ]
+  },
+  {
+   "name": "ETCSEngineering",
+   "info": "Defines the container for the ETCS Engineering",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "engAreas",
+     "composition": "EngArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of engineering areas",
+     "label": "Eng Areas"
+    },
+    {
+     "intId": 2,
+     "name": "locationAccuracyAreas",
+     "composition": "LocationAccuracyArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of location accuracy areas",
+     "label": "Location Accuracy Areas"
+    },
+    {
+     "intId": 3,
+     "name": "kmAreas",
+     "composition": "KmArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of km areas",
+     "label": "Km Areas"
+    }
+   ]
+  },
+  {
+   "name": "EngArea",
+   "info": "Defines the container for the Engineering area",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "infra.TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "defaultSleepersType",
+     "enumType": "SleepersType",
+     "info": "Defines the default sleeper type",
+     "label": "Default Sleepers Type"
+    },
+    {
+     "intId": 4,
+     "name": "switches",
+     "composition": "Switch",
+     "multiplicity": "0..*",
+     "formatNote": "SlipCrossing can only reference two or four switches for single slip crossing and double slip crossing respectively",
+     "info": "Defines the list of switches",
+     "label": "Switches"
+    },
+    {
+     "intId": 5,
+     "name": "crossings",
+     "composition": "Crossing",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of crossings",
+     "label": "Crossings"
+    },
+    {
+     "intId": 6,
+     "name": "levelCrossings",
+     "composition": "LevelCrossing",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of level crossings",
+     "label": "Level Crossings"
+    },
+    {
+     "intId": 7,
+     "name": "baliseGroups",
+     "composition": "BaliseGroup",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the balise groups",
+     "label": "Balise Groups"
+    },
+    {
+     "intId": 8,
+     "name": "sleepers",
+     "composition": "Sleepers",
+     "multiplicity": "0..*",
+     "info": "Defines the list of sleepers",
+     "label": "Sleepers"
+    },
+    {
+     "intId": 9,
+     "name": "trackUsagePaths",
+     "composition": "TrackUsagePath",
+     "multiplicity": "0..*",
+     "info": "Defines the list of track usage paths",
+     "label": "TrackUsagePaths"
+    },
+    {
+     "intId": 10,
+     "name": "dangerPoints",
+     "composition": "DangerPoint",
+     "multiplicity": "0..*",
+     "info": "Defines the list of danger points",
+     "label": "Danger Points"
+    },
+    {
+     "intId": 11,
+     "name": "foulingPoints",
+     "composition": "FoulingPoint",
+     "multiplicity": "0..*",
+     "info": "Defines the list of fouling points",
+     "label": "Fouling Points"
+    },
+    {
+     "intId": 12,
+     "name": "bufferStops",
+     "composition": "BufferStop",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of buffer stops",
+     "label": "Buffer Stops"
+    }
+   ]
+  },
+  {
+   "name": "FoulingPoint",
+   "info": "the point on a railway track beyond which a train is not allowed to proceed if another train or object is occupying that portion of the track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "topologicalCoordinate",
+     "composition": "infra.TopologicalCoordinate",
+     "info": "Defines the point location on the linear element",
+     "label": "Topological Coordinate"
+    }
+   ]
+  },
+  {
+   "name": "KilometricPost",
+   "info": "An object that represents Kilometer information at specific location on a LinearElement",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "pos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "Pos"
+    },
+    {
+     "intId": 2,
+     "name": "kilometer",
+     "dataType": "double",
+     "unit": "km",
+     "info": "Defines exact kilometer value",
+     "label": "kilometer number",
+     "ontology": {
+      "subPropertyOf": [
+       "http://data.europa.eu/949/signalDataParameter",
+       "http://data.europa.eu/949/tunnelDataParameter"
+      ]
+     }
+    },
+    {
+     "intId": 3,
+     "name": "kmPostName",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "Name of the Kilometric Post.",
+     "label": "kilometric post name"
+    }
+   ]
+  },
+  {
+   "name": "KmArea",
+   "info": "Represents an area containing kilometre referencing information for one or more LinearElements. The kilometre values are defined through associated LinearElementKm profiles and their KilometricPosts.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "infra.TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "linearElementKm",
+     "composition": "LinearElementKm",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Contains the kilometre referencing definitions for the LinearElements belonging to the area.",
+     "label": "LinearElement Km"
+    }
+   ]
+  },
+  {
+   "name": "LevelCrossing",
+   "info": "A level crossing is an intersection where a railway line crosses a road or a path at the same level. It can be used for the implementation of the ETCS trackside or to identify potential collision scenarios",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.LevelCrossing"
+    },
+    {
+     "intId": 2,
+     "name": "dangerPoints",
+     "reference": "DangerPoint",
+     "multiplicity": "1..*",
+     "info": "refers to danger points",
+     "label": "Danger Points"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementAccuracyProfile",
+   "info": "Defines the positional accuracy of a LinearElement along its length, indicating how precisely its geometry is known or measured.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "linearElement",
+     "reference": "infra.LinearElement",
+     "info": "reference to the corresponding LinearElement",
+     "label": "LinearElement "
+    },
+    {
+     "intId": 3,
+     "name": "offsetAccuracies",
+     "composition": "OffsetAccuracy",
+     "multiplicity": "0..*",
+     "ordered": "byIndex",
+     "info": "must be sorted in accending order according to offset from 0 to LinearElement.length",
+     "label": "Offset Accuracies"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementKm",
+   "info": "Defines the kilometre referencing information for a LinearElement. It contains an ordered set of KilometricPosts that associate positions along the LinearElement with corresponding railway kilometre values.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElement",
+     "reference": "infra.LinearElement",
+     "info": "reference to the corresponding linear element",
+     "label": "LinearElement "
+    },
+    {
+     "intId": 2,
+     "name": "kilometricPosts",
+     "composition": "KilometricPost",
+     "multiplicity": "0..*",
+     "ordered": "byIndex",
+     "info": "Defines the kilometre points on the track. These are sorted by pos from 0 to length",
+     "label": "Kilometric Posts"
+    }
+   ]
+  },
+  {
+   "name": "LocationAccuracyArea",
+   "info": "Represents an area containing positional accuracy definitions for one or more LinearElements. The accuracy information is provided through LinearElementAccuracyProfiles, which specify the expected positional deviation of the LinearElement geometry at defined offsets along its length.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "infra.TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "accuracyProfiles",
+     "composition": "LinearElementAccuracyProfile",
+     "multiplicity": "0..*",
+     "info": "Defines the accuracies for defined linear elements",
+     "label": "Accuracy Profiles"
+    }
+   ]
+  },
+  {
+   "name": "OffsetAccuracy",
+   "info": "Positional accuracy specified at a defined offset along a LinearElement.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "offset",
+     "dataType": "double",
+     "unit": "m",
+     "info": "offset on the LinearElement with defined accuracy.",
+     "label": "Offset"
+    },
+    {
+     "intId": 2,
+     "name": "accuracy",
+     "dataType": "double",
+     "unit": "m",
+     "info": "defines absolute deviation of the offset as 1sigma",
+     "label": "Accuracy"
+    }
+   ]
+  },
+  {
+   "name": "Sleepers",
+   "info": "Sleepers are components on which the rails arranged with corresponding gauge.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "linearElementSections",
+     "composition": "infra.LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element's sections",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 3,
+     "name": "sleepersType",
+     "enumType": "SleepersType",
+     "info": "defines sleepers type",
+     "label": "Sleepers Type"
+    }
+   ]
+  },
+  {
+   "name": "Switch",
+   "info": "A unit of track comprising two fixed rails (stock rails) and two movable rails (switch rails) used to direct vehicles from one track to another track.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.Switch"
+    },
+    {
+     "intId": 2,
+     "name": "foulingPoints",
+     "reference": "FoulingPoint",
+     "multiplicity": "1..*",
+     "info": "refers to fouling points",
+     "label": "Fouling Points"
+    },
+    {
+     "intId": 3,
+     "name": "tipShift",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the tip distance from the start of the switch on main and branching tracks",
+     "label": "Tip Shift"
+    },
+    {
+     "intId": 4,
+     "name": "bladeLength",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the length of the blade of switch along main and branching tracks",
+     "label": "Blade Length",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/length"
+     }
+    },
+    {
+     "intId": 5,
+     "name": "routeRequiresPointRight",
+     "reference": "TrackUsagePath",
+     "multiplicity": "0..*",
+     "info": "list of trackUsagePaths that require this Switch to allow travelling through pointRight.",
+     "label": "Route Requires Point Right"
+    },
+    {
+     "intId": 6,
+     "name": "routeRequiresPointLeft",
+     "reference": "TrackUsagePath",
+     "multiplicity": "0..*",
+     "info": "list of trackUsagePaths that require this Switch to allow travelling through pointLeft.",
+     "label": "Route Requires Point Left"
+    }
+   ]
+  },
+  {
+   "name": "TrackUsagePath",
+   "info": "A defined sequence of track elements and associated infrastructure forming a continuous operational path.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "switches",
+     "reference": "Switch",
+     "multiplicity": "0..*",
+     "formatNote": "SlipCrossing can only reference two or four switches for single slip crossing and double slip crossing respectively",
+     "info": "Defines the list of switch(es)",
+     "label": "Switches"
+    },
+    {
+     "intId": 3,
+     "name": "derailers",
+     "reference": "infra.Derailer",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of derailer(s)",
+     "label": "Derailers"
+    },
+    {
+     "intId": 4,
+     "name": "levelCrossings",
+     "reference": "LevelCrossing",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of level crossings",
+     "label": "Level Crossings"
+    },
+    {
+     "intId": 5,
+     "name": "pathBody",
+     "composition": "infra.NetLinearReference",
+     "info": "List of linear references included in the track usage path.",
+     "label": "Path Body"
+    },
+    {
+     "intId": 6,
+     "name": "precedingTrackUsagePath",
+     "reference": "TrackUsagePath",
+     "multiplicity": "0..1",
+     "info": "Defines the immediately preceding TrackUsagePath in the operational sequence.",
+     "label": "PrecedingTrackUsagePath",
+     "ontology": {
+      "propertyTypes": [
+       "http://www.w3.org/2002/07/owl#AsymmetricProperty",
+       "http://www.w3.org/2002/07/owl#IrreflexiveProperty"
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "enums": [
+  {
+   "name": "BufferStopType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "friction",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/buffer-stop-type/friction"
+    },
+    {
+     "intId": 1,
+     "name": "hydraulic",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/buffer-stop-type/hydraulic"
+    },
+    {
+     "intId": 2,
+     "name": "fixated",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/buffer-stop-type/fixated"
+    },
+    {
+     "intId": 3,
+     "name": "other",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/buffer-stop-type/other"
+    }
+   ]
+  },
+  {
+   "name": "DuplicationType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "noDuplicates",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/duplication-type/noDuplicates"
+    },
+    {
+     "intId": 1,
+     "name": "duplicateNextBalise",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/duplication-type/duplicateNextBalise"
+    },
+    {
+     "intId": 2,
+     "name": "duplicatePreviousBalise",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/duplication-type/duplicatePreviousBalise"
+    }
+   ]
+  },
+  {
+   "name": "ETCSMVersions",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "v1_0",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/10"
+    },
+    {
+     "intId": 1,
+     "name": "v1_1",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/11"
+    },
+    {
+     "intId": 2,
+     "name": "v2_0",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/20"
+    },
+    {
+     "intId": 3,
+     "name": "v2_1",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/21"
+    },
+    {
+     "intId": 4,
+     "name": "v2_2",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/22"
+    },
+    {
+     "intId": 5,
+     "name": "v2_3",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/23"
+    },
+    {
+     "intId": 6,
+     "name": "v3_0",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/30"
+    },
+    {
+     "intId": 7,
+     "name": "v_previous",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/etcs-m-versions/00"
+    }
+   ]
+  },
+  {
+   "name": "SleepersType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "unknownSleepersType",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/sleepers-type/unknownSleepersType"
+    },
+    {
+     "intId": 1,
+     "name": "composite",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/sleepers-type/composite"
+    },
+    {
+     "intId": 2,
+     "name": "concrete",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/sleepers-type/concrete"
+    },
+    {
+     "intId": 3,
+     "name": "steel",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/sleepers-type/steel"
+    },
+    {
+     "intId": 4,
+     "name": "wood",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/sleepers-type/wood"
+    }
+   ]
+  }
+ ]
+}

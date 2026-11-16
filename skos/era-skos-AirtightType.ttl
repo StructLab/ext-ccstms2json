@@ -1,0 +1,45 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-att: <http://data.europa.eu/949/concepts/airtight-type/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-att:AirtightType a skos:ConceptScheme ;
+    rdfs:label "Airtight Type"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "indicates whether the train is fitted with an airtight system or not."@en ;
+    skos:hiddenLabel "CCSTMS_AirtightType"@en ;
+    skos:prefLabel "Airtight Type"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-att:fitted a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_fitted_1"@en ;
+    skos:inScheme era-att:AirtightType ;
+    skos:notation "fitted"^^xsd:string ;
+    skos:prefLabel "Fitted"@en ;
+    skos:topConceptOf era-att:AirtightType .
+
+era-att:notFitted a skos:Concept ;
+    skos:hiddenLabel "CCSTMS_notFitted_0"@en ;
+    skos:inScheme era-att:AirtightType ;
+    skos:notation "notFitted"^^xsd:string ;
+    skos:prefLabel "Not Fitted"@en ;
+    skos:topConceptOf era-att:AirtightType .

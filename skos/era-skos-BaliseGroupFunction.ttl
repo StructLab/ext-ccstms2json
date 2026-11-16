@@ -1,0 +1,160 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-bgfunction: <http://data.europa.eu/949/concepts/balise-group-function/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-bgfunction:BaliseGroupFunction a skos:ConceptScheme ;
+    rdfs:label "Balise Group Function"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2025-02-19"^^xsd:date ;
+    dct:modified "2025-03-06"^^xsd:date ,
+                    "2026-07-24"^^xsd:date  ;
+    skos:hiddenLabel "CCSTMS_BaliseGroupFunction" ;
+    skos:prefLabel "Balise Group Function"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-bgfunction:border a skos:Concept ;
+    rdfs:comment "has a border function"@en ;
+    skos:hiddenLabel "CCSTMS_border_6" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "border"^^xsd:string ;
+    skos:prefLabel "Border"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:handover a skos:Concept ;
+    rdfs:comment "has a handover function"@en ;
+    skos:hiddenLabel "CCSTMS_handover_7" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "handover"^^xsd:string ;
+    skos:prefLabel "Handover"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:infill a skos:Concept ;
+    rdfs:comment "performs the function of infill"@en ;
+    skos:hiddenLabel "CCSTMS_infill_8" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "infill"^^xsd:string ;
+    skos:prefLabel "Infill"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:levelTransitionAnnouncement a skos:Concept ;
+    rdfs:comment "has a level transition announcement function"@en ;
+    skos:hiddenLabel "CCSTMS_levelTransitionAnnouncement_3" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "levelTransitionAnnouncement"^^xsd:string ;
+    skos:prefLabel "Level Transition Announcement"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:levelTransitionCancellation a skos:Concept ;
+    rdfs:comment "has a level transition cancellation function"@en ;
+    skos:hiddenLabel "CCSTMS_levelTransitionCancellation_14" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "levelTransitionCancellation"^^xsd:string ;
+    skos:prefLabel "Level Transition Cancellation"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:levelTransitionOrder a skos:Concept ;
+    rdfs:comment "has a level transition order function"@en ;
+    skos:hiddenLabel "CCSTMS_levelTransitionOrder_12" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "levelTransitionOrder"^^xsd:string ;
+    skos:prefLabel "Level Transition Order"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:location a skos:Concept ;
+    rdfs:comment "has a location function"@en ;
+    skos:hiddenLabel "CCSTMS_location_0" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "location"^^xsd:string ;
+    skos:prefLabel "Location"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:networkRegistration a skos:Concept ;
+    rdfs:comment "has a network registration function"@en ;
+    skos:hiddenLabel "CCSTMS_networkRegistration_2" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "networkRegistration"^^xsd:string ;
+    skos:prefLabel "Network Registration"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:reference a skos:Concept ;
+    rdfs:comment "balise group used as reference"@en ;
+    skos:hiddenLabel "CCSTMS_reference_15" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "reference"^^xsd:string ;
+    skos:prefLabel "Reference"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:sessionEstablishment a skos:Concept ;
+    rdfs:comment "has a session establishment function"@en ;
+    skos:hiddenLabel "CCSTMS_sessionEstablishment_10" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "sessionEstablishment"^^xsd:string ;
+    skos:prefLabel "Session Establishment"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:sessionManagement a skos:Concept ;
+    rdfs:comment "has a session management function"@en ;
+    skos:hiddenLabel "CCSTMS_sessionManagement_1" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "sessionManagement"^^xsd:string ;
+    skos:prefLabel "Session Management"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:sessionTermination a skos:Concept ;
+    rdfs:comment "has a session termination function"@en ;
+    skos:hiddenLabel "CCSTMS_sessionTermination_11" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "sessionTermination"^^xsd:string ;
+    skos:prefLabel "Session Termination"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:stopIfInShunting a skos:Concept ;
+    rdfs:comment "has a stop-if-in-shunting function"@en ;
+    skos:hiddenLabel "CCSTMS_stopIfInShunting_13" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "stopIfInShunting"^^xsd:string ;
+    skos:prefLabel "Stop If In Shunting"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:stopIfInStaffResponsible a skos:Concept ;
+    rdfs:comment "has a stop-if-in-staff-responsible function"@en ;
+    skos:hiddenLabel "CCSTMS_stopIfInStaffResponsible_4" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "stopIfInStaffResponsible"^^xsd:string ;
+    skos:prefLabel "Stop If In Staff Responsible"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:temporarySpeedRestrictionAnnouncement a skos:Concept ;
+    rdfs:comment "has a temporary speed restriction announcement function"@en ;
+    skos:hiddenLabel "CCSTMS_temporarySpeedRestrictionAnnouncement_5" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "temporarySpeedRestrictionAnnouncement"^^xsd:string ;
+    skos:prefLabel "Temporary Speed Restriction Announcement"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .
+
+era-bgfunction:temporarySpeedRestrictionRevocation a skos:Concept ;
+    rdfs:comment "has a temporary speed restriction revocation"@en ;
+    skos:hiddenLabel "CCSTMS_temporarySpeedRestrictionRevocation_9" ;
+    skos:inScheme era-bgfunction:BaliseGroupFunction ;
+    skos:notation "temporarySpeedRestrictionRevocation"^^xsd:string ;
+    skos:prefLabel "Temporary Speed Restriction Revocation"@en ;
+    skos:topConceptOf era-bgfunction:BaliseGroupFunction .

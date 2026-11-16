@@ -1,0 +1,3522 @@
+{
+ "domain": "INFRA",
+ "structs": [
+  {
+   "name": "AtoTSInstance",
+   "info": "Defines an ATO-TS Instance for the Segment Profiles",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "nidATOTS",
+     "dataType": "uint32",
+     "info": "defines national identifier for the ATO-TS",
+     "label": "ATO-TS Identifier",
+     "subsetName": "NID_ATOTS"
+    },
+    {
+     "intId": 2,
+     "name": "atotsNidC",
+     "dataType": "uint32",
+     "info": "defines county identifier for the segment profile",
+     "label": "ATO-TS Country Identifier",
+     "subsetName": "NID_C"
+    }
+   ]
+  },
+  {
+   "name": "AxleLoadSpeedProfile",
+   "info": "Defines the axle load speed profile for a section of track",
+   "belongsToSubPackage": "PropertiesArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "startPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the start position on the associated Linear element",
+     "label": "Start Position"
+    },
+    {
+     "intId": 2,
+     "name": "endPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the end position on the associated Linear element",
+     "label": "End Position"
+    },
+    {
+     "intId": 3,
+     "name": "axleLoadSpeedRestriction",
+     "dataType": "uint32",
+     "unit": "km/h",
+     "info": "Defines the applicable speed for the section of track ; Resolution as defined in SS126 = 5 km/h",
+     "label": "AxleLoadSpeedRestriction",
+     "subsetName": "V_New_Speed_Level"
+    },
+    {
+     "intId": 4,
+     "name": "axleLoadCategory",
+     "enumType": "LoadCapabilityLineCategories",
+     "info": "Axle load category (The values allocated below correspond to a list of increasing axle load categories (i.e. B1 > HS17, B2 > B1, D2 > C4, ….etc) and it is used by the on-board equipment to compare its axle load category with the axle load category sent by trackside.For the underlying meaning of the axle load categories listed (with the exception of HS17) refer to CR INF TSI.The category HS17 (axle load <= 17t) corresponds to a static load per axle only, as specified in HS RST TSI clause 4.2.3.2. The introduction of this artefact is necessary to ensure backward compatibility, without any negative performance impact, in case ASPs are used on lines operated with system version X = 1).see ss026, 7.5.1.62 M_AXLELOADCAT",
+     "label": "AxleLoadCategory",
+     "subsetName": "M_AXLELOADCAT"
+    },
+    {
+     "intId": 5,
+     "name": "trainEndApplicability",
+     "enumType": "TrainEndApplicability",
+     "info": "Indicates if a speed limit given for a profile element is to be applied until the front of the train (no train length delay) or the end of the train (train length delay) has left the element.",
+     "label": "Train End Applicability",
+     "subsetName": "Q_FRONT"
+    }
+   ]
+  },
+  {
+   "name": "Balise",
+   "info": "Defines a technical device on the railway trackbed",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topologicalCoordinate",
+     "composition": "TopologicalCoordinate",
+     "info": "defines the location on Linear Element",
+     "label": "Topological Coordinate"
+    }
+   ]
+  },
+  {
+   "name": "BaliseGroup",
+   "info": "Defines a group of balises on the railway trackbed.",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "nid_bg",
+     "dataType": "uint32",
+     "range": "0..16383",
+     "info": "national identifier of the balise group",
+     "label": "Nid_Bg"
+    },
+    {
+     "intId": 3,
+     "name": "nid_c",
+     "dataType": "uint32",
+     "range": "0..1023",
+     "info": "country identifier of the balise group",
+     "label": "Nid_C"
+    },
+    {
+     "intId": 4,
+     "name": "balises",
+     "composition": "Balise",
+     "multiplicity": "1..8",
+     "ordered": "byIndex",
+     "info": "Defines the balises within the balise group. ETCS-positionInGroup is equal to the position this array",
+     "label": "Balises",
+     "subsetName": "Balise"
+    },
+    {
+     "intId": 5,
+     "name": "bgFunction",
+     "enumType": "BaliseGroupFunction",
+     "info": "Defines the function of the balise. To be clarified, if derivable from baliseTelegram",
+     "label": "Balise Group Function"
+    },
+    {
+     "intId": 6,
+     "name": "linkOrientationDirection",
+     "enumType": "OrientationDirections",
+     "info": "defines linking orientation direction along the LinearElement",
+     "label": "LinkOrientationDirection"
+    },
+    {
+     "intId": 7,
+     "name": "etcsMarker",
+     "reference": "ETCSMarker",
+     "multiplicity": "0..1",
+     "info": "defines the etcs marker board reference for the balise",
+     "label": "ETCS Marker"
+    }
+   ]
+  },
+  {
+   "name": "Bridge",
+   "info": "It is a structure constructed for the exclusive purpose of carrying railroad traffic across an obstruction. It can be used for defining non-stopping areas, big metal mass, resistance to traffic load etc.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "areaReference",
+     "composition": "NetAreaReference",
+     "info": "composes of track area",
+     "label": "Area Reference"
+    }
+   ]
+  },
+  {
+   "name": "BufferStop",
+   "info": "An infrastructure element installed at the end of a track to prevent rolling stock from moving beyond the track termination. It serves as the physical end point of the track and may provide energy absorption in the event of a train overrun.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "netPointReference",
+     "composition": "NetPointReference",
+     "info": "Defines position corresponding to the buffers of the buffer stop on LinearElement",
+     "label": "NetPointReference"
+    },
+    {
+     "intId": 3,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "CantPoint",
+   "info": "Defines Cant (Superelevation) at the locations of start and end Cant Ramps on the track.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/CantGeometrySegment"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "appliedCant",
+     "dataType": "int32",
+     "unit": "mm",
+     "info": "Height of the outer rail minus the inner rail. Outer rail and inner rail are defined according to the direction of curve. Rollangle=(arcsin(cant/gauge)), gauge is distance between middle of the railheads, e.g. 1500mm for EU-standard gauge '1435mm' ; The applied cant is defined for the start",
+     "label": "Applied Cant"
+    }
+   ]
+  },
+  {
+   "name": "CantSamplePoint",
+   "info": "Defines the cant(superelevation) of the track at a given location on the track.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/SampledGeometrySegment"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "samplePointCant",
+     "dataType": "int32",
+     "unit": "mm",
+     "info": "Defines the height of the outer rail minus the inner rail. Outer rail and inner rail are defined according to the direction of curve. Rollangle=(arcsin(cant/gauge), gauge is distance between centers of rail-heads, e.g. 1500mm for EU-standard gauge.",
+     "label": "SamplePointCant"
+    }
+   ]
+  },
+  {
+   "name": "Crossing",
+   "info": "Defines the physical track asset Crossing without possibility to switch between two linear elements",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topologicalCoordinates",
+     "composition": "TopologicalCoordinate",
+     "multiplicity": "2..2",
+     "info": "composes of topological coordinates",
+     "label": "Topological Coordinates"
+    },
+    {
+     "intId": 3,
+     "name": "isSwitchable",
+     "dataType": "boolean",
+     "info": "True: If the crossing is switchable ; False: If the crossing is not switchable ; https://commons.wikimedia.org/wiki/Category:Switched_diamond_crossings",
+     "label": "Is Switchable"
+    },
+    {
+     "intId": 4,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "CurrentLimitation",
+   "info": "Defines max current for a list of track sections",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSections",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element sections",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 2,
+     "name": "maxCurrent",
+     "dataType": "uint32",
+     "unit": "A",
+     "info": "defines max current value",
+     "label": "Max Current"
+    }
+   ]
+  },
+  {
+   "name": "CurveSamplePoint",
+   "info": "Defines curve (radius) of the track at a given location on the track.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/SampledGeometrySegment"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "sampleCurveRadius",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the radius at a specific location along the linear element, negative-counter-clockwise/left-curve, positive-clockwise/right-curve",
+     "label": "SampleCurveRadius"
+    }
+   ]
+  },
+  {
+   "name": "Derailer",
+   "info": "Defines the physical track asset Derailer",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "netPointReference",
+     "composition": "NetPointReference",
+     "info": "Defines position on LinearElement",
+     "label": "NetPointReference"
+    },
+    {
+     "intId": 3,
+     "name": "reversalTime",
+     "dataType": "uint32",
+     "multiplicity": "0..1",
+     "unit": "s",
+     "info": "Defines the time in seconds to switch from one position to the other",
+     "label": "Reversal Time",
+     "exp": -1
+    },
+    {
+     "intId": 4,
+     "name": "derailToRight",
+     "dataType": "boolean",
+     "info": "Defines the side on which the derailer derails. If false = derailToLeft",
+     "label": "Derail To Right"
+    },
+    {
+     "intId": 5,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "ETCSMarker",
+   "info": "Defines the ETCS Marker Boards",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "netPointReference",
+     "composition": "NetPointReference",
+     "info": "Defines position on LinearElement",
+     "label": "NetPointReference"
+    },
+    {
+     "intId": 3,
+     "name": "markerFunctionStop",
+     "dataType": "boolean",
+     "info": "Defines the function associated with the ETCS marker board. true=stop, false=location (when the ETCS marker is a location marker)",
+     "label": "Marker Function Stop"
+    },
+    {
+     "intId": 4,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "FunctionalArea",
+   "info": "Defines the container functional area within INFRA Domain",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "faVersionTimestamp",
+     "dataType": "timestamp",
+     "info": "version information of the functional area which is valid since timestamp",
+     "label": "FaVersionTimestamp"
+    },
+    {
+     "intId": 4,
+     "name": "opPoints",
+     "composition": "OperationalPoint",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of operational points",
+     "label": "Operational Points"
+    },
+    {
+     "intId": 5,
+     "name": "switches",
+     "composition": "Switch",
+     "multiplicity": "0..*",
+     "formatNote": "SlipCrossing can only reference two or four switches for single slip crossing and double slip crossing respectively",
+     "info": "Defines the set of switches",
+     "label": "Switches"
+    },
+    {
+     "intId": 6,
+     "name": "slipCrossings",
+     "composition": "SlipCrossing",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of slip crossings",
+     "label": "Slip Crossings"
+    },
+    {
+     "intId": 7,
+     "name": "derailers",
+     "composition": "Derailer",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of derailers",
+     "label": "Derailers"
+    },
+    {
+     "intId": 8,
+     "name": "crossings",
+     "composition": "Crossing",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of crossings",
+     "label": "Crossings"
+    },
+    {
+     "intId": 9,
+     "name": "trainDetectors",
+     "composition": "TrainDetectionSystem",
+     "multiplicity": "0..*",
+     "info": "Defines the set of train detectors",
+     "label": "Train Detectors"
+    },
+    {
+     "intId": 10,
+     "name": "baliseGroups",
+     "composition": "BaliseGroup",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of balise groups",
+     "label": "Balise Groups"
+    },
+    {
+     "intId": 11,
+     "name": "etcsMarkers",
+     "composition": "ETCSMarker",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of etcs markers",
+     "label": "ETCS Markers"
+    },
+    {
+     "intId": 12,
+     "name": "segmentProfile",
+     "composition": "SegmentProfile",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of segment profiles",
+     "label": "Segment Profile"
+    },
+    {
+     "intId": 13,
+     "name": "stopLocations",
+     "composition": "StopLocation",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of stop locations where the train is allowed to stop",
+     "label": "Stop Locations"
+    },
+    {
+     "intId": 14,
+     "name": "tunnels",
+     "composition": "Tunnel",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of tunnels",
+     "label": "Tunnels"
+    },
+    {
+     "intId": 15,
+     "name": "bridges",
+     "composition": "Bridge",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of bridges",
+     "label": "Bridges"
+    },
+    {
+     "intId": 16,
+     "name": "underpasses",
+     "composition": "Underpass",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of underpasses",
+     "label": "Underpasses"
+    },
+    {
+     "intId": 17,
+     "name": "tvps",
+     "composition": "TvpSection",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of track vacancy proving sections",
+     "label": "Tvps"
+    },
+    {
+     "intId": 18,
+     "name": "levelCrossings",
+     "composition": "LevelCrossing",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of level crossings",
+     "label": "Level Crossings"
+    },
+    {
+     "intId": 19,
+     "name": "nationalBorders",
+     "composition": "NationalBorder",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of national borders",
+     "label": "National Borders"
+    },
+    {
+     "intId": 20,
+     "name": "bufferStops",
+     "composition": "BufferStop",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of buffer stops",
+     "label": "Buffer Stops"
+    },
+    {
+     "intId": 21,
+     "name": "timingPoints",
+     "composition": "TimingPoint",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of timing points, at which TMS would calculate train positions",
+     "label": "Timing Points"
+    }
+   ]
+  },
+  {
+   "name": "GeometryArea",
+   "info": "Defines the container geometry area within INFRA Domain",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "gaVersionTimestamp",
+     "dataType": "timestamp",
+     "info": "version information of the geometry area which is valid since timestamp",
+     "label": "GaVersionTimestamp"
+    },
+    {
+     "intId": 4,
+     "name": "alignment3d",
+     "dataType": "boolean",
+     "info": "Defines the 3d alignment information for the geometry area. if true, all positions and length calculated on 3d line. if false - on 2d projection",
+     "label": "3D Alignment"
+    },
+    {
+     "intId": 5,
+     "name": "linearElementGeometries",
+     "composition": "LinearElementGeometry",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "composes of linear element geometries",
+     "label": "LinearElement Geometries"
+    }
+   ]
+  },
+  {
+   "name": "HorizontalArc",
+   "info": "Defines the geometric primitive for a horizontal arc of circle",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/HorizontalGeometrySegment"
+   },
+   "belongsToSubPackage": "geometry",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "azimuth",
+     "dataType": "double",
+     "unit": "degree",
+     "range": "0..360",
+     "info": "Defines the azimuth at pos, i.e. bearing measured clockwise with respect to geographic north",
+     "label": "Azimuth"
+    },
+    {
+     "intId": 3,
+     "name": "radius",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the radius at pos, negative-counter-clockwise/left-curve, positive-clockwise/right-curve",
+     "label": "Radius"
+    }
+   ]
+  },
+  {
+   "name": "HorizontalLine",
+   "info": "Defines the geometric primitive for a horizontal linear segment",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/HorizontalGeometrySegment"
+   },
+   "belongsToSubPackage": "geometry",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the position on the associated Linear Element",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "azimuth",
+     "dataType": "double",
+     "unit": "degree",
+     "range": "0..360",
+     "info": "Defines the azimuth at pos, i.e. bearing measured clockwise with respect to geographic north",
+     "label": "Azimuth"
+    }
+   ]
+  },
+  {
+   "name": "HorizontalSegment",
+   "info": "Defines a curvi-linear geometric primitive, mathematically represents a horizontal segment of the centre line of a railway track",
+   "belongsToSubPackage": "geometry",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "horizontalSegmentLine",
+     "composition": "HorizontalLine",
+     "multiplicity": "0..1",
+     "info": "composes of lines",
+     "label": "Horizontal Segment Line"
+    },
+    {
+     "intId": 2,
+     "name": "horizontalSegmentArc",
+     "composition": "HorizontalArc",
+     "multiplicity": "0..1",
+     "info": "composes of arcs",
+     "label": "Horizontal Segment Arc"
+    },
+    {
+     "intId": 3,
+     "name": "horizontalSegmentTransition",
+     "composition": "HorizontalTransition",
+     "multiplicity": "0..1",
+     "info": "composes of transition curves",
+     "label": "HorizontalSegmentTransition"
+    }
+   ]
+  },
+  {
+   "name": "HorizontalTransition",
+   "info": "Defines a geometric primitive for a horizontal transition curve, a clothoid.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/HorizontalGeometrySegment"
+   },
+   "belongsToSubPackage": "geometry",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated Linear Element",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "azimuth",
+     "dataType": "double",
+     "unit": "degree",
+     "range": "0..360",
+     "info": "Defines the azimuth at pos, i.e. bearing measured clockwise with respect to geographic north",
+     "label": "Azimuth"
+    },
+    {
+     "intId": 3,
+     "name": "radius",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the radius at pos, negative-counter-clockwise/left-curve, positive-clockwise/right-curve",
+     "label": "Radius"
+    },
+    {
+     "intId": 4,
+     "name": "transitionType",
+     "enumType": "TransitionType",
+     "info": "defines different transition types",
+     "label": "Transition Type"
+    }
+   ]
+  },
+  {
+   "name": "Infrastructure",
+   "info": "Defines the Containter for Infrastructure (INFRA)",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "topoAreas",
+     "composition": "TopoArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of topo areas",
+     "label": "Topo Areas"
+    },
+    {
+     "intId": 2,
+     "name": "geometryAreas",
+     "composition": "GeometryArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of geometry areas",
+     "label": "Geometry Areas"
+    },
+    {
+     "intId": 3,
+     "name": "sampledGeometryAreas",
+     "composition": "SampledGeometryArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of sampled geometry areas",
+     "label": "Sampled Geometry Areas"
+    },
+    {
+     "intId": 4,
+     "name": "functionalAreas",
+     "composition": "FunctionalArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of functional areas",
+     "label": "Functional Areas"
+    },
+    {
+     "intId": 5,
+     "name": "propertiesAreas",
+     "composition": "PropertiesArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of properties areas",
+     "label": "Properties Areas"
+    },
+    {
+     "intId": 6,
+     "name": "trackUsageAreas",
+     "composition": "TrackUsageArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the set of track usage areas",
+     "label": "Track Usage Areas"
+    }
+   ]
+  },
+  {
+   "name": "LevelCrossing",
+   "info": "A level crossing is an intersection where a railway line crosses a road or a path at the same level. It can be used for the implementation of the ETCS trackside or to identify potential collision scenarios",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "areaReference",
+     "composition": "NetAreaReference",
+     "info": "composes of track area",
+     "label": "Area Reference"
+    },
+    {
+     "intId": 3,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 4,
+     "name": "isProtected",
+     "dataType": "boolean",
+     "info": "True if the level crossing is protected, False - if the level crossing is unprotected",
+     "label": "Is Protected"
+    }
+   ]
+  },
+  {
+   "name": "LimitedDynamicBrakeForce",
+   "info": "Defines the area with limited dynamic brake force information for a segment profile",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSection",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element section",
+     "label": "LinearElement Section"
+    },
+    {
+     "intId": 2,
+     "name": "dynamicBrakeForceLimit",
+     "dataType": "uint32",
+     "unit": "kN",
+     "range": "0..3000",
+     "info": "Maximum Brake Force [kN] to be applied by the Dynamic Brake",
+     "label": "Dynamic Brake Force Limit"
+    }
+   ]
+  },
+  {
+   "name": "LinearElement",
+   "info": "A linear element is an uninterrupted stretch of railway track, without divergence or convergence.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/NetElement"
+   },
+   "belongsToSubPackage": "topology",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "lengthOfNetLinearElement",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the distance along the LinearElement's track centre line.",
+     "label": "length of net linear element",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/length"
+     }
+    },
+    {
+     "intId": 3,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementGauge",
+   "info": "Defines the inner distance between two rails, e.g. 1432 for EU-standard-rails",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSections",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element sections",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 2,
+     "name": "gauge",
+     "enumType": "NominalTrackGauges",
+     "info": "defines different track gauges",
+     "label": "Gauge"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementGeometry",
+   "info": "Defines the geometry of the linear element centre line as a list of parametrised curves. The geometry is smooth; no discontinuities in azimuth or inclination.",
+   "belongsToSubPackage": "geometry",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "linearElement",
+     "reference": "LinearElement",
+     "info": "reference to the corresponding LinearElement",
+     "label": "LinearElement "
+    },
+    {
+     "intId": 3,
+     "name": "horizontalAlignments",
+     "composition": "HorizontalSegment",
+     "multiplicity": "1..*",
+     "ordered": "byIndex",
+     "info": "Defines a sequence of geometric primitives, i.e. arc, line or clothoid, that compose this track geometry",
+     "label": "Horizontal Alignments"
+    },
+    {
+     "intId": 4,
+     "name": "verticalAlignments",
+     "composition": "VerticalSegment",
+     "multiplicity": "1..*",
+     "ordered": "byIndex",
+     "info": "Defines a sequence of geometric primitives, i.e. arc, line or clothoid, that compose this track geometry",
+     "label": "Vertical Alignments"
+    },
+    {
+     "intId": 5,
+     "name": "cantPoints",
+     "composition": "CantPoint",
+     "multiplicity": "0..*",
+     "ordered": "byIndex",
+     "info": "Defines the cant points along the linear element. The linear element must be completely defined, at least at beginning and end. Empty means undefined",
+     "label": "Cant Points"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementLoadingGauge",
+   "info": "Defines linear element loading gauge on the track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSections",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element sections",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 2,
+     "name": "loadingGaugeType",
+     "enumType": "LoadingGaugeType",
+     "info": "Defining the loading gauge profile of a train (refer to LOC&PAS TSI). see ss026, 7.5.1.68 M_LOADINGGAUGE",
+     "label": "Loading Gauge Type",
+     "subsetName": "M_LOADINGGAUGE"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementSection",
+   "info": "Defines adirected linear object (with a linear extension) located on a LinearElement",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/LinearElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "onElement",
+     "reference": "LinearElement",
+     "info": "Specifies the linear element a section belongs to.",
+     "label": "on element"
+    },
+    {
+     "intId": 2,
+     "name": "startOffsetFromOrigin",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the start offset from the origin",
+     "label": "start offset from origin"
+    },
+    {
+     "intId": 3,
+     "name": "endOffsetFromOrigin",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the end offset from the origin",
+     "label": "end offset from the origin"
+    },
+    {
+     "intId": 4,
+     "name": "appliesInBothDirections",
+     "dataType": "boolean",
+     "info": "Defines if the section applies in both directions",
+     "label": "applies in both directions"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementSpeedProfile",
+   "info": "Defines the permitted speeds for a linear element in both directions",
+   "belongsToSubPackage": "PropertiesArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "linearElement",
+     "reference": "LinearElement",
+     "info": "reference to the corresponding LinearElement",
+     "label": "LinearElement "
+    },
+    {
+     "intId": 3,
+     "name": "sameDirProfile",
+     "composition": "SpeedProfile",
+     "info": "Defines the speed profile valid in the same direction as the Linear element",
+     "label": "Same Direction Profile"
+    },
+    {
+     "intId": 4,
+     "name": "oppositeDirProfile",
+     "composition": "SpeedProfile",
+     "multiplicity": "0..1",
+     "info": "Defines the applicable speed profile for the opposite direction of travel with reference to linear element. valid in the opposite direction as the Linear Element. Skip if the same in both directions.",
+     "label": "Opposite Direction Profile"
+    }
+   ]
+  },
+  {
+   "name": "NationalBorder",
+   "info": "Defines a border point is used to separate the railway network due to different reasons. Typical examples are country borders, the change of owning infrastructure manager or the border of a station",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topologicalCoordinate",
+     "composition": "TopologicalCoordinate",
+     "info": "defines the location on linear element",
+     "label": "Topological Coordinate"
+    },
+    {
+     "intId": 3,
+     "name": "fromCountryCode",
+     "dataType": "string",
+     "formatNote": "NN -> the country code in the form of two-letter system of ISO 3166-1",
+     "info": "Defines the from country code for the national border in the direction of linear element",
+     "label": "From Country Code"
+    },
+    {
+     "intId": 4,
+     "name": "toCountryCode",
+     "dataType": "string",
+     "formatNote": "NN -> the country code in the form of two-letter system of ISO 3166-1",
+     "info": "Defines the to country code for the national border in the direction of linear element",
+     "label": "To Country Code"
+    },
+    {
+     "intId": 5,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "NetAreaReference",
+   "info": "Represents an area reference in the network.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/NetBasicReference"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "includes",
+     "composition": "NetLinearReference",
+     "multiplicity": "1..*",
+     "info": "List of linear references included in an network area reference.",
+     "label": "includes list of linear references"
+    }
+   ]
+  },
+  {
+   "name": "NetLinearReference",
+   "info": "Defines a linked path on the topology",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/NetBasicReference"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "startsAt",
+     "composition": "NetPointReference",
+     "info": "Definesthe starting point of a linear reference",
+     "label": "starts at"
+    },
+    {
+     "intId": 2,
+     "name": "endsAt",
+     "composition": "NetPointReference",
+     "info": "Specifies the ending point of a linear reference",
+     "label": "ends at"
+    },
+    {
+     "intId": 3,
+     "name": "hasSequence",
+     "reference": "LinearElement",
+     "multiplicity": "0..*",
+     "ordered": "byIndex",
+     "info": "The ordered sequence of topological linear elements which create a linear net reference.",
+     "label": "has sequence"
+    }
+   ]
+  },
+  {
+   "name": "NetPointReference",
+   "info": "Represents a point reference in the network.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/NetBasicReference"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "hasTopoCoordinate",
+     "composition": "TopologicalCoordinate",
+     "info": "Defines the topological coordinate of a network point reference",
+     "label": "has topological coordinate"
+    },
+    {
+     "intId": 2,
+     "name": "appliesToDirection",
+     "enumType": "OrientationDirections",
+     "info": "The direction relative to the origin of the linear element towards the point reference applies",
+     "label": "applies to direction"
+    }
+   ]
+  },
+  {
+   "name": "NetRelation",
+   "info": "Defines a relation between two elements.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/Feature"
+   },
+   "belongsToSubPackage": "topology",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "elementA",
+     "reference": "LinearElement",
+     "info": "References the first linear element in an oriented relation.",
+     "label": "Element A"
+    },
+    {
+     "intId": 3,
+     "name": "elementB",
+     "reference": "LinearElement",
+     "info": "References the second linear element in an oriented relation.",
+     "label": "Element B"
+    },
+    {
+     "intId": 4,
+     "name": "isOnOriginOfElementA",
+     "dataType": "boolean",
+     "info": "Determines if the position of the topological element A in a relation is the origin of element A.",
+     "label": "is on origin of element A"
+    },
+    {
+     "intId": 5,
+     "name": "isOnOriginOfElementB",
+     "dataType": "boolean",
+     "info": "Determines if the position of the topological element B in a relation is the origin of element B.",
+     "label": "is on origin of element B"
+    }
+   ]
+  },
+  {
+   "name": "OperationalPoint",
+   "info": "An operational point (OP) means any location for train service operations, where train services may begin and end or change route, and where passenger or freight services may be provided; operational point also means any location at boundaries between Member States or infrastructure managers. In https://eur-lex.europa.eu/eli/reg_impl/2019/773/oj 2.1.2 Principal locations (stations, yards, junctions, freight terminals).",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "uopid",
+     "dataType": "string",
+     "formatNote": "CCAAAAAAAAAA\nThe first part  CC  is the country code in two-letter system of ISO.  \nThe second part is alphanumeric OP code within the MS. \nFor example, an OP code could be current abbreviation of name used in route books.\nIn case of borders point, the code is to be selected in the corresponding list in annex 5.1",
+     "info": "Code composed of country code and alphanumeric operational point code.",
+     "label": "Unique OP ID",
+     "ontology": {
+      "subPropertyOf": [
+       "http://data.europa.eu/949/opGenericDataParameter",
+       "http://purl.org/dc/terms/identifier"
+      ]
+     }
+    },
+    {
+     "intId": 2,
+     "name": "opName",
+     "dataType": "string",
+     "info": "Name normally related to the town or village or to traffic control purpose.",
+     "label": "Name of operational point",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/opGenericDataParameter"
+     }
+    },
+    {
+     "intId": 3,
+     "name": "travelTimeMeasurementPoints",
+     "composition": "TravelTimeMeasurementPoint",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defined to measure/define timestamps for passing trains. Stopping-timingPoints can be found via platforms.platformEdges.stopLocations and timingPoint.stopLocation",
+     "label": "Travel Time Measurement Points"
+    },
+    {
+     "intId": 4,
+     "name": "opType",
+     "enumType": "OperationalPointTypes",
+     "info": "Defines the Type of operational point in relation to the dominating operational functions.",
+     "label": "Type of operational point",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/opGenericObjParameter"
+     }
+    },
+    {
+     "intId": 5,
+     "name": "platforms",
+     "composition": "Platform",
+     "multiplicity": "0..*",
+     "ordered": "byIndex",
+     "info": "Defines the sequence (one after the another) of platforms according to the real location, so neighbours are the same in array and reality",
+     "label": "Platforms"
+    }
+   ]
+  },
+  {
+   "name": "PermittedBrakingDistance",
+   "info": "Defines max allowed braking distance for a list of linear element sections",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSections",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "Defines the set of linear element sections composing the application area",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 2,
+     "name": "distance",
+     "dataType": "uint32",
+     "unit": "m",
+     "info": "Defines the applicable permitted braking distance",
+     "label": "Distance"
+    },
+    {
+     "intId": 3,
+     "name": "byEmergencyBrake",
+     "dataType": "boolean",
+     "info": "Whether the permitted braking distance is to be achieved with the Service Brake or Emergency Brake. True if Braking is to be achieved using Emergency brake ; False if braking is to be achieved by service brake",
+     "label": "By Emergency Brake"
+    },
+    {
+     "intId": 4,
+     "name": "gradientValue",
+     "dataType": "int32",
+     "unit": "permill",
+     "info": "Defines the gradient value. Required Resolution is 0.1 permill; positiv: uphill, negative: downhill",
+     "label": "Gradient Value",
+     "exp": -1,
+     "subsetName": "G_New_Gradient"
+    },
+    {
+     "intId": 5,
+     "name": "sameDir",
+     "dataType": "boolean",
+     "info": "Defines the usage direction of the linear element ;true: active in same direction as linear element, false: active in opposite direction",
+     "label": "Same Direction"
+    }
+   ]
+  },
+  {
+   "name": "Platform",
+   "info": "Defines the object platform",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "platformEdges",
+     "composition": "PlatformEdge",
+     "multiplicity": "1..*",
+     "info": "composes of platform edges",
+     "label": "Platform Edges"
+    }
+   ]
+  },
+  {
+   "name": "PlatformEdge",
+   "info": "Platform for the purpose of RINF is understood as a platform edge. A platform concerns only the part of the structure neighbouring to the track (interfaced with trains).",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "platformId",
+     "dataType": "string",
+     "info": "Unique platform edge identification or unique platform edge number within an Operational Point.",
+     "label": "Identification of platform",
+     "ontology": {
+      "subPropertyOf": [
+       "http://data.europa.eu/949/platformDataParameter",
+       "http://purl.org/dc/terms/identifier"
+      ]
+     }
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "linearReference",
+     "composition": "NetLinearReference",
+     "info": "composes of linked path",
+     "label": "Linear Reference"
+    },
+    {
+     "intId": 4,
+     "name": "stopLocations",
+     "reference": "StopLocation",
+     "multiplicity": "1..*",
+     "ordered": "byKey",
+     "info": "Defines the stop locations. Add only, if stopLocation can be used on that PlatformEdge for passenger/freight exchange",
+     "label": "Stop Locations"
+    },
+    {
+     "intId": 5,
+     "name": "platformHeight",
+     "enumType": "PlatformHeights",
+     "info": "Distance between the upper surface of platform and running surface of the neighbouring track. It is the nominal value expressed in millimetres.",
+     "label": "Height of platform",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/platformObjParameter"
+     }
+    }
+   ]
+  },
+  {
+   "name": "PropertiesArea",
+   "info": "Defines the container properties area within INFRA Domain",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "paVersionTimestamp",
+     "dataType": "timestamp",
+     "info": "version information of the properties-area which is valid since timestamp",
+     "label": "PaVersionTimestamp"
+    },
+    {
+     "intId": 4,
+     "name": "gauge",
+     "enumType": "NominalTrackGauges",
+     "info": "Defines the default gauge in the area. Deviations are covered in linearElementGauges",
+     "label": "Gauge"
+    },
+    {
+     "intId": 5,
+     "name": "loadingGaugeTypes",
+     "enumType": "LoadingGaugeType",
+     "multiplicity": "0..*",
+     "info": "Defines a list of supported loading gauges per default",
+     "label": "Loading Gauge Types"
+    },
+    {
+     "intId": 6,
+     "name": "defaultVoltage",
+     "enumType": "EnergySupplySystems",
+     "info": "defines default Voltage",
+     "label": "Default Voltage"
+    },
+    {
+     "intId": 7,
+     "name": "defaultMaxCurrent",
+     "dataType": "uint32",
+     "unit": "A",
+     "info": "Defines the deafult maximun current for the section of track. Used in ATO & ETCS.packet40",
+     "label": "Default Max Current"
+    },
+    {
+     "intId": 8,
+     "name": "linearElementSpeedProfiles",
+     "composition": "LinearElementSpeedProfile",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "composes of linear element speed profiles",
+     "label": "LinearElement SpeedProfiles"
+    },
+    {
+     "intId": 9,
+     "name": "linearElementGauges",
+     "composition": "LinearElementGauge",
+     "multiplicity": "0..*",
+     "info": "composes of linear element gauges",
+     "label": "LinearElement Gauges"
+    },
+    {
+     "intId": 10,
+     "name": "linearElementLoadingGauges",
+     "composition": "LinearElementLoadingGauge",
+     "multiplicity": "0..*",
+     "info": "composes of linear element loading gauges",
+     "label": "LinearElement LoadingGauges"
+    },
+    {
+     "intId": 11,
+     "name": "trackConditions",
+     "composition": "TrackCondition",
+     "multiplicity": "0..*",
+     "info": "composes of track conditions",
+     "label": "Track Conditions"
+    },
+    {
+     "intId": 12,
+     "name": "currentLimitations",
+     "composition": "CurrentLimitation",
+     "multiplicity": "0..*",
+     "info": "composes of current limitation",
+     "label": "Current Limitations"
+    },
+    {
+     "intId": 13,
+     "name": "permittedBrakingDistances",
+     "composition": "PermittedBrakingDistance",
+     "multiplicity": "0..*",
+     "info": "composes of permitted braking distances",
+     "label": "Permitted Braking Distances"
+    },
+    {
+     "intId": 14,
+     "name": "tractionSystems",
+     "composition": "TractionSystem",
+     "multiplicity": "0..*",
+     "info": "composes of traction systems",
+     "label": "Traction Systems"
+    },
+    {
+     "intId": 15,
+     "name": "dynamicBrakeForceInhibitionAreas",
+     "composition": "LinearElementSection",
+     "multiplicity": "0..*",
+     "info": "composes of areas with Dynamic Brake force inhibition",
+     "label": "DynamicBrakeForceInhibitionAreas"
+    },
+    {
+     "intId": 16,
+     "name": "limitedDynamicBrakeForces",
+     "composition": "LimitedDynamicBrakeForce",
+     "multiplicity": "0..*",
+     "info": "composes of areas with limited Dynamic Brake force",
+     "label": "Limited Dynamic Brake Forces"
+    }
+   ]
+  },
+  {
+   "name": "SampledGeometryArea",
+   "info": "Defines the container sampled geometry area within INFRA Domain",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "sgaVersionTimestamp",
+     "dataType": "timestamp",
+     "info": "version information of the samples geometry area which is valid since timestamp",
+     "label": "SgaVersionTimestamp"
+    },
+    {
+     "intId": 4,
+     "name": "sampledLinearElementGeometries",
+     "composition": "SampledLinearElementGeometry",
+     "multiplicity": "1..*",
+     "ordered": "byKey",
+     "info": "composes of sampled linear element geometries",
+     "label": "SampledLinearElementGeometries"
+    }
+   ]
+  },
+  {
+   "name": "SampledLinearElementGeometry",
+   "info": "Defines the container sampled linear element geometry within INFRA Domain",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "linearElement",
+     "reference": "LinearElement",
+     "info": "reference to the corresponding LinearElement",
+     "label": "LinearElement "
+    },
+    {
+     "intId": 3,
+     "name": "slopes",
+     "composition": "SlopeSamplePoint",
+     "multiplicity": "1..*",
+     "ordered": "byIndex",
+     "info": "composes of slope sample points",
+     "label": "Slopes"
+    },
+    {
+     "intId": 4,
+     "name": "curves",
+     "composition": "CurveSamplePoint",
+     "multiplicity": "1..*",
+     "ordered": "byIndex",
+     "info": "composes of curve sample points",
+     "label": "Curves"
+    },
+    {
+     "intId": 5,
+     "name": "cants",
+     "composition": "CantSamplePoint",
+     "multiplicity": "1..*",
+     "ordered": "byIndex",
+     "info": "composes of cant sample points",
+     "label": "Cants"
+    }
+   ]
+  },
+  {
+   "name": "SegmentProfile",
+   "info": "Defines a Segment Profile along a Linear Element",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "nidSP",
+     "dataType": "uint32",
+     "info": "defines national identifier for the segment profile",
+     "label": "Segment Profile Identity",
+     "key": "local",
+     "subsetName": "NID_SP"
+    },
+    {
+     "intId": 2,
+     "name": "onLinearElement",
+     "reference": "LinearElement",
+     "info": "reference to the corresponding linear elemen",
+     "label": "on linear element"
+    },
+    {
+     "intId": 3,
+     "name": "eoaOffset",
+     "dataType": "uint32",
+     "unit": "cm",
+     "info": "defines End of Authority EoA offset for the segment profile",
+     "label": "End of Authority Offset",
+     "subsetName": "D_EoA_Offset"
+    },
+    {
+     "intId": 4,
+     "name": "atotsInstance",
+     "composition": "AtoTSInstance",
+     "info": "Defines the ATO-TS instance to which the SP belongs",
+     "label": "ATO-TS Instance"
+    },
+    {
+     "intId": 5,
+     "name": "adjacentAtotsInstance",
+     "composition": "AtoTSInstance",
+     "multiplicity": "0..1",
+     "info": "defines the adjacent ATO-TS to which the SP belongs",
+     "label": "Adjacent ATO-TS Instance"
+    }
+   ]
+  },
+  {
+   "name": "SlipCrossing",
+   "info": "Defines the physical track asset Slip Crossing ; 2 instances switch point define a single slip crossing and 4 instances of switch point defined a double slip crossing ; Reversal time is the maximum of known reversal times of switches. If the reversal time of at least one switch in the slip point is unknown, the reversal time of the slip point is unknown as well.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "switches",
+     "reference": "Switch",
+     "multiplicity": "0..*",
+     "formatNote": "SlipCrossing can only reference two or four switches for single slip crossing and double slip crossing respectively",
+     "info": "Consists of simple points",
+     "label": "Switches"
+    },
+    {
+     "intId": 3,
+     "name": "crossing",
+     "reference": "Crossing",
+     "info": "Consists of crossing",
+     "label": "Crossing"
+    },
+    {
+     "intId": 4,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "SlopeSamplePoint",
+   "info": "Defines the Slope (gradient) of the track at a given location on the track.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/SampledGeometrySegment"
+   },
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "samplePointSlope",
+     "dataType": "int32",
+     "unit": "permill",
+     "info": "Defines the vertical slope at pos, between the horizon and the track centre line. Viewed in the direction of the LinearElement. Positive for rising slope and negative for falling slope.",
+     "label": "Sample Point Slope",
+     "exp": -1
+    }
+   ]
+  },
+  {
+   "name": "SpecificStaticSpeedLimit",
+   "info": "Defines the specific static speed profile for a section of track",
+   "belongsToSubPackage": "PropertiesArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "absolutePositiveSpeed",
+     "dataType": "uint32",
+     "unit": "km/h",
+     "info": "Defines the absolute Positive Speed associated to a train category",
+     "label": "AbsolutePositiveSpeed",
+     "subsetName": "V_DIFF"
+    },
+    {
+     "intId": 2,
+     "name": "speedLimitCategory",
+     "composition": "SpeedLimitCategory",
+     "info": "defines different specific speed limit categories",
+     "label": "SpeedLimitCategory"
+    }
+   ]
+  },
+  {
+   "name": "SpeedLimitCategory",
+   "info": "Defines the different applicable speed limit categories on the sections of track",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "otherCategoryReplacesCantDeficiencySSP",
+     "enumType": "OtherSpecificStaticSpeedProfileCategory",
+     "multiplicity": "0..1",
+     "info": "is of type other Category Replaces Cant Deficiency SSP",
+     "label": "Other Category Replaces Cant Deficiency SSP"
+    },
+    {
+     "intId": 2,
+     "name": "otherCategoryDoesNotReplaceCantDeficiencySSP",
+     "enumType": "OtherSpecificStaticSpeedProfileCategory",
+     "multiplicity": "0..1",
+     "info": "is of type other Category Replaces Cant Deficiency SSP",
+     "label": "Other Category Does Not Replace Cant Deficiency SSP"
+    },
+    {
+     "intId": 3,
+     "name": "cantDeficiencyCategory",
+     "enumType": "CantDeficiencies",
+     "multiplicity": "0..1",
+     "info": "is of type Cant Deficiency Category",
+     "label": "Cant Deficiency Category",
+     "subsetName": "NC_CDTRAIN"
+    }
+   ]
+  },
+  {
+   "name": "SpeedProfile",
+   "info": "Defines the different applicable speed profiles on the sections of track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "staticSpeedProfile",
+     "composition": "StaticSpeedLimit",
+     "multiplicity": "1..*",
+     "info": "composes of static speed profiles",
+     "label": "Static Speed Profile"
+    },
+    {
+     "intId": 2,
+     "name": "axleLoadSpeedProfiles",
+     "composition": "AxleLoadSpeedProfile",
+     "multiplicity": "0..*",
+     "info": "composes of axle load speed profiles",
+     "label": "Axle Load Speed Profiles"
+    }
+   ]
+  },
+  {
+   "name": "StaticSpeedLimit",
+   "info": "Defines the static speed profile for a section of linear element or segment profile",
+   "belongsToSubPackage": "PropertiesArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "pos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "Pos"
+    },
+    {
+     "intId": 2,
+     "name": "speed",
+     "dataType": "uint32",
+     "unit": "km/h",
+     "info": "Defines the applicable speed for the section of track",
+     "label": "Speed",
+     "subsetName": [
+      "V_STATIC",
+      "V_TRAIN"
+     ]
+    },
+    {
+     "intId": 3,
+     "name": "specificStaticSpeedLimits",
+     "composition": "SpecificStaticSpeedLimit",
+     "multiplicity": "0..*",
+     "info": "composes of specific static speed profiles",
+     "label": "Specific Static Speed Limits"
+    },
+    {
+     "intId": 4,
+     "name": "trainEndApplicability",
+     "enumType": "TrainEndApplicability",
+     "info": "Indicates if a speed limit given for a profile element is to be applied until the front of the train (no train length delay) or the end of the train (train length delay) has left the element.",
+     "label": "Train End Applicability",
+     "subsetName": "Q_FRONT"
+    }
+   ]
+  },
+  {
+   "name": "StopLocation",
+   "info": "Defines the stop locations",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "netPointReference",
+     "composition": "NetPointReference",
+     "info": "Defines position on LinearElement",
+     "label": "NetPointReference"
+    },
+    {
+     "intId": 3,
+     "name": "stopTrainLimit",
+     "composition": "StopTrainLimit",
+     "multiplicity": "0..1",
+     "info": "composes of stop train limits",
+     "label": "Stop Train Limit"
+    },
+    {
+     "intId": 4,
+     "name": "trainLoadType",
+     "enumType": "TrainLoadType",
+     "info": "composes of train load types",
+     "label": "Train Load Type"
+    },
+    {
+     "intId": 5,
+     "name": "doorOpeningSide",
+     "enumType": "DoorOpeningSide",
+     "info": "defines different train opening sides",
+     "label": "Door Opening Side"
+    },
+    {
+     "intId": 6,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "StopTrainLimit",
+   "info": "Defines the different stop limits for train on the track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "trainMaxLength",
+     "dataType": "uint32",
+     "unit": "m",
+     "info": "Defines the maximum train length associated with stop train limit. use zero if not defined",
+     "label": "Train Max Length",
+     "ontology": {
+      "subPropertyOf": "http://data.europa.eu/949/length"
+     }
+    },
+    {
+     "intId": 2,
+     "name": "trainMaxAxles",
+     "dataType": "uint32",
+     "info": "Defines the maximum train axles associated with stop train limit. use zero if not defined",
+     "label": "Train Max Axles"
+    },
+    {
+     "intId": 3,
+     "name": "trainMaxWagons",
+     "dataType": "uint32",
+     "info": "Defines the maximum train wagons associated with stope train limit. including Locomotives, use zero if not defined",
+     "label": "Train Max Wagons"
+    },
+    {
+     "intId": 4,
+     "name": "trainMaxSize",
+     "enumType": "TrainSize",
+     "info": "Defines the size of train applicable for this stop train limit. use undefinedTrainSize if not defined",
+     "label": "Train Max Size"
+    }
+   ]
+  },
+  {
+   "name": "Switch",
+   "info": "A unit of track comprising two fixed rails (stock rails) and two movable rails (switch rails) used to direct vehicles from one track to another track.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "reversalTime",
+     "dataType": "uint32",
+     "multiplicity": "0..1",
+     "unit": "s",
+     "info": "Defines the time in seconds to switch from one position to the other",
+     "label": "Reversal Time",
+     "exp": -1
+    },
+    {
+     "intId": 3,
+     "name": "leftBranch",
+     "reference": "NetRelation",
+     "info": "NetRelation referencing the left side of the switch in the facing direction of the switch",
+     "label": "Left Branch"
+    },
+    {
+     "intId": 4,
+     "name": "rightBranch",
+     "reference": "NetRelation",
+     "info": "NetRelation referencing the right side of the switch in the facing direction of the switch",
+     "label": "Right Branch"
+    },
+    {
+     "intId": 5,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "TPActiveObject",
+   "info": "Defines a functional object infront of which a TimingPoint is located and active",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "etcsMarker",
+     "reference": "ETCSMarker",
+     "multiplicity": "0..1",
+     "info": "refers to ETCS marker",
+     "label": "ETCS Marker"
+    },
+    {
+     "intId": 2,
+     "name": "stopLocation",
+     "reference": "StopLocation",
+     "multiplicity": "0..1",
+     "info": "refers to stop location",
+     "label": "Stop Location"
+    },
+    {
+     "intId": 3,
+     "name": "timeMeasurePoint",
+     "reference": "TravelTimeMeasurementPoint",
+     "multiplicity": "0..1",
+     "info": "refers to travel time measurement point",
+     "label": "Time Measure Point"
+    }
+   ]
+  },
+  {
+   "name": "TimingPoint",
+   "info": "Defines a fixed point on the infrastructure",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topologicalCoordinate",
+     "composition": "TopologicalCoordinate",
+     "info": "defines the location on linear element",
+     "label": "Topological Coordinate"
+    },
+    {
+     "intId": 3,
+     "name": "activeObject",
+     "composition": "TPActiveObject",
+     "info": "Defines the functional object infront of which a TimingPoint is located and is active",
+     "label": "Active Object"
+    },
+    {
+     "intId": 4,
+     "name": "nidTP",
+     "dataType": "uint32",
+     "info": "defines national identifier for the timing point",
+     "label": "NID_TP",
+     "key": "local",
+     "subsetName": "NID_TP"
+    },
+    {
+     "intId": 5,
+     "name": "tpName",
+     "dataType": "string",
+     "info": "User-friendly name for the timing point",
+     "label": "Tp Name",
+     "subsetName": "X_TEXT"
+    },
+    {
+     "intId": 6,
+     "name": "stopLocationTolerance",
+     "enumType": "StopLocationTolerance",
+     "info": "Defines the required stopping tolerance for a Timing Point",
+     "label": "Stop Location To lerance"
+    },
+    {
+     "intId": 7,
+     "name": "stoppingPointReachDistance",
+     "enumType": "StopLocationTolerance",
+     "info": "Defines the distance from a stopping point to consider it as reached.",
+     "label": "Stopping Point Reach Distance"
+    }
+   ]
+  },
+  {
+   "name": "TopoArea",
+   "info": "Defines a container for rail network topology",
+   "belongsToSubPackage": "topology",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "taVersionTimestamp",
+     "dataType": "timestamp",
+     "info": "version information of the topo-area which is valid since timestamp",
+     "label": "TaVersionTimestamp"
+    },
+    {
+     "intId": 3,
+     "name": "linearElements",
+     "composition": "LinearElement",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "composes of linear elements = Edges in the graph",
+     "label": "Linear Elements"
+    },
+    {
+     "intId": 4,
+     "name": "netRelations",
+     "composition": "NetRelation",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "composes of net relations = links between edges in the graph",
+     "label": "Net Relations"
+    },
+    {
+     "intId": 5,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    }
+   ]
+  },
+  {
+   "name": "TopologicalCoordinate",
+   "info": "Defines a topological coordinate on the track",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "onLinearElement",
+     "reference": "LinearElement",
+     "info": "is positioned on linear element",
+     "label": "on linear element"
+    },
+    {
+     "intId": 2,
+     "name": "offsetFromOrigin",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated NetElement",
+     "label": "offset from origin"
+    }
+   ]
+  },
+  {
+   "name": "TrackCondition",
+   "info": "Defines the TrackConditions for a section of track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSections",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element sections",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 2,
+     "name": "conditionType",
+     "enumType": "TransmittedTrackConditions",
+     "info": "defines different track conditions",
+     "label": "Condition Type"
+    }
+   ]
+  },
+  {
+   "name": "TrackUsageArea",
+   "info": "Defines the preferred usage specification, most usable for TMS and planning",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "tuaVersionTimestamp",
+     "dataType": "timestamp",
+     "info": "version information of the track usage area which is valid since timestamp",
+     "label": "TuaVersionTimestamp"
+    },
+    {
+     "intId": 4,
+     "name": "secondaryTracks",
+     "reference": "LinearElement",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of secondary tracks. All tracks except 'shuntingTracks' and 'secondaryTracks' are 'mainTracks'",
+     "label": "Secondary Tracks"
+    },
+    {
+     "intId": 5,
+     "name": "shuntingTracks",
+     "reference": "LinearElement",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of shunting tracks. All tracks except 'shuntingTracks' and 'secondaryTracks' are 'mainTracks'",
+     "label": "Shunting Tracks"
+    },
+    {
+     "intId": 6,
+     "name": "preferredSameDir",
+     "reference": "LinearElement",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of linear elements with preferred direction identical to the Linear element-Direction",
+     "label": "Preferred Same Direction"
+    },
+    {
+     "intId": 7,
+     "name": "preferredOppositeDir",
+     "reference": "LinearElement",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the list of linear elements with preferred direction opposite to the Linear element-Direction",
+     "label": "Preferred Opposite Direction"
+    }
+   ]
+  },
+  {
+   "name": "TractionSystem",
+   "info": "Defines the equipped traction system on the track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "linearElementSections",
+     "composition": "LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "composes of linear element sections",
+     "label": "LinearElement Sections"
+    },
+    {
+     "intId": 2,
+     "name": "voltageType",
+     "enumType": "EnergySupplySystems",
+     "info": "defines the different voltage types",
+     "label": "Voltage Type"
+    }
+   ]
+  },
+  {
+   "name": "TrainDetectionSystem",
+   "info": "Safety system used to detect the presence of vehicles on the railway track.",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topologicalCoordinate",
+     "composition": "TopologicalCoordinate",
+     "info": "defines the location on linear element",
+     "label": "Topological Coordinate"
+    },
+    {
+     "intId": 3,
+     "name": "trainDetectionSystemType",
+     "enumType": "TrainDetectionSystems",
+     "info": "Defines the train detection system applicable for the TVPS",
+     "label": "Type of train detection system",
+     "ontology": {
+      "subPropertyOf": [
+       "http://data.europa.eu/949/otherTrainDetectionSystemsObjParameter",
+       "http://data.europa.eu/949/vehicleTypeTechnicalObjectCharacteristic"
+      ]
+     }
+    },
+    {
+     "intId": 4,
+     "name": "referenceDir",
+     "enumType": "OrientationDirections",
+     "info": "Reference direction corresponding to linear element in which the train detector detects trains: same/opposite for axleCounter, both for trackCircuit",
+     "label": "Reference Dir"
+    }
+   ]
+  },
+  {
+   "name": "TravelTimeMeasurementPoint",
+   "info": "a preciselydefined location within an OperationalPoint where the actual passing time of a train is measured or recorded. It provides a topological reference used for running-time calculation, performance monitoring, and comparison with planned timetable data.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topologicalCoordinate",
+     "composition": "TopologicalCoordinate",
+     "info": "defines the location on linear element",
+     "label": "Topological Coordinate"
+    }
+   ]
+  },
+  {
+   "name": "Tunnel",
+   "info": "A railway tunnel is an excavation or a construction around the track provided to allow the railway to pass for example higher land, buildings or water.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "tunnelIdentification",
+     "dataType": "string",
+     "info": "Unique tunnel identification or unique tunnel number within Member State",
+     "label": "Tunnel identification",
+     "ontology": {
+      "subPropertyOf": [
+       "http://data.europa.eu/949/tunnelDataParameter",
+       "http://purl.org/dc/terms/identifier"
+      ]
+     }
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "tunnelTubes",
+     "composition": "TunnelTube",
+     "multiplicity": "1..*",
+     "info": "composes of tunnel tubes",
+     "label": "Tunnel Tubes"
+    }
+   ]
+  },
+  {
+   "name": "TunnelTube",
+   "info": "Defines the tunnels tubes within a tunnel. Main Use-Case identify emergency management with rescue into neighbour tube",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "areaReference",
+     "composition": "NetAreaReference",
+     "info": "composes of track area",
+     "label": "Area Reference"
+    },
+    {
+     "intId": 2,
+     "name": "crossSection",
+     "dataType": "double",
+     "unit": "m2",
+     "info": "Defines the standard Cross section dimensions of a tunnel tube for calculation of air-resistance",
+     "label": "Cross Section"
+    }
+   ]
+  },
+  {
+   "name": "TvpSection",
+   "info": "Defines the train vacancy proving section",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "linkedArea",
+     "composition": "NetAreaReference",
+     "info": "composes of linked area",
+     "label": "Linked Area"
+    },
+    {
+     "intId": 4,
+     "name": "trainDetectors",
+     "reference": "TrainDetectionSystem",
+     "multiplicity": "0..*",
+     "info": "Defines the set of train detectors",
+     "label": "Train Detectors"
+    }
+   ]
+  },
+  {
+   "name": "Underpass",
+   "info": "Defines the civil infrastructure object Underpass",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/InfrastructureElement"
+   },
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "areaReference",
+     "composition": "NetAreaReference",
+     "info": "composes of track area",
+     "label": "Area Reference"
+    }
+   ]
+  },
+  {
+   "name": "VerticalArc",
+   "info": "Defines the geometric primitive for a vertical arc.",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/VerticalGeometrySegment"
+   },
+   "belongsToSubPackage": "geometry",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "slope",
+     "dataType": "int32",
+     "unit": "permill",
+     "info": "Defines the vertical slope at pos, between the horizon and the track centre line. Viewed in the direction of the linear element. Positive for rising slope and negative for falling slope.",
+     "label": "Slope",
+     "exp": -1
+    },
+    {
+     "intId": 3,
+     "name": "radius",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines the radius at pos",
+     "label": "Radius"
+    },
+    {
+     "intId": 4,
+     "name": "arcType",
+     "enumType": "ArcType",
+     "info": "Defines the type of Arc. For more details see https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcAlignmentVerticalSegmentTypeEnum.htm",
+     "label": "Arc Type"
+    }
+   ]
+  },
+  {
+   "name": "VerticalLine",
+   "info": "Defines the geometric primitive for vertical linear segment",
+   "ontology": {
+    "subClassOf": "http://data.europa.eu/949/VerticalGeometrySegment"
+   },
+   "belongsToSubPackage": "geometry",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementGeometryPos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "position on the associated LinearElement",
+     "label": "ElementGeometryPos"
+    },
+    {
+     "intId": 2,
+     "name": "slope",
+     "dataType": "int32",
+     "unit": "permill",
+     "info": "Defines the vertical slope at pos, between the horizon and the track centre line. Viewed in the direction of the linear element. Positive for rising slope and negative for falling slope.",
+     "label": "Slope",
+     "exp": -1
+    }
+   ]
+  },
+  {
+   "name": "VerticalSegment",
+   "info": "Defines a curvi-linear geometric primitive, mathematically represents a vertical segment of the centre line of a railway track",
+   "belongsToSubPackage": "geometry",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "verticalSegmentLine",
+     "composition": "VerticalLine",
+     "multiplicity": "0..1",
+     "info": "composes of lines",
+     "label": "Vertical Segment Line"
+    },
+    {
+     "intId": 2,
+     "name": "verticalSegmentArc",
+     "composition": "VerticalArc",
+     "multiplicity": "0..1",
+     "info": "composes of arcs",
+     "label": "Vertical Segment Arc"
+    }
+   ]
+  }
+ ],
+ "enums": [
+  {
+   "name": "ArcType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "circularArc",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/arc-type/circularArc"
+    },
+    {
+     "intId": 1,
+     "name": "parabola",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/arc-type/parabola"
+    }
+   ]
+  },
+  {
+   "name": "BaliseGroupFunction",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "location",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/location"
+    },
+    {
+     "intId": 1,
+     "name": "sessionManagement",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/sessionManagement"
+    },
+    {
+     "intId": 2,
+     "name": "networkRegistration",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/networkRegistration"
+    },
+    {
+     "intId": 3,
+     "name": "levelTransitionAnnouncement",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/levelTransitionAnnouncement"
+    },
+    {
+     "intId": 4,
+     "name": "stopIfInStaffResponsible",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/stopIfInStaffResponsible"
+    },
+    {
+     "intId": 5,
+     "name": "temporarySpeedRestrictionAnnouncement",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/temporarySpeedRestrictionAnnouncement"
+    },
+    {
+     "intId": 6,
+     "name": "border",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/border"
+    },
+    {
+     "intId": 7,
+     "name": "handover",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/handover"
+    },
+    {
+     "intId": 8,
+     "name": "infill",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/infill"
+    },
+    {
+     "intId": 9,
+     "name": "temporarySpeedRestrictionRevocation",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/temporarySpeedRestrictionRevocation"
+    },
+    {
+     "intId": 10,
+     "name": "sessionEstablishment",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/sessionEstablishment"
+    },
+    {
+     "intId": 11,
+     "name": "sessionTermination",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/sessionTermination"
+    },
+    {
+     "intId": 12,
+     "name": "levelTransitionOrder",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/levelTransitionOrder"
+    },
+    {
+     "intId": 13,
+     "name": "stopIfInShunting",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/stopIfInShunting"
+    },
+    {
+     "intId": 14,
+     "name": "levelTransitionCancellation",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/levelTransitionCancellation"
+    },
+    {
+     "intId": 15,
+     "name": "reference",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/balise-group-function/reference"
+    }
+   ]
+  },
+  {
+   "name": "CantDeficiencies",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "CD_80mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/80"
+    },
+    {
+     "intId": 1,
+     "name": "CD_100mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/100"
+    },
+    {
+     "intId": 2,
+     "name": "CD_130mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/130"
+    },
+    {
+     "intId": 3,
+     "name": "CD_150mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/150"
+    },
+    {
+     "intId": 4,
+     "name": "CD_165mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/165"
+    },
+    {
+     "intId": 5,
+     "name": "CD_180mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/180"
+    },
+    {
+     "intId": 6,
+     "name": "CD_210mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/210"
+    },
+    {
+     "intId": 7,
+     "name": "CD_225mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/225"
+    },
+    {
+     "intId": 8,
+     "name": "CD_245mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/245"
+    },
+    {
+     "intId": 9,
+     "name": "CD_275mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/275"
+    },
+    {
+     "intId": 10,
+     "name": "CD_300mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/cant-deficiencies/300"
+    }
+   ]
+  },
+  {
+   "name": "DoorOpeningSide",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "noSide",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/door-opening-side/noSide"
+    },
+    {
+     "intId": 1,
+     "name": "leftSide",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/door-opening-side/leftSide"
+    },
+    {
+     "intId": 2,
+     "name": "rightSide",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/door-opening-side/rightSide"
+    },
+    {
+     "intId": 3,
+     "name": "bothSides",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/door-opening-side/bothSides"
+    }
+   ]
+  },
+  {
+   "name": "EnergySupplySystems",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "vtNotFitted",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/notFitted"
+    },
+    {
+     "intId": 1,
+     "name": "vtAC25kv50Hz",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/AC10"
+    },
+    {
+     "intId": 2,
+     "name": "vtAC15kv16_7Hz",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/AC20"
+    },
+    {
+     "intId": 3,
+     "name": "vtDC3kv",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/DC30"
+    },
+    {
+     "intId": 4,
+     "name": "vtDC1_5kv",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/DC40"
+    },
+    {
+     "intId": 5,
+     "name": "vtDC600v",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/DC80"
+    },
+    {
+     "intId": 6,
+     "name": "vtDC650v",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/DC70"
+    },
+    {
+     "intId": 7,
+     "name": "vtDC750v",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/DC60"
+    },
+    {
+     "intId": 8,
+     "name": "vtDC850v",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/energy-supply-systems/DC90"
+    }
+   ]
+  },
+  {
+   "name": "LoadCapabilityLineCategories",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "AL_A",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/10"
+    },
+    {
+     "intId": 1,
+     "name": "AL_HS17",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/230"
+    },
+    {
+     "intId": 2,
+     "name": "AL_B1",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/20"
+    },
+    {
+     "intId": 3,
+     "name": "AL_B2",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/30"
+    },
+    {
+     "intId": 4,
+     "name": "AL_C2",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/40"
+    },
+    {
+     "intId": 5,
+     "name": "AL_C3",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/50"
+    },
+    {
+     "intId": 6,
+     "name": "AL_C4",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/60"
+    },
+    {
+     "intId": 7,
+     "name": "AL_D2",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/70"
+    },
+    {
+     "intId": 8,
+     "name": "AL_D3",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/80"
+    },
+    {
+     "intId": 9,
+     "name": "AL_D4",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/90"
+    },
+    {
+     "intId": 10,
+     "name": "AL_D4XL",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/100"
+    },
+    {
+     "intId": 11,
+     "name": "AL_E4",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/110"
+    },
+    {
+     "intId": 12,
+     "name": "AL_E5",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/load-capability-line-categories/120"
+    }
+   ]
+  },
+  {
+   "name": "LoadingGaugeType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "loadingGaugeIncompatible",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/loading-gauge-type/loadingGaugeIncompatible"
+    },
+    {
+     "intId": 1,
+     "name": "g1",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/loading-gauge-type/g1"
+    },
+    {
+     "intId": 2,
+     "name": "gA",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/loading-gauge-type/gA"
+    },
+    {
+     "intId": 3,
+     "name": "gB",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/loading-gauge-type/gB"
+    },
+    {
+     "intId": 4,
+     "name": "gC",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/loading-gauge-type/gC"
+    }
+   ]
+  },
+  {
+   "name": "NominalTrackGauges",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "tg750mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/10"
+    },
+    {
+     "intId": 1,
+     "name": "tg760mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/80"
+    },
+    {
+     "intId": 2,
+     "name": "tg1000mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/20"
+    },
+    {
+     "intId": 3,
+     "name": "tg1435mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/30"
+    },
+    {
+     "intId": 4,
+     "name": "tg1520mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/40"
+    },
+    {
+     "intId": 5,
+     "name": "tg1524mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/50"
+    },
+    {
+     "intId": 6,
+     "name": "tg1600mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/60"
+    },
+    {
+     "intId": 7,
+     "name": "tg1668mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/nominal-track-gauges/70"
+    }
+   ]
+  },
+  {
+   "name": "OperationalPointTypes",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "station",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/10"
+    },
+    {
+     "intId": 1,
+     "name": "depot",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/50"
+    },
+    {
+     "intId": 2,
+     "name": "siding",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/130"
+    },
+    {
+     "intId": 3,
+     "name": "trainTechnicalServices",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/60"
+    },
+    {
+     "intId": 4,
+     "name": "shuntingYard",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/100"
+    },
+    {
+     "intId": 5,
+     "name": "borderPoint",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/90"
+    },
+    {
+     "intId": 6,
+     "name": "technicalChange",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/110"
+    },
+    {
+     "intId": 7,
+     "name": "domesticBorderPoint",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/140"
+    },
+    {
+     "intId": 8,
+     "name": "freightTerminal",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/40"
+    },
+    {
+     "intId": 9,
+     "name": "junction",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/80"
+    },
+    {
+     "intId": 10,
+     "name": "passengerStop",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/70"
+    },
+    {
+     "intId": 11,
+     "name": "passengerTerminal",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/30"
+    },
+    {
+     "intId": 12,
+     "name": "switch",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/120"
+    },
+    {
+     "intId": 13,
+     "name": "smallStation",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/op-types/20"
+    }
+   ]
+  },
+  {
+   "name": "OrientationDirections",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "both",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/orientations/02"
+    },
+    {
+     "intId": 1,
+     "name": "same",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/orientations/00"
+    },
+    {
+     "intId": 2,
+     "name": "opposite",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/orientations/01"
+    }
+   ]
+  },
+  {
+   "name": "OtherSpecificStaticSpeedProfileCategory",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "SSSP_freightTrainP",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/other-specific-static-speed-profile-category/SSSP_freightTrainP"
+    },
+    {
+     "intId": 1,
+     "name": "SSSP_freightTrainG",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/other-specific-static-speed-profile-category/SSSP_freightTrainG"
+    },
+    {
+     "intId": 2,
+     "name": "SSSP_passengerTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/other-specific-static-speed-profile-category/SSSP_passengerTrain"
+    }
+   ]
+  },
+  {
+   "name": "PlatformHeights",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "PH_150mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/50"
+    },
+    {
+     "intId": 1,
+     "name": "PH_200mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/60"
+    },
+    {
+     "intId": 2,
+     "name": "PH_220mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/220"
+    },
+    {
+     "intId": 3,
+     "name": "PH_250mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/10"
+    },
+    {
+     "intId": 4,
+     "name": "PH_280mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/20"
+    },
+    {
+     "intId": 5,
+     "name": "PH_300mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/300"
+    },
+    {
+     "intId": 6,
+     "name": "PH_350mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/350"
+    },
+    {
+     "intId": 7,
+     "name": "PH_380mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/380"
+    },
+    {
+     "intId": 8,
+     "name": "PH_550mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/30"
+    },
+    {
+     "intId": 9,
+     "name": "PH_580mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/70"
+    },
+    {
+     "intId": 10,
+     "name": "PH_680mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/80"
+    },
+    {
+     "intId": 11,
+     "name": "PH_685mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/90"
+    },
+    {
+     "intId": 12,
+     "name": "PH_730mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/100"
+    },
+    {
+     "intId": 13,
+     "name": "PH_760mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/40"
+    },
+    {
+     "intId": 14,
+     "name": "PH_840mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/110"
+    },
+    {
+     "intId": 15,
+     "name": "PH_900mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/120"
+    },
+    {
+     "intId": 16,
+     "name": "PH_915mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/130"
+    },
+    {
+     "intId": 17,
+     "name": "PH_920mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/140"
+    },
+    {
+     "intId": 18,
+     "name": "PH_960mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/150"
+    },
+    {
+     "intId": 19,
+     "name": "PH_1100mm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/platform-heights/160"
+    }
+   ]
+  },
+  {
+   "name": "StopLocationTolerance",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "T_10cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_10cm"
+    },
+    {
+     "intId": 1,
+     "name": "T_20cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_20cm"
+    },
+    {
+     "intId": 2,
+     "name": "T_30cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_30cm"
+    },
+    {
+     "intId": 3,
+     "name": "T_40cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_40cm"
+    },
+    {
+     "intId": 4,
+     "name": "T_50cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_50cm"
+    },
+    {
+     "intId": 5,
+     "name": "T_1m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_1m"
+    },
+    {
+     "intId": 6,
+     "name": "T_150cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_150cm"
+    },
+    {
+     "intId": 7,
+     "name": "T_2m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_2m"
+    },
+    {
+     "intId": 8,
+     "name": "T_250cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_250cm"
+    },
+    {
+     "intId": 9,
+     "name": "T_3m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_3m"
+    },
+    {
+     "intId": 10,
+     "name": "T_5m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_5m"
+    },
+    {
+     "intId": 11,
+     "name": "T_750cm",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_750cm"
+    },
+    {
+     "intId": 12,
+     "name": "T_10m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_10m"
+    },
+    {
+     "intId": 13,
+     "name": "T_15m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_15m"
+    },
+    {
+     "intId": 14,
+     "name": "T_20m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_20m"
+    },
+    {
+     "intId": 15,
+     "name": "T_25m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_25m"
+    },
+    {
+     "intId": 16,
+     "name": "T_30m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_30m"
+    },
+    {
+     "intId": 17,
+     "name": "T_50m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_50m"
+    },
+    {
+     "intId": 18,
+     "name": "T_75m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_75m"
+    },
+    {
+     "intId": 19,
+     "name": "T_100m",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_100m"
+    },
+    {
+     "intId": 20,
+     "name": "T_Undefined",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_Undefined"
+    }
+   ]
+  },
+  {
+   "name": "TrainDetectionSystems",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "axleCounter",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-detection/20"
+    },
+    {
+     "intId": 1,
+     "name": "trackCircuitBorder",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-detection/10"
+    }
+   ]
+  },
+  {
+   "name": "TrainEndApplicability",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "lengthDelay",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-end-applicability/lengthDelay"
+    },
+    {
+     "intId": 1,
+     "name": "noLengthDelay",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-end-applicability/noLengthDelay"
+    }
+   ]
+  },
+  {
+   "name": "TrainLoadType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "passengerTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-load-type/passengerTrain"
+    },
+    {
+     "intId": 1,
+     "name": "freightTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-load-type/freightTrain"
+    },
+    {
+     "intId": 2,
+     "name": "anyTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-load-type/anyTrain"
+    }
+   ]
+  },
+  {
+   "name": "TrainSize",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "undefinedTrainSize",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-size/undefinedTrainSize"
+    },
+    {
+     "intId": 1,
+     "name": "shortTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-size/shortTrain"
+    },
+    {
+     "intId": 2,
+     "name": "halfTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-size/halfTrain"
+    },
+    {
+     "intId": 3,
+     "name": "fullTrain",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/train-size/fullTrain"
+    }
+   ]
+  },
+  {
+   "name": "TransitionType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "clothoidCurve",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/clothoidCurve"
+    },
+    {
+     "intId": 1,
+     "name": "biquadraticParabola",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/biquadraticParabola"
+    },
+    {
+     "intId": 2,
+     "name": "blossCurve",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/blossCurve"
+    },
+    {
+     "intId": 3,
+     "name": "cosineCurve",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/cosineCurve"
+    },
+    {
+     "intId": 4,
+     "name": "cubicParabola",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/cubicParabola"
+    },
+    {
+     "intId": 5,
+     "name": "sineCurve",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/sineCurve"
+    },
+    {
+     "intId": 6,
+     "name": "wienerBogen",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transition-type/wienerBogen"
+    }
+   ]
+  },
+  {
+   "name": "TransmittedTrackConditions",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "powerlessLowPanthograph",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-a"
+    },
+    {
+     "intId": 1,
+     "name": "powerlessMainSwitch",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-b"
+    },
+    {
+     "intId": 2,
+     "name": "airTightness",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-e"
+    },
+    {
+     "intId": 3,
+     "name": "soundHorn",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-h"
+    },
+    {
+     "intId": 4,
+     "name": "nonStoppingArea",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-c"
+    },
+    {
+     "intId": 5,
+     "name": "tunnelStoppingArea",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-g"
+    },
+    {
+     "intId": 6,
+     "name": "bigMetalMasses",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/bigMetalMasses"
+    },
+    {
+     "intId": 7,
+     "name": "radioHole",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/5-8-12-d"
+    },
+    {
+     "intId": 8,
+     "name": "switchOffRegenerativeBrake",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/switchOffRegenerativeBrake"
+    },
+    {
+     "intId": 9,
+     "name": "switchOffEddyCurrentBrakeForServiceBrake",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/switchOffEddyCurrentBrakeForServiceBrake"
+    },
+    {
+     "intId": 10,
+     "name": "switchOffEddyCurrentBrakeForEmergencyBrake",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/switchOffEddyCurrentBrakeForEmergencyBrake"
+    },
+    {
+     "intId": 11,
+     "name": "switchOffMagneticShoeBrake",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/transmitted-tcs/switchOffMagneticShoeBrake"
+    }
+   ]
+  }
+ ]
+}

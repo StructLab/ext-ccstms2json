@@ -1,0 +1,55 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-lrbgps: <http://data.europa.eu/949/concepts/lrbg-position-status/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-lrbgps:LRBGPositionStatus a skos:ConceptScheme ;
+    rdfs:label "LRBG Position Status"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "Defines the status of the Start of Mission (SoM) position report in relation to the Last Relevant Balise Group (LRBG)."@en ;
+    skos:hiddenLabel "CCSTMS_LRBGPositionStatus"@en ;
+    skos:prefLabel "LRBG Position Status"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-lrbgps:invalidPosition a skos:Concept ;
+    rdfs:comment "Invalid train position referred to an LRBG."@en ;
+    skos:hiddenLabel "CCSTMS_invalidPosition_0"@en ;
+    skos:inScheme era-lrbgps:LRBGPositionStatus ;
+    skos:notation "invalidPosition"^^xsd:string ;
+    skos:prefLabel "Invalid Position"@en ;
+    skos:topConceptOf era-lrbgps:LRBGPositionStatus .
+
+era-lrbgps:noPosition a skos:Concept ;
+    rdfs:comment "No train position referred to an LRBG."@en ;
+    skos:hiddenLabel "CCSTMS_noPosition_2"@en ;
+    skos:inScheme era-lrbgps:LRBGPositionStatus ;
+    skos:notation "noPosition"^^xsd:string ;
+    skos:prefLabel "No Position"@en ;
+    skos:topConceptOf era-lrbgps:LRBGPositionStatus .
+
+era-lrbgps:validPosition a skos:Concept ;
+    rdfs:comment "Valid train position referred to an LRBG."@en ;
+    skos:hiddenLabel "CCSTMS_validPosition_1"@en ;
+    skos:inScheme era-lrbgps:LRBGPositionStatus ;
+    skos:notation "validPosition"^^xsd:string ;
+    skos:prefLabel "Valid Position"@en ;
+    skos:topConceptOf era-lrbgps:LRBGPositionStatus .

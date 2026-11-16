@@ -1,0 +1,46 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-stasd: <http://data.europa.eu/949/concepts/stasd/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-stasd:SwitchableTracksideAssetSectionDriveability a skos:ConceptScheme ;
+    rdfs:label "Switchable Trackside Asset Section Driveability"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    skos:hiddenLabel "CCSTMS_SwitchableTracksideAssetSectionDriveability"@en ;
+    skos:prefLabel "Switchable Trackside Asset Section Driveability"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-stasd:full a skos:Concept ;
+    rdfs:comment "driveable"@en ;
+    skos:hiddenLabel "CCSTMS_full_0"@en ;
+    skos:inScheme era-stasd:SwitchableTracksideAssetSectionDriveability ;
+    skos:notation "full"^^xsd:string ;
+    skos:prefLabel "Full"@en ;
+    skos:topConceptOf era-stasd:SwitchableTracksideAssetSectionDriveability .
+
+era-stasd:none a skos:Concept ;
+    rdfs:comment "non-driveable"@en ;
+    skos:hiddenLabel "CCSTMS_none_1"@en ;
+    skos:inScheme era-stasd:SwitchableTracksideAssetSectionDriveability ;
+    skos:notation "none"^^xsd:string ;
+    skos:prefLabel "None"@en ;
+    skos:topConceptOf era-stasd:SwitchableTracksideAssetSectionDriveability .

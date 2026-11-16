@@ -1,0 +1,1000 @@
+{
+ "domain": "TP",
+ "structs": [
+  {
+   "name": "AreaOfControl",
+   "info": "Defines the Area of Control of a system like Traffic CS, MBS/APS, TMS, PE/EAL, ....",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "area",
+     "composition": "infra.NetAreaReference",
+     "info": "composes of linked area",
+     "label": "Area"
+    },
+    {
+     "intId": 4,
+     "name": "controlledBy",
+     "composition": "Controller",
+     "multiplicity": "0..1",
+     "info": "composes of controller controlling the Area of Control",
+     "label": "Controlled By"
+    }
+   ]
+  },
+  {
+   "name": "ControlledInfraElement",
+   "info": "Defines Controlled Infra Element",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "switchConfigurationData",
+     "reference": "SwitchConfigurationData",
+     "multiplicity": "0..1",
+     "info": "Reference to the Configuration for the Switch",
+     "label": "SwitchConfigurationData"
+    },
+    {
+     "intId": 2,
+     "name": "tvpSection",
+     "reference": "TvpSectionConfigurationData",
+     "multiplicity": "0..1",
+     "info": "Reference to the Configuration for the Tvp Section",
+     "label": "TVP Section"
+    },
+    {
+     "intId": 3,
+     "name": "trainDetector",
+     "reference": "TrainDetectionSystemConfigurationData",
+     "multiplicity": "0..1",
+     "info": "Reference to the Configuration for the Train Detection System",
+     "label": "Train Detector"
+    },
+    {
+     "intId": 4,
+     "name": "levelCrossing",
+     "reference": "LxConfigurationData",
+     "multiplicity": "0..1",
+     "info": "Reference to the Configuration for the Level Crossing",
+     "label": "Level Crossing"
+    }
+   ]
+  },
+  {
+   "name": "Controller",
+   "info": "Defines a controller",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "iPAddress",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "defines the ip address for communication purposes",
+     "label": "IP Address"
+    },
+    {
+     "intId": 3,
+     "name": "rastaId",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "defines EULYNX RaSTA identifier for the field object controller",
+     "label": "RASTA-ID"
+    },
+    {
+     "intId": 4,
+     "name": "portNumber",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "defines the port number for communication purposes",
+     "label": "Port Number"
+    },
+    {
+     "intId": 5,
+     "name": "eulynxBaseline",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "defines EULYNX baseline for the filed object controller",
+     "label": "EULYNX Baseline"
+    },
+    {
+     "intId": 6,
+     "name": "ocVersion",
+     "dataType": "uint32",
+     "multiplicity": "0..1",
+     "info": "defines the EULYNX field object controller version",
+     "label": "Object-Controller Version "
+    }
+   ]
+  },
+  {
+   "name": "ETCSMarker",
+   "info": "Defines the ETCS Marker Boards",
+   "belongsToSubPackage": "FunctionalArea",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global",
+     "sameKeyAs": "infra.ETCSMarker"
+    },
+    {
+     "intId": 2,
+     "name": "markerType",
+     "enumType": "MarkerFunction",
+     "info": "Defines the type of marker board associated",
+     "label": "Marker Type"
+    },
+    {
+     "intId": 3,
+     "name": "acknowledgementDistance",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "info": "Defines the distance at which the driver should acknowledge a visual/audio indication on the DMI",
+     "label": "Acknowledgement Distance"
+    },
+    {
+     "intId": 4,
+     "name": "maxTransitionSpeed",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "info": "Defines the maximum allowed speed during transition",
+     "label": "Maximum Transition Speed"
+    },
+    {
+     "intId": 5,
+     "name": "offsetTransitionUnreachable",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "info": "Definesa distance from LRBG that indicates the point beyond which a transition becomes unreachable.",
+     "label": "OffsetTransitionUnreachable"
+    }
+   ]
+  },
+  {
+   "name": "FieldObjectController",
+   "info": "Defines a Field Object Controller",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "controlledInfraElements",
+     "composition": "ControlledInfraElement",
+     "multiplicity": "1..*",
+     "info": "Reference to the controller infrastructure elements",
+     "label": "Controlled Infra Elements"
+    },
+    {
+     "intId": 3,
+     "name": "belongsToAoc",
+     "reference": "AreaOfControl",
+     "info": "defines the Area of Control to which this field object controller belongs to",
+     "label": "BelongsToAoc"
+    },
+    {
+     "intId": 4,
+     "name": "controlledBy",
+     "composition": "Controller",
+     "info": "composes of controller controlling the Field Object Controller",
+     "label": "Controlled By"
+    }
+   ]
+  },
+  {
+   "name": "FoulingSection",
+   "info": "Defines an fouling section for a section of track",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "linearReferences",
+     "composition": "infra.LinearElementSection",
+     "multiplicity": "1..*",
+     "info": "References Linear Element Sections",
+     "label": "Linear References"
+    },
+    {
+     "intId": 4,
+     "name": "dependencies",
+     "reference": "FoulingSection",
+     "multiplicity": "1..*",
+     "info": "is dependent on the fouling sections",
+     "label": "Dependencies",
+     "ontology": {
+      "propertyType": "http://www.w3.org/2002/07/owl#IrreflexiveProperty"
+     }
+    }
+   ]
+  },
+  {
+   "name": "GenericIOConfigurationData",
+   "info": "Defines the Configuration Data for Generic IO",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "conTFlashPeriod",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Defines the Configurable time for flash period",
+     "label": "Flash Period Time"
+    },
+    {
+     "intId": 2,
+     "name": "outputChannelConfigurationData",
+     "composition": "OutputChannelConfigurationData",
+     "multiplicity": "0..*",
+     "info": "Composes output channel configuration data",
+     "label": "OutputChannelConfigurationData"
+    },
+    {
+     "intId": 3,
+     "name": "inputChannelConfigurationData",
+     "composition": "InputChannelConfigurationData",
+     "multiplicity": "0..*",
+     "info": "Composes input channel configuration data",
+     "label": "InputChannelConfigurationData"
+    }
+   ]
+  },
+  {
+   "name": "InputChannelConfigurationData",
+   "info": "Defines the Configuration Data for the Input Channel",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "type",
+     "dataType": "string",
+     "info": "Defines the type of input channel configuration data",
+     "label": "Type"
+    },
+    {
+     "intId": 3,
+     "name": "physicalOutputMonitored",
+     "dataType": "boolean",
+     "info": "Defines weather physical output is monitored",
+     "label": "PhysicalOutputMonitored"
+    },
+    {
+     "intId": 4,
+     "name": "conTMessageDelayTime",
+     "dataType": "boolean",
+     "info": "The Message delay time Con_t_Message_Delay_Time shall be configurable for each Input Channel, both, for report of switching-on and switching-off, for special applications.",
+     "label": "Message Delay Time"
+    },
+    {
+     "intId": 5,
+     "name": "conTMaxSwitchingPeriod",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Con_tmax_Switching_Period is a period, which needs to be configured individually for each Input Channel, which is monitored Antivalent or Equivalent",
+     "label": "Max Switching Period Time"
+    },
+    {
+     "intId": 6,
+     "name": "debouncingTime",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Debouncing_Time needs to be configured and followed individually for each action of both, switching-on and switching-off, of an Input Channel",
+     "label": "Debouncing Time"
+    }
+   ]
+  },
+  {
+   "name": "LxConfigurationData",
+   "info": "Defines Configuration Data for Level Crossing",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "levelCrossing",
+     "composition": "infra.LevelCrossing",
+     "info": "Composes of infra level crossing",
+     "label": "Level Crossing"
+    },
+    {
+     "intId": 2,
+     "name": "conTmaxClosureTimer",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Defines the permissible duration for the activation of the level crossing. The time value is configurable and specific to a particular location.",
+     "label": "Maximum Closure Timer"
+    },
+    {
+     "intId": 3,
+     "name": "conTPdiLossDeactivationTimer",
+     "dataType": "uint32",
+     "info": "Defines the delay to deactivate the Level Crossing protection facility after an activation caused by an interrupted Safe communication protocol connection.The time value is configurable and specific to a particular location.",
+     "label": "PDI Loss Deactivation Timer"
+    },
+    {
+     "intId": 4,
+     "name": "closureTimeUsed",
+     "dataType": "boolean",
+     "info": "Defines theusage of the Closure Time",
+     "label": "Use Closure Time"
+    },
+    {
+     "intId": 5,
+     "name": "preActivation",
+     "dataType": "boolean",
+     "info": "Definesthe usage of the activation type Pre-Activation.",
+     "label": "Pre Activation"
+    },
+    {
+     "intId": 6,
+     "name": "detectionElementUsed",
+     "dataType": "boolean",
+     "info": "Defines the usage of Detection elements",
+     "label": "Used Detection Elements"
+    },
+    {
+     "intId": 7,
+     "name": "detectionElementsNumber",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Defines the number of detection elements used",
+     "label": "Number of Detection Elements"
+    },
+    {
+     "intId": 8,
+     "name": "indexDetectionElemtents",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "info": "Defines the index of the detection elements",
+     "label": "Index of Detection Elements"
+    },
+    {
+     "intId": 9,
+     "name": "obstacleDetectionUsed",
+     "dataType": "boolean",
+     "info": "Defines the usage of obstacle detection",
+     "label": "Used Obstacle Detection"
+    },
+    {
+     "intId": 10,
+     "name": "lcIsolationFunctionUsed",
+     "dataType": "boolean",
+     "info": "Defines the isolation function used",
+     "label": "Used Level Crossing Isolation Function"
+    },
+    {
+     "intId": 11,
+     "name": "localOperationHandover",
+     "dataType": "boolean",
+     "info": "Presence of local operation handover",
+     "label": "LocalOperationHandover"
+    },
+    {
+     "intId": 12,
+     "name": "indexLocalOperationsHandovers",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "info": "Index of local operations handovers",
+     "label": "IndexLocalOperationsHandovers"
+    },
+    {
+     "intId": 13,
+     "name": "triggersCriticalFailure",
+     "dataType": "string",
+     "multiplicity": "0..*",
+     "info": "List of triggers resulting in a critical failure",
+     "label": "TriggersCriticalFailure"
+    },
+    {
+     "intId": 14,
+     "name": "triggersNonCriticalFailure",
+     "dataType": "string",
+     "multiplicity": "0..*",
+     "info": "List of triggers resulting in a non-critical failure.",
+     "label": "TriggersNonCriticalFailure"
+    },
+    {
+     "intId": 15,
+     "name": "localDeactivationRequests",
+     "dataType": "boolean",
+     "info": "Presence of local (de)activation requests",
+     "label": "LocalDeactivationRequests"
+    },
+    {
+     "intId": 16,
+     "name": "indexLocalDeactivationRequests",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "unit": "s",
+     "info": "Index of local (de)activation requests.",
+     "label": "IndexLocalDeactivationRequests"
+    }
+   ]
+  },
+  {
+   "name": "OutputChannelConfigurationData",
+   "info": "Defines the Configuration of the Output Channel",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "type",
+     "dataType": "string",
+     "info": "Defines the type of output channel configuration data",
+     "label": "Type"
+    },
+    {
+     "intId": 3,
+     "name": "physicalOutputMonitored",
+     "dataType": "boolean",
+     "info": "Defines weather physical output is monitored",
+     "label": "PhysicalOutputMonitored"
+    },
+    {
+     "intId": 4,
+     "name": "flashing",
+     "dataType": "boolean",
+     "info": "Defines weather it is flashing",
+     "label": "Flashing"
+    },
+    {
+     "intId": 5,
+     "name": "conTActivationDelayOn",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "The activation delay period Con_t_Activation_Delay shall be configurable for each Output Channel, both, for switching-on and switching-off, for special applications",
+     "label": "Activation Delay Time"
+    },
+    {
+     "intId": 6,
+     "name": "conTActivationDelayOff",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "represents the time value for conTActivationDelay. This is the delay for switching-off the Output Channel.",
+     "label": "Activation Delay Off Time"
+    },
+    {
+     "intId": 7,
+     "name": "conTFlashDutyCycle",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Defines the Configurable flash duty cycle period",
+     "label": "Flash Duty Cycle Time"
+    }
+   ]
+  },
+  {
+   "name": "ProtectedInfraElement",
+   "info": "Defines Protected Infra Element",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "switch",
+     "reference": "infra.Switch",
+     "multiplicity": "0..1",
+     "info": "References the infra switch",
+     "label": "Switch"
+    },
+    {
+     "intId": 2,
+     "name": "slipCrossing",
+     "reference": "infra.SlipCrossing",
+     "multiplicity": "0..1",
+     "info": "References the infra slip crossing",
+     "label": "Slip Crossing"
+    },
+    {
+     "intId": 3,
+     "name": "crossing",
+     "reference": "infra.Crossing",
+     "multiplicity": "0..1",
+     "info": "References the infra crossing",
+     "label": "Crossing"
+    },
+    {
+     "intId": 4,
+     "name": "derailer",
+     "reference": "infra.Derailer",
+     "multiplicity": "0..1",
+     "info": "References the infra derailer",
+     "label": "Derailer"
+    },
+    {
+     "intId": 5,
+     "name": "levelCrossing",
+     "reference": "infra.LevelCrossing",
+     "multiplicity": "0..1",
+     "info": "References the infra level crossing",
+     "label": "Level Crossing"
+    }
+   ]
+  },
+  {
+   "name": "SwitchConfigurationData",
+   "info": "Defines Configuration Data for Switch",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "switch",
+     "composition": "infra.Switch",
+     "info": "Composes of infra Switch",
+     "label": "Switch"
+    },
+    {
+     "intId": 2,
+     "name": "conTmaxPointOperation",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Con_tmax_Point_Operation is a configurable timer, starting with the command Moving to the Point machines and defines the max. time span after the Point has to arrive to an End position",
+     "label": "Maximum Point Operation Time"
+    },
+    {
+     "intId": 3,
+     "name": "numberPointMachine",
+     "dataType": "uint32",
+     "info": "Defines the number of point machines",
+     "label": "NumberPointMachine"
+    },
+    {
+     "intId": 4,
+     "name": "unintended",
+     "dataType": "boolean",
+     "info": "Defines weather it candetect and report unintended position",
+     "label": "Unintended"
+    },
+    {
+     "intId": 5,
+     "name": "redrive",
+     "dataType": "boolean",
+     "info": "Defineswhether it is configured to perform redrive",
+     "label": "Redrive"
+    },
+    {
+     "intId": 6,
+     "name": "switchMachineConfiguration",
+     "composition": "SwitchMachineConfiguration",
+     "multiplicity": "1..*",
+     "info": "Composes the Configuration for the Switch machine",
+     "label": "switch Machine Configuration"
+    }
+   ]
+  },
+  {
+   "name": "SwitchMachineConfiguration",
+   "info": "Defines Configuration Data for Switch Machine",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "switchMachineType",
+     "dataType": "string",
+     "info": "Defines the type of switch machine",
+     "label": "SwitchMachineType"
+    },
+    {
+     "intId": 2,
+     "name": "interfaceType",
+     "dataType": "string",
+     "info": "Defines the type of interface for the switch machine",
+     "label": "Interface Type"
+    },
+    {
+     "intId": 3,
+     "name": "crucial",
+     "dataType": "boolean",
+     "info": "Defines for whether it is crucial or non-crucial",
+     "label": "Crucial"
+    }
+   ]
+  },
+  {
+   "name": "SwitchableTracksideAsset",
+   "info": "Defines Switchable Trackside Asset",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "switchableTracksideAssetSections",
+     "composition": "SwitchableTracksideAssetSection",
+     "multiplicity": "1..*",
+     "info": "Composes of Switchable Trackside Asset Sections",
+     "label": "Switchable Trackside Asset Section"
+    },
+    {
+     "intId": 4,
+     "name": "protectedInfraElements",
+     "composition": "ProtectedInfraElement",
+     "info": "Composes of Protected Infra Element",
+     "label": "Protected Infrastructure Elements"
+    },
+    {
+     "intId": 5,
+     "name": "dependenciesType",
+     "enumType": "DependencyType",
+     "info": "defines dependencies between n Switchable Trackside Asset Sections",
+     "label": "Dependencies Type"
+    },
+    {
+     "intId": 6,
+     "name": "switchableTracksideAssetsDependencies",
+     "dataType": "uint32",
+     "multiplicity": "0..*",
+     "info": "contains row-wise bit matrix with column = index of the element in DriveProtectionSectionGroup. 0 means not allowed to use ; 1 means allowed to use for rail traffic. Each line in the matrix contains a valid state of the DriveProtectionSectionGroup ; Use only if DPSDependencyType == Specific",
+     "label": "Switchable Trackside Assets Dependencies"
+    },
+    {
+     "intId": 7,
+     "name": "runTime",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Defines the total time required for the DPS(s) in a DPS Group to switch from one position to the other",
+     "label": "Run Time",
+     "exp": -1
+    }
+   ]
+  },
+  {
+   "name": "SwitchableTracksideAssetSection",
+   "info": "Defines Switchable Trackside Asset Section",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "linearElementSection",
+     "composition": "infra.LinearElementSection",
+     "info": "Composes of the Linear Element Section",
+     "label": "LinearElement Section"
+    },
+    {
+     "intId": 4,
+     "name": "maxFlankProtectionSpeed",
+     "dataType": "uint32",
+     "unit": "km/h",
+     "info": "Defines the Maximum Speed Allowed on the Switchable Trackside Asset when it is set for Flank Protection",
+     "label": "Maximum Flank Protection Speed"
+    }
+   ]
+  },
+  {
+   "name": "TrainDetectionSystemConfigurationData",
+   "info": "Defines Configuration Data for Train Detection System",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "abilityToForceTvpsClear",
+     "dataType": "boolean",
+     "info": "The handling of the ability to force a TVPS to clear in the state disturbed, reason operational according to Variant A and B.Note: The functional differences between these variants is explained in section Eu.TDS.6525",
+     "label": "AbilityToForceTvpsClear"
+    },
+    {
+     "intId": 2,
+     "name": "tvpSectionConfigurationData",
+     "composition": "TvpSectionConfigurationData",
+     "multiplicity": "0..*",
+     "info": "Composes Tvp Section Configuration Data",
+     "label": "TvpSectionConfigurationData"
+    },
+    {
+     "intId": 3,
+     "name": "trainDetectorConfigurationData",
+     "composition": "TrainDetectorConfigurationData",
+     "multiplicity": "0..*",
+     "info": "Composes train detector Configuration Data",
+     "label": "TrainDetectorConfigurationData"
+    }
+   ]
+  },
+  {
+   "name": "TrainDetectorConfigurationData",
+   "info": "Defines Configuration Data for Train Detector",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "trainDetector",
+     "composition": "infra.TrainDetectionSystem",
+     "info": "Composes of infra train detection system",
+     "label": "Train Detector"
+    },
+    {
+     "intId": 2,
+     "name": "directionOfPassing",
+     "dataType": "string",
+     "info": "Defines the passing direction of the train with respect to the train detector.",
+     "label": "DirectionOfPassing"
+    }
+   ]
+  },
+  {
+   "name": "TrainProtection",
+   "info": "Defines the container for all Train Protection Areas within a railway infrastructure system.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "tpArea",
+     "composition": "TrainProtectionArea",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the collection of Train Protection Areas belonging to the railway infrastructure system.",
+     "label": "TP Area"
+    }
+   ]
+  },
+  {
+   "name": "TrainProtectionArea",
+   "info": "Defines Train Protection Area",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "topoArea",
+     "reference": "infra.TopoArea",
+     "info": "reference to the corresponding TopoArea",
+     "label": "Topo Area"
+    },
+    {
+     "intId": 3,
+     "name": "switchableTracksideAssets",
+     "composition": "SwitchableTracksideAsset",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the switchable trackside assets belonging to the Train Protection Area.",
+     "label": "SwitchableTracksideAssets"
+    },
+    {
+     "intId": 4,
+     "name": "allocationSections",
+     "composition": "FoulingSection",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the fouling sections associated with the Train Protection Area.",
+     "label": "Allocation Sections"
+    },
+    {
+     "intId": 5,
+     "name": "fieldObjectControllers",
+     "composition": "FieldObjectController",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the field object controllers associated with the Train Protection Area.",
+     "label": "Field Object Controllers"
+    },
+    {
+     "intId": 6,
+     "name": "areaOfControl",
+     "composition": "AreaOfControl",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the areas of control belonging to the Train Protection Area.",
+     "label": "AreaOfControl"
+    },
+    {
+     "intId": 7,
+     "name": "etcsMarkers",
+     "composition": "ETCSMarker",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the ETCS markers located within the Train Protection Area.",
+     "label": "ETCS Markers"
+    },
+    {
+     "intId": 8,
+     "name": "controllers",
+     "composition": "Controller",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines the controllers associated with the Train Protection Area.",
+     "label": "Controllers"
+    }
+   ]
+  },
+  {
+   "name": "TvpSectionConfigurationData",
+   "info": "Defines Configuration Data for TVP Section",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "tvpSection",
+     "composition": "infra.TvpSection",
+     "info": "Composes of infra tvp section",
+     "label": "TVP Section"
+    },
+    {
+     "intId": 2,
+     "name": "drfcCommandUsed",
+     "dataType": "boolean",
+     "info": "Usage of the DRFC-command per each TVPS and per source of the command (Electronic Interlocking or Maintainer).",
+     "label": "Used Disable restriction to force section commands"
+    },
+    {
+     "intId": 3,
+     "name": "uflCommandUsed",
+     "dataType": "boolean",
+     "info": "Usage of the UFL-command per each TVPS.",
+     "label": "Used Update Filling Level Commands"
+    },
+    {
+     "intId": 4,
+     "name": "permissibleFcModes",
+     "dataType": "string",
+     "info": "Permissible FC-modes per each TVPS and per source of the command (Electronic Interlocking, Maintainer or from internal).",
+     "label": "Permissible Force Section modes"
+    },
+    {
+     "intId": 5,
+     "name": "conTInhibitionTimer",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Configurable delay, defining the duration between the detection of a passing for a TVPS (incoming wheel, outgoing wheel or undefined pattern) and the moment that the state of a TVPS is considered stable. Cd_Cancel is not rejected during inhibition time. Until expiration of this delay, all FC, DRFC and UFL commands to the TVPS are rejected.",
+     "label": "Inhibition Timer"
+    },
+    {
+     "intId": 6,
+     "name": "conTDealyOfNotificationOfAvailability",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Defines a configurable delay of reporting vacant from the Train Detection System to the interlocking, following the state change of a TVPS from occupied to vacant",
+     "label": "Delay of Availability Notification"
+    },
+    {
+     "intId": 7,
+     "name": "conTMaxfcPOrFcPA",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Configurable time, defining the maximum time between detecting a sweeping train and confirmation of a succesful sweeping.",
+     "label": "Max Configurable time"
+    },
+    {
+     "intId": 8,
+     "name": "conTMinfcPOrFcPA",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "a configurable time, which starts with the first detected incomming Wheel.",
+     "label": "Min Configurable Time"
+    },
+    {
+     "intId": 9,
+     "name": "conTTdpDelay",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "configurable delay, defining the duration of a passed TDP and the message, that the TDP is in state TDP not passed.",
+     "label": "Passed TDP Indication Delay"
+    },
+    {
+     "intId": 10,
+     "name": "conTTdpUnidentifiedPatternDelay",
+     "dataType": "uint32",
+     "unit": "s",
+     "info": "Configurable delay, defining the duration after an undefined pattern was detected till the TDP is reported as Disturbed.",
+     "label": "Undefined Pattern Delay"
+    }
+   ]
+  }
+ ],
+ "enums": [
+  {
+   "name": "DependencyType",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "exclusive",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/dependency-type/exclusive"
+    },
+    {
+     "intId": 1,
+     "name": "equivalent",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/dependency-type/equivalent"
+    },
+    {
+     "intId": 2,
+     "name": "specific",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/dependency-type/specific"
+    }
+   ]
+  },
+  {
+   "name": "MarkerFunction",
+   "enumLiterals": [
+    {
+     "intId": 0,
+     "name": "exit",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/marker-function/exit"
+    },
+    {
+     "intId": 1,
+     "name": "entry",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/marker-function/entry"
+    },
+    {
+     "intId": 2,
+     "name": "intermediate",
+     "owl:sameAs": "http://data.europa.eu/949/concepts/marker-function/intermediate"
+    }
+   ]
+  }
+ ]
+}

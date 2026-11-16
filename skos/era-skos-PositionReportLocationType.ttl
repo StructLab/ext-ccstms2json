@@ -1,0 +1,55 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix era-prlt: <http://data.europa.eu/949/concepts/prlt/> .
+
+
+#################################################################
+#
+#    Concept Schemes
+#
+#################################################################
+
+
+era-prlt:PositionReportLocationType a skos:ConceptScheme ;
+    rdfs:label "Position Report Location Type"@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:issued "2026-07-24"^^xsd:date ;
+    rdfs:comment "defines when or under what condition the train must send a position report, corresponding to ETCS variable M_LOC in Subset-026-7."@en ;
+    skos:hiddenLabel "CCSTMS_PositionReportLocationType"@en ;
+    skos:prefLabel "Position Report Location Type"@en .
+
+
+#################################################################
+#
+#    Concept instances
+#
+#################################################################
+
+
+era-prlt:everyLRBG a skos:Concept ;
+    rdfs:comment "The position report is sent every time the train passes a balise group that complies with the Last Relevant Balise Group (LRBG) definition."@en ;
+    skos:hiddenLabel "CCSTMS_everyLRBG_1"@en ;
+    skos:inScheme era-prlt:PositionReportLocationType ;
+    skos:notation "everyLRBG"^^xsd:string ;
+    skos:prefLabel "Every LRBG"@en ;
+    skos:topConceptOf era-prlt:PositionReportLocationType .
+
+era-prlt:noReportOnLRBG a skos:Concept ;
+    rdfs:comment "The train does not send a position report upon passage of a LRBG-compliant balise group."@en ;
+    skos:hiddenLabel "CCSTMS_noReportOnLRBG_2"@en ;
+    skos:inScheme era-prlt:PositionReportLocationType ;
+    skos:notation "noReportOnLRBG"^^xsd:string ;
+    skos:prefLabel "No Report On LRBG"@en ;
+    skos:topConceptOf era-prlt:PositionReportLocationType .
+
+era-prlt:now a skos:Concept ;
+    rdfs:comment "The position report is sent immediately upon receipt of the order."@en ;
+    skos:hiddenLabel "CCSTMS_now_0"@en ;
+    skos:inScheme era-prlt:PositionReportLocationType ;
+    skos:notation "now"^^xsd:string ;
+    skos:prefLabel "Now"@en ;
+    skos:topConceptOf era-prlt:PositionReportLocationType .

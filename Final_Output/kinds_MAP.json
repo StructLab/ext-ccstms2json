@@ -1,0 +1,307 @@
+{
+ "domain": "MAP",
+ "structs": [
+  {
+   "name": "FunctionalElementProjection",
+   "info": "Defines the spatial projection of a functional infrastructure element by associating it with geographic coordinates and their accuracy.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "elementRef",
+     "composition": "FunctionalElementRef",
+     "info": "Defines reference container for which the coodinate is defined",
+     "label": "Element Ref"
+    },
+    {
+     "intId": 2,
+     "name": "x",
+     "dataType": "double",
+     "info": "todo: mapping to each EPSG-code",
+     "label": "X"
+    },
+    {
+     "intId": 3,
+     "name": "y",
+     "dataType": "double",
+     "info": "todo: mapping to each EPSG-code",
+     "label": "Y"
+    },
+    {
+     "intId": 4,
+     "name": "z",
+     "dataType": "double",
+     "info": "todo: mapping to each EPSG-code",
+     "label": "Z"
+    },
+    {
+     "intId": 5,
+     "name": "accX",
+     "dataType": "double",
+     "info": "absolute accuracy as 1sigma. Use 0.0 if not defined",
+     "label": "Acc X"
+    },
+    {
+     "intId": 6,
+     "name": "accY",
+     "dataType": "double",
+     "info": "absolute accuracy as 1sigma. Use 0.0 if not defined",
+     "label": "Acc Y"
+    },
+    {
+     "intId": 7,
+     "name": "accZ",
+     "dataType": "double",
+     "info": "absolute accuracy as 1sigma. Use 0.0 if not defined",
+     "label": "Acc Z"
+    }
+   ]
+  },
+  {
+   "name": "FunctionalElementRef",
+   "info": "Defines a reference to a functional infrastructure element for which a geographic projection is provided.",
+   "union": true,
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "switch",
+     "reference": "infra.Switch",
+     "multiplicity": "0..1",
+     "info": "refers to switch/simple point",
+     "label": "Switch"
+    },
+    {
+     "intId": 2,
+     "name": "etcsMarker",
+     "reference": "infra.ETCSMarker",
+     "multiplicity": "0..1",
+     "info": "refers to ETCS marker",
+     "label": "ETCS Marker"
+    },
+    {
+     "intId": 3,
+     "name": "stopLocation",
+     "reference": "infra.StopLocation",
+     "multiplicity": "0..1",
+     "info": "refers to stop location",
+     "label": "Stop Location"
+    },
+    {
+     "intId": 4,
+     "name": "timingPoint",
+     "reference": "infra.TimingPoint",
+     "multiplicity": "0..1",
+     "info": "Defines a reference to a timing point",
+     "label": "Timing Point"
+    },
+    {
+     "intId": 5,
+     "name": "operationalPoint",
+     "reference": "infra.OperationalPoint",
+     "multiplicity": "0..1",
+     "info": "Defines a reference to an operational point (station, siding etc).",
+     "label": "Operational Point"
+    },
+    {
+     "intId": 6,
+     "name": "balise",
+     "reference": "infra.Balise",
+     "multiplicity": "0..1",
+     "info": "Defines a reference to a functional balise",
+     "label": "Balise"
+    },
+    {
+     "intId": 7,
+     "name": "derailer",
+     "reference": "infra.Derailer",
+     "multiplicity": "0..1",
+     "info": "Defines a reference to a functional derailer",
+     "label": "Derailer"
+    },
+    {
+     "intId": 8,
+     "name": "trainDetector",
+     "reference": "infra.TrainDetectionSystem",
+     "multiplicity": "0..1",
+     "info": "Defines a reference to a train detector",
+     "label": "Train Detector"
+    },
+    {
+     "intId": 9,
+     "name": "bufferStop",
+     "reference": "infra.BufferStop",
+     "multiplicity": "0..1",
+     "info": "Defines a reference to a buffer stop",
+     "label": "Buffer Stop"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementCoordinate",
+   "info": "Defines a coordinate point associated with a position on a LinearElement, including its spatial coordinates and positional accuracy.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "pos",
+     "dataType": "double",
+     "unit": "m",
+     "info": "Defines position on the associated LinearElement",
+     "label": "Pos"
+    },
+    {
+     "intId": 2,
+     "name": "x",
+     "dataType": "double",
+     "info": "Defines the x coordiante value, mapping to each EPSG-code",
+     "label": "X"
+    },
+    {
+     "intId": 3,
+     "name": "y",
+     "dataType": "double",
+     "info": "Defines the y coordiante value, mapping to each EPSG-code",
+     "label": "Y"
+    },
+    {
+     "intId": 4,
+     "name": "z",
+     "dataType": "double",
+     "info": "Defines the z coordiante value, mapping to each EPSG-code",
+     "label": "Z"
+    },
+    {
+     "intId": 5,
+     "name": "accPos",
+     "dataType": "uint32",
+     "unit": "mm",
+     "info": "absolute accuracy as 1sigma. Use 0 if not defined",
+     "label": "Acc Pos"
+    },
+    {
+     "intId": 6,
+     "name": "accX",
+     "dataType": "double",
+     "info": "absolute accuracy as 1sigma. Use 0.0 if not defined",
+     "label": "Acc X"
+    },
+    {
+     "intId": 7,
+     "name": "accY",
+     "dataType": "double",
+     "info": "absolute accuracy as 1sigma. Use 0.0 if not defined",
+     "label": "Acc Y"
+    },
+    {
+     "intId": 8,
+     "name": "accZ",
+     "dataType": "double",
+     "info": "absolute accuracy as 1sigma. Use 0.0 if not defined",
+     "label": "Acc Z"
+    }
+   ]
+  },
+  {
+   "name": "LinearElementProjection",
+   "info": "Defines the geometric projection of a LinearElement by mapping positions along the linear element to spatial coordinates.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "linearElement",
+     "reference": "infra.LinearElement",
+     "info": "reference to the corresponding LinearElement",
+     "label": "LinearElement "
+    },
+    {
+     "intId": 3,
+     "name": "coordinates",
+     "composition": "LinearElementCoordinate",
+     "multiplicity": "2..*",
+     "ordered": "byIndex",
+     "info": "Defines a sequence of coordinates representing a mapping of a linear element",
+     "label": "Coordinates"
+    }
+   ]
+  },
+  {
+   "name": "Map",
+   "info": "Defines Map for an area",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "id",
+     "dataType": "string",
+     "info": "Identity of the object; used for referencing",
+     "key": "global"
+    },
+    {
+     "intId": 2,
+     "name": "name",
+     "dataType": "string",
+     "multiplicity": "0..1",
+     "info": "User-friendly name, only if different from id",
+     "label": "Name"
+    },
+    {
+     "intId": 3,
+     "name": "versionTimestamp",
+     "dataType": "timestamp",
+     "info": "Defines the version information which is valid since timestamp",
+     "label": "Version Timestamp"
+    },
+    {
+     "intId": 4,
+     "name": "areaId",
+     "dataType": "string",
+     "info": "Defines the areaIds for a Map. There could be several maps representing one area",
+     "label": "Area Id"
+    },
+    {
+     "intId": 5,
+     "name": "epsg",
+     "dataType": "uint32",
+     "info": "Defines the applicable EPSG code for the map area. Use 1 for monitor coordinates",
+     "label": "EPSG Code"
+    },
+    {
+     "intId": 6,
+     "name": "linearElementProjections",
+     "composition": "LinearElementProjection",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines container for projections of linearElements on same mapping system",
+     "label": "LinearElement Projections"
+    },
+    {
+     "intId": 7,
+     "name": "functionalElements",
+     "composition": "FunctionalElementProjection",
+     "multiplicity": "0..*",
+     "info": "Defines a container for a reference to a functional element of the infrastructure",
+     "label": "Functional Elements"
+    }
+   ]
+  },
+  {
+   "name": "MapSet",
+   "info": "Defines the container for all map representations belonging to a railway infrastructure system.",
+   "attrs": [
+    {
+     "intId": 1,
+     "name": "maps",
+     "composition": "Map",
+     "multiplicity": "0..*",
+     "ordered": "byKey",
+     "info": "Defines container for all Maps in a system",
+     "label": "Maps"
+    }
+   ]
+  }
+ ],
+ "enums": []
+}
