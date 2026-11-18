@@ -2122,7 +2122,6 @@ infra-sh:BaliseGroup-bgFunction
     sh:message "Der Wert muss einem der CCSTMS-Konzepte von era:BaliseGroupFunction entsprechen."@de ;
     sh:message "La valeur doit correspondre à l'un des concepts CCSTMS de era:BaliseGroupFunction."@fr ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
     sh:severity sh:Violation ;
     .
 

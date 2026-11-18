@@ -4757,7 +4757,6 @@
      "intId": 1,
      "name": "trackToTrainPacket_0",
      "composition": "ETCSTrackToTrainPacket_0",
-     "multiplicity": "0..1",
      "info": "Virtual Balise Cover marker",
      "label": "TrackToTrainPacket_0"
     },
@@ -4765,7 +4764,6 @@
      "intId": 2,
      "name": "trackToTrainPacket_2",
      "composition": "ETCSTrackToTrainPacket_2",
-     "multiplicity": "0..1",
      "info": "System Version order",
      "label": "TrackToTrainPacket_2"
     },
@@ -4773,7 +4771,6 @@
      "intId": 3,
      "name": "trackToTrainPacket_3",
      "composition": "ETCSTrackToTrainPacket_3",
-     "multiplicity": "0..1",
      "info": "National Values",
      "label": "TrackToTrainPacket_3"
     },
@@ -4781,7 +4778,6 @@
      "intId": 4,
      "name": "trackToTrainPacket_5",
      "composition": "ETCSTrackToTrainPacket_5",
-     "multiplicity": "0..1",
      "info": "Linking Information",
      "label": "TrackToTrainPacket_5"
     },
@@ -4789,7 +4785,6 @@
      "intId": 5,
      "name": "trackToTrainPacket_6",
      "composition": "ETCSTrackToTrainPacket_6",
-     "multiplicity": "0..1",
      "info": "Virtual Balise Cover order",
      "label": "TrackToTrainPacket_6"
     },
@@ -4797,7 +4792,6 @@
      "intId": 6,
      "name": "trackToTrainPacket_15",
      "composition": "ETCSTrackToTrainPacket_15",
-     "multiplicity": "0..1",
      "info": "Level 2 Movement Authority",
      "label": "TrackToTrainPacket_15"
     },
@@ -4805,7 +4799,6 @@
      "intId": 7,
      "name": "trackToTrainPacket_16",
      "composition": "ETCSTrackToTrainPacket_16",
-     "multiplicity": "0..1",
      "info": "Repositioning Information",
      "label": "TrackToTrainPacket_16"
     },
@@ -4813,7 +4806,6 @@
      "intId": 8,
      "name": "trackToTrainPacket_21",
      "composition": "ETCSTrackToTrainPacket_21",
-     "multiplicity": "0..1",
      "info": "Gradient Profile",
      "label": "TrackToTrainPacket_21"
     },
@@ -4821,7 +4813,6 @@
      "intId": 9,
      "name": "trackToTrainPacket_27",
      "composition": "ETCSTrackToTrainPacket_27",
-     "multiplicity": "0..1",
      "info": "International Static Speed Profile",
      "label": "TrackToTrainPacket_27"
     },
@@ -4829,7 +4820,6 @@
      "intId": 10,
      "name": "trackToTrainPacket_31",
      "composition": "ETCSTrackToTrainPacket_31",
-     "multiplicity": "0..1",
      "info": "RBC transition order for RBC interfaced to FRMCS only",
      "label": "TrackToTrainPacket_31"
     },
@@ -4837,7 +4827,6 @@
      "intId": 11,
      "name": "trackToTrainPacket_32",
      "composition": "ETCSTrackToTrainPacket_32",
-     "multiplicity": "0..1",
      "info": "Session Management for RBC interfaced to FRMCS only",
      "label": "TrackToTrainPacket_32"
     },
@@ -4845,7 +4834,6 @@
      "intId": 12,
      "name": "trackToTrainPacket_39",
      "composition": "ETCSTrackToTrainPacket_39",
-     "multiplicity": "0..1",
      "info": "Track Condition Change of traction system",
      "label": "TrackToTrainPacket_39"
     },
@@ -4853,7 +4841,6 @@
      "intId": 13,
      "name": "trackToTrainPacket_40",
      "composition": "ETCSTrackToTrainPacket_40",
-     "multiplicity": "0..1",
      "info": "Track Condition Change of allowed current consumption",
      "label": "TrackToTrainPacket_40"
     },
@@ -4861,7 +4848,6 @@
      "intId": 14,
      "name": "trackToTrainPacket_41",
      "composition": "ETCSTrackToTrainPacket_41",
-     "multiplicity": "0..1",
      "info": "Level Transition Order",
      "label": "TrackToTrainPacket_41"
     },
@@ -4869,7 +4855,6 @@
      "intId": 15,
      "name": "trackToTrainPacket_42",
      "composition": "ETCSTrackToTrainPacket_42",
-     "multiplicity": "0..1",
      "info": "Session Management",
      "label": "TrackToTrainPacket_42"
     },
@@ -4877,7 +4862,6 @@
      "intId": 16,
      "name": "trackToTrainPacket_44",
      "composition": "ETCSTrackToTrainPacket_44",
-     "multiplicity": "0..1",
      "info": "Data used by applications outside the ERTMS/ETCS system",
      "label": "TrackToTrainPacket_44"
     },
@@ -4885,7 +4869,6 @@
      "intId": 17,
      "name": "trackToTrainPacket_45",
      "composition": "ETCSTrackToTrainPacket_45",
-     "multiplicity": "0..1",
      "info": "Radio Network registration",
      "label": "TrackToTrainPacket_45"
     },
@@ -4893,7 +4876,6 @@
      "intId": 18,
      "name": "trackToTrainPacket_46",
      "composition": "ETCSTrackToTrainPacket_46",
-     "multiplicity": "0..1",
      "info": "Conditional Level Transition Order",
      "label": "TrackToTrainPacket_46"
     },
@@ -4901,7 +4883,6 @@
      "intId": 19,
      "name": "trackToTrainPacket_49",
      "composition": "ETCSTrackToTrainPacket_49",
-     "multiplicity": "0..1",
      "info": "List of balises for SH Area",
      "label": "TrackToTrainPacket_49"
     },
@@ -4909,7 +4890,6 @@
      "intId": 20,
      "name": "trackToTrainPacket_51",
      "composition": "ETCSTrackToTrainPacket_51",
-     "multiplicity": "0..1",
      "info": "Axle Load Speed Profile",
      "label": "TrackToTrainPacket_51"
     },
@@ -4917,7 +4897,6 @@
      "intId": 21,
      "name": "trackToTrainPacket_52",
      "composition": "ETCSTrackToTrainPacket_52",
-     "multiplicity": "0..1",
      "info": "Permitted Braking Distance Information",
      "label": "TrackToTrainPacket_52"
     },
@@ -4925,7 +4904,6 @@
      "intId": 22,
      "name": "trackToTrainPacket_57",
      "composition": "ETCSTrackToTrainPacket_57",
-     "multiplicity": "0..1",
      "info": "Movement Authority Request Parameters",
      "label": "TrackToTrainPacket_57"
     },
@@ -4933,7 +4911,6 @@
      "intId": 23,
      "name": "trackToTrainPacket_58",
      "composition": "ETCSTrackToTrainPacket_58",
-     "multiplicity": "0..1",
      "info": "Position Report Parameters",
      "label": "TrackToTrainPacket_58"
     },
@@ -4941,7 +4918,6 @@
      "intId": 24,
      "name": "trackToTrainPacket_63",
      "composition": "ETCSTrackToTrainPacket_63",
-     "multiplicity": "0..1",
      "info": "List of Balise Groups in SR Authority",
      "label": "TrackToTrainPacket_63"
     },
@@ -4949,7 +4925,6 @@
      "intId": 25,
      "name": "trackToTrainPacket_64",
      "composition": "ETCSTrackToTrainPacket_64",
-     "multiplicity": "0..1",
      "info": "Inhibition of revocable TSRs from balises in level 2",
      "label": "TrackToTrainPacket_64"
     },
@@ -4957,7 +4932,6 @@
      "intId": 26,
      "name": "trackToTrainPacket_65",
      "composition": "ETCSTrackToTrainPacket_65",
-     "multiplicity": "0..1",
      "info": "Temporary Speed Restriction",
      "label": "TrackToTrainPacket_65"
     },
@@ -4965,7 +4939,6 @@
      "intId": 27,
      "name": "trackToTrainPacket_66",
      "composition": "ETCSTrackToTrainPacket_66",
-     "multiplicity": "0..1",
      "info": "Temporary Speed Restriction Revocation",
      "label": "TrackToTrainPacket_66"
     },
@@ -4973,7 +4946,6 @@
      "intId": 28,
      "name": "trackToTrainPacket_67",
      "composition": "ETCSTrackToTrainPacket_67",
-     "multiplicity": "0..1",
      "info": "Track Condition Big Metal Masses",
      "label": "TrackToTrainPacket_67"
     },
@@ -4981,7 +4953,6 @@
      "intId": 29,
      "name": "trackToTrainPacket_68",
      "composition": "ETCSTrackToTrainPacket_68",
-     "multiplicity": "0..1",
      "info": "Track Condition",
      "label": "TrackToTrainPacket_68"
     },
@@ -4989,7 +4960,6 @@
      "intId": 30,
      "name": "trackToTrainPacket_69",
      "composition": "ETCSTrackToTrainPacket_69",
-     "multiplicity": "0..1",
      "info": "Track Condition Station Platforms",
      "label": "TrackToTrainPacket_69"
     },
@@ -4997,7 +4967,6 @@
      "intId": 31,
      "name": "trackToTrainPacket_70",
      "composition": "ETCSTrackToTrainPacket_70",
-     "multiplicity": "0..1",
      "info": "Route Suitability Data",
      "label": "TrackToTrainPacket_70"
     },
@@ -5005,7 +4974,6 @@
      "intId": 32,
      "name": "trackToTrainPacket_71",
      "composition": "ETCSTrackToTrainPacket_71",
-     "multiplicity": "0..1",
      "info": "Adhesion factor",
      "label": "TrackToTrainPacket_71"
     },
@@ -5013,7 +4981,6 @@
      "intId": 33,
      "name": "trackToTrainPacket_73",
      "composition": "ETCSTrackToTrainPacket_73",
-     "multiplicity": "0..1",
      "info": "Packet for sending plain text messages",
      "label": "TrackToTrainPacket_73"
     },
@@ -5021,7 +4988,6 @@
      "intId": 34,
      "name": "trackToTrainPacket_74",
      "composition": "ETCSTrackToTrainPacket_74",
-     "multiplicity": "0..1",
      "info": "Packet for sending fixed text messages",
      "label": "TrackToTrainPacket_74"
     },
@@ -5029,7 +4995,6 @@
      "intId": 35,
      "name": "trackToTrainPacket_79",
      "composition": "ETCSTrackToTrainPacket_79",
-     "multiplicity": "0..1",
      "info": "Geographical Position Information",
      "label": "TrackToTrainPacket_79"
     },
@@ -5037,7 +5002,6 @@
      "intId": 36,
      "name": "trackToTrainPacket_80",
      "composition": "ETCSTrackToTrainPacket_80",
-     "multiplicity": "0..1",
      "info": "Mode profile",
      "label": "TrackToTrainPacket_80"
     },
@@ -5045,7 +5009,6 @@
      "intId": 37,
      "name": "trackToTrainPacket_88",
      "composition": "ETCSTrackToTrainPacket_88",
-     "multiplicity": "0..1",
      "info": "Level Crossing information",
      "label": "TrackToTrainPacket_88"
     },
@@ -5053,7 +5016,6 @@
      "intId": 38,
      "name": "trackToTrainPacket_90",
      "composition": "ETCSTrackToTrainPacket_90",
-     "multiplicity": "0..1",
      "info": "Track Ahead Free up to level 2/3 transition location",
      "label": "TrackToTrainPacket_90"
     },
@@ -5061,7 +5023,6 @@
      "intId": 39,
      "name": "trackToTrainPacket_131",
      "composition": "ETCSTrackToTrainPacket_131",
-     "multiplicity": "0..1",
      "info": "RBC transition order",
      "label": "TrackToTrainPacket_131"
     },
@@ -5069,7 +5030,6 @@
      "intId": 40,
      "name": "trackToTrainPacket_132",
      "composition": "ETCSTrackToTrainPacket_132",
-     "multiplicity": "0..1",
      "info": "Danger for Shunting information",
      "label": "TrackToTrainPacket_132"
     },
@@ -5077,7 +5037,6 @@
      "intId": 41,
      "name": "trackToTrainPacket_133",
      "composition": "ETCSTrackToTrainPacket_133",
-     "multiplicity": "0..1",
      "info": "Radio infill area information",
      "label": "TrackToTrainPacket_133"
     },
@@ -5085,7 +5044,6 @@
      "intId": 42,
      "name": "trackToTrainPacket_134",
      "composition": "ETCSTrackToTrainPacket_134",
-     "multiplicity": "0..1",
      "info": "EOLM Packet",
      "label": "TrackToTrainPacket_134"
     },
@@ -5093,7 +5051,6 @@
      "intId": 43,
      "name": "trackToTrainPacket_135",
      "composition": "ETCSTrackToTrainPacket_135",
-     "multiplicity": "0..1",
      "info": "Stop Shunting on desk opening",
      "label": "TrackToTrainPacket_135"
     },
@@ -5101,7 +5058,6 @@
      "intId": 44,
      "name": "trackToTrainPacket_136",
      "composition": "ETCSTrackToTrainPacket_136",
-     "multiplicity": "0..1",
      "info": "Infill location reference",
      "label": "TrackToTrainPacket_136"
     },
@@ -5109,7 +5065,6 @@
      "intId": 45,
      "name": "trackToTrainPacket_137",
      "composition": "ETCSTrackToTrainPacket_137",
-     "multiplicity": "0..1",
      "info": "Stop if in Staff Responsible",
      "label": "TrackToTrainPacket_137"
     },
@@ -5117,7 +5072,6 @@
      "intId": 46,
      "name": "trackToTrainPacket_138",
      "composition": "ETCSTrackToTrainPacket_138",
-     "multiplicity": "0..1",
      "info": "Reversing area information",
      "label": "TrackToTrainPacket_138"
     },
@@ -5125,7 +5079,6 @@
      "intId": 47,
      "name": "trackToTrainPacket_139",
      "composition": "ETCSTrackToTrainPacket_139",
-     "multiplicity": "0..1",
      "info": "Reversing supervision information",
      "label": "TrackToTrainPacket_139"
     },
@@ -5133,7 +5086,6 @@
      "intId": 48,
      "name": "trackToTrainPacket_140",
      "composition": "ETCSTrackToTrainPacket_140",
-     "multiplicity": "0..1",
      "info": "Train running number from RBC",
      "label": "TrackToTrainPacket_140"
     },
@@ -5141,7 +5093,6 @@
      "intId": 49,
      "name": "trackToTrainPacket_141",
      "composition": "ETCSTrackToTrainPacket_141",
-     "multiplicity": "0..1",
      "info": "Default Gradient for Temporary Speed Restriction",
      "label": "TrackToTrainPacket_141"
     },
@@ -5149,7 +5100,6 @@
      "intId": 50,
      "name": "trackToTrainPacket_145",
      "composition": "ETCSTrackToTrainPacket_145",
-     "multiplicity": "0..1",
      "info": "Inhibition of balise group message consistency reaction",
      "label": "TrackToTrainPacket_145"
     },
@@ -5157,7 +5107,6 @@
      "intId": 51,
      "name": "trackToTrainPacket_180",
      "composition": "ETCSTrackToTrainPacket_180",
-     "multiplicity": "0..1",
      "info": "LSSMA display toggle order",
      "label": "TrackToTrainPacket_180"
     },
@@ -5165,7 +5114,6 @@
      "intId": 52,
      "name": "trackToTrainPacket_181",
      "composition": "ETCSTrackToTrainPacket_181",
-     "multiplicity": "0..1",
      "info": "Generic LS function marker",
      "label": "TrackToTrainPacket_181"
     },
@@ -5173,7 +5121,6 @@
      "intId": 53,
      "name": "trackToTrainPacket_254",
      "composition": "ETCSTrackToTrainPacket_254",
-     "multiplicity": "0..1",
      "info": "Default balise, loop or RIU information",
      "label": "TrackToTrainPacket_254"
     },
@@ -5181,7 +5128,6 @@
      "intId": 54,
      "name": "trackToTrainPacket_255",
      "composition": "ETCSTrackToTrainPacket_255",
-     "multiplicity": "0..1",
      "info": "End of Information",
      "label": "TrackToTrainPacket_255"
     }
@@ -5196,7 +5142,6 @@
      "intId": 1,
      "name": "trackToTrainRM_2",
      "composition": "ETCSTrackToTrainRM_2",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 2.",
      "label": "TrackToTrainRM_2"
     },
@@ -5204,7 +5149,6 @@
      "intId": 2,
      "name": "trackToTrainRM_3",
      "composition": "ETCSTrackToTrainRM_3",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 3",
      "label": "TrackToTrainRM_3"
     },
@@ -5212,7 +5156,6 @@
      "intId": 3,
      "name": "trackToTrainRM_4",
      "composition": "ETCSTrackToTrainRM_4",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 4.",
      "label": "TrackToTrainRM_4"
     },
@@ -5220,7 +5163,6 @@
      "intId": 4,
      "name": "trackToTrainRM_5",
      "composition": "ETCSTrackToTrainRM_5",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 5.",
      "label": "TrackToTrainRM_5"
     },
@@ -5228,7 +5170,6 @@
      "intId": 5,
      "name": "trackToTrainRM_6",
      "composition": "ETCSTrackToTrainRM_6",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 6.",
      "label": "TrackToTrainRM_6"
     },
@@ -5236,7 +5177,6 @@
      "intId": 6,
      "name": "trackToTrainRM_7",
      "composition": "ETCSTrackToTrainRM_7",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 7.",
      "label": "TrackToTrainRM_7"
     },
@@ -5244,7 +5184,6 @@
      "intId": 7,
      "name": "trackToTrainRM_8",
      "composition": "ETCSTrackToTrainRM_8",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 8.",
      "label": "TrackToTrainRM_8"
     },
@@ -5252,7 +5191,6 @@
      "intId": 8,
      "name": "trackToTrainRM_9",
      "composition": "ETCSTrackToTrainRM_9",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 9.",
      "label": "TrackToTrainRM_9"
     },
@@ -5260,7 +5198,6 @@
      "intId": 9,
      "name": "trackToTrainRM_15",
      "composition": "ETCSTrackToTrainRM_15",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 15.",
      "label": "TrackToTrainRM_15"
     },
@@ -5268,7 +5205,6 @@
      "intId": 10,
      "name": "trackToTrainRM_16",
      "composition": "ETCSTrackToTrainRM_16",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 16.",
      "label": "TrackToTrainRM_16"
     },
@@ -5276,7 +5212,6 @@
      "intId": 11,
      "name": "trackToTrainRM_18",
      "composition": "ETCSTrackToTrainRM_18",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 18.",
      "label": "TrackToTrainRM_18"
     },
@@ -5284,7 +5219,6 @@
      "intId": 12,
      "name": "trackToTrainRM_24",
      "composition": "ETCSTrackToTrainRM_24",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 24.",
      "label": "TrackToTrainRM_24"
     },
@@ -5292,7 +5226,6 @@
      "intId": 13,
      "name": "trackToTrainRM_27",
      "composition": "ETCSTrackToTrainRM_27",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 27.",
      "label": "TrackToTrainRM_27"
     },
@@ -5300,7 +5233,6 @@
      "intId": 14,
      "name": "trackToTrainRM_28",
      "composition": "ETCSTrackToTrainRM_28",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 28.",
      "label": "TrackToTrainRM_28"
     },
@@ -5308,7 +5240,6 @@
      "intId": 15,
      "name": "trackToTrainRM_32",
      "composition": "ETCSTrackToTrainRM_32",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 32.",
      "label": "TrackToTrainRM_32"
     },
@@ -5316,7 +5247,6 @@
      "intId": 16,
      "name": "trackToTrainRM_33",
      "composition": "ETCSTrackToTrainRM_33",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 33.",
      "label": "TrackToTrainRM_33"
     },
@@ -5324,7 +5254,6 @@
      "intId": 17,
      "name": "trackToTrainRM_34",
      "composition": "ETCSTrackToTrainRM_34",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 34.",
      "label": "TrackToTrainRM_34"
     },
@@ -5332,7 +5261,6 @@
      "intId": 18,
      "name": "trackToTrainRM_38",
      "composition": "ETCSTrackToTrainRM_38",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 38.",
      "label": "TrackToTrainRM_38"
     },
@@ -5340,7 +5268,6 @@
      "intId": 19,
      "name": "trackToTrainRM_39",
      "composition": "ETCSTrackToTrainRM_39",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 39.",
      "label": "TrackToTrainRM_39"
     },
@@ -5348,7 +5275,6 @@
      "intId": 20,
      "name": "trackToTrainRM_40",
      "composition": "ETCSTrackToTrainRM_40",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 40.",
      "label": "TrackToTrainRM_40"
     },
@@ -5356,7 +5282,6 @@
      "intId": 21,
      "name": "trackToTrainRM_41",
      "composition": "ETCSTrackToTrainRM_41",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 41.",
      "label": "TrackToTrainRM_41"
     },
@@ -5364,7 +5289,6 @@
      "intId": 22,
      "name": "trackToTrainRM_43",
      "composition": "ETCSTrackToTrainRM_43",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 43.",
      "label": "TrackToTrainRM_43"
     },
@@ -5372,7 +5296,6 @@
      "intId": 23,
      "name": "trackToTrainRM_45",
      "composition": "ETCSTrackToTrainRM_45",
-     "multiplicity": "0..1",
      "info": "Payload structure for ETCS Track-to-Train Message 45.",
      "label": "TrackToTrainRM_45"
     }
@@ -5411,7 +5334,6 @@
      "intId": 1,
      "name": "trainToTrackPacket_0",
      "composition": "ETCSTrainToTrackPacket_0",
-     "multiplicity": "0..1",
      "info": "Position Report",
      "label": "TrainToTrackPacket_0"
     },
@@ -5419,7 +5341,6 @@
      "intId": 2,
      "name": "trainToTrackPacket_1",
      "composition": "ETCSTrainToTrackPacket_1",
-     "multiplicity": "0..1",
      "info": "Position Report based on two balise groups",
      "label": "TrainToTrackPacket_1"
     },
@@ -5427,7 +5348,6 @@
      "intId": 3,
      "name": "trainToTrackPacket_2",
      "composition": "ETCSTrainToTrackPacket_2",
-     "multiplicity": "0..1",
      "info": "Onboard supported system versions",
      "label": "TrainToTrackPacket_2"
     },
@@ -5435,7 +5355,6 @@
      "intId": 4,
      "name": "trainToTrackPacket_4",
      "composition": "ETCSTrainToTrackPacket_4",
-     "multiplicity": "0..1",
      "info": "Error reporting to the RBC",
      "label": "TrainToTrackPacket_4"
     },
@@ -5443,7 +5362,6 @@
      "intId": 5,
      "name": "trainToTrackPacket_5",
      "composition": "ETCSTrainToTrackPacket_5",
-     "multiplicity": "0..1",
      "info": "Train running number",
      "label": "TrainToTrackPacket_5"
     },
@@ -5451,7 +5369,6 @@
      "intId": 6,
      "name": "trainToTrackPacket_9",
      "composition": "ETCSTrainToTrackPacket_9",
-     "multiplicity": "0..1",
      "info": "Level 2 transition information",
      "label": "TrainToTrackPacket_9"
     },
@@ -5459,7 +5376,6 @@
      "intId": 7,
      "name": "trainToTrackPacket_10",
      "composition": "ETCSTrainToTrackPacket_10",
-     "multiplicity": "0..1",
      "info": "Safe consist length information for Supervised Manoeuvre",
      "label": "TrainToTrackPacket_10"
     },
@@ -5467,7 +5383,6 @@
      "intId": 8,
      "name": "trainToTrackPacket_11",
      "composition": "ETCSTrainToTrackPacket_11",
-     "multiplicity": "0..1",
      "info": "Validated train data",
      "label": "TrainToTrackPacket_11"
     },
@@ -5475,7 +5390,6 @@
      "intId": 9,
      "name": "trainToTrackPacket_12",
      "composition": "ETCSTrainToTrackPacket_12",
-     "multiplicity": "0..1",
      "info": "Default train data for Supervised Manoeuvre",
      "label": "TrainToTrackPacket_12"
     },
@@ -5483,7 +5397,6 @@
      "intId": 10,
      "name": "trainToTrackPacket_44",
      "composition": "ETCSTrainToTrackPacket_44",
-     "multiplicity": "0..1",
      "info": "Data used by applications outside the ERTMS/ETCS system",
      "label": "TrainToTrackPacket_44"
     }
@@ -5498,7 +5411,6 @@
      "intId": 1,
      "name": "trainToTrackRM_129",
      "composition": "ETCSTrainToTrackRM_129",
-     "multiplicity": "0..1",
      "info": "Validated Train Data",
      "label": "TrainToTrackRM_129"
     },
@@ -5506,7 +5418,6 @@
      "intId": 2,
      "name": "trainToTrackRM_130",
      "composition": "ETCSTrainToTrackRM_130",
-     "multiplicity": "0..1",
      "info": "Request for Shunting",
      "label": "TrainToTrackRM_130"
     },
@@ -5514,7 +5425,6 @@
      "intId": 3,
      "name": "trainToTrackRM_131",
      "composition": "ETCSTrainToTrackRM_131",
-     "multiplicity": "0..1",
      "info": "Request for Supervised Manoeuvre",
      "label": "TrainToTrackRM_131"
     },
@@ -5522,7 +5432,6 @@
      "intId": 4,
      "name": "trainToTrackRM_132",
      "composition": "ETCSTrainToTrackRM_132",
-     "multiplicity": "0..1",
      "info": "MA Request",
      "label": "TrainToTrackRM_132"
     },
@@ -5530,7 +5439,6 @@
      "intId": 5,
      "name": "trainToTrackRM_133",
      "composition": "ETCSTrainToTrackRM_133",
-     "multiplicity": "0..1",
      "info": "Safe consist length information for Supervised Manoeuvre",
      "label": "TrainToTrackRM_133"
     },
@@ -5538,7 +5446,6 @@
      "intId": 6,
      "name": "trainToTrackRM_136",
      "composition": "ETCSTrainToTrackRM_136",
-     "multiplicity": "0..1",
      "info": "Train Position Report",
      "label": "TrainToTrackRM_136"
     },
@@ -5546,7 +5453,6 @@
      "intId": 7,
      "name": "trainToTrackRM_137",
      "composition": "ETCSTrainToTrackRM_137",
-     "multiplicity": "0..1",
      "info": "Request to shorten MA is granted",
      "label": "TrainToTrackRM_137"
     },
@@ -5554,7 +5460,6 @@
      "intId": 8,
      "name": "trainToTrackRM_138",
      "composition": "ETCSTrainToTrackRM_138",
-     "multiplicity": "0..1",
      "info": "Request to shorten MA is rejected",
      "label": "TrainToTrackRM_138"
     },
@@ -5562,7 +5467,6 @@
      "intId": 9,
      "name": "trainToTrackRM_146",
      "composition": "ETCSTrainToTrackRM_146",
-     "multiplicity": "0..1",
      "info": "Acknowledgement",
      "label": "TrainToTrackRM_146"
     },
@@ -5570,7 +5474,6 @@
      "intId": 10,
      "name": "trainToTrackRM_147",
      "composition": "ETCSTrainToTrackRM_147",
-     "multiplicity": "0..1",
      "info": "Acknowledgement of Emergency Stop",
      "label": "TrainToTrackRM_147"
     },
@@ -5578,7 +5481,6 @@
      "intId": 11,
      "name": "trainToTrackRM_149",
      "composition": "ETCSTrainToTrackRM_149",
-     "multiplicity": "0..1",
      "info": "Track Ahead Free Granted",
      "label": "TrainToTrackRM_149"
     },
@@ -5586,7 +5488,6 @@
      "intId": 12,
      "name": "trainToTrackRM_150",
      "composition": "ETCSTrainToTrackRM_150",
-     "multiplicity": "0..1",
      "info": "End of Mission",
      "label": "TrainToTrackRM_150"
     },
@@ -5594,7 +5495,6 @@
      "intId": 13,
      "name": "trainToTrackRM_153",
      "composition": "ETCSTrainToTrackRM_153",
-     "multiplicity": "0..1",
      "info": "Radio infill request",
      "label": "TrainToTrackRM_153"
     },
@@ -5602,7 +5502,6 @@
      "intId": 14,
      "name": "trainToTrackRM_154",
      "composition": "ETCSTrainToTrackRM_154",
-     "multiplicity": "0..1",
      "info": "No compatible version supported",
      "label": "TrainToTrackRM_154"
     },
@@ -5610,7 +5509,6 @@
      "intId": 15,
      "name": "trainToTrackRM_155",
      "composition": "ETCSTrainToTrackRM_155",
-     "multiplicity": "0..1",
      "info": "Initiation of a communication session",
      "label": "TrainToTrackRM_155"
     },
@@ -5618,7 +5516,6 @@
      "intId": 16,
      "name": "trainToTrackRM_156",
      "composition": "ETCSTrainToTrackRM_156",
-     "multiplicity": "0..1",
      "info": "Termination of a communication session",
      "label": "TrainToTrackRM_156"
     },
@@ -5626,7 +5523,6 @@
      "intId": 17,
      "name": "trainToTrackRM_157",
      "composition": "ETCSTrainToTrackRM_157",
-     "multiplicity": "0..1",
      "info": "SoM Position Report",
      "label": "TrainToTrackRM_157"
     },
@@ -5634,7 +5530,6 @@
      "intId": 18,
      "name": "trainToTrackRM_158",
      "composition": "ETCSTrainToTrackRM_158",
-     "multiplicity": "0..1",
      "info": "Text message acknowledged by driver",
      "label": "TrainToTrackRM_158"
     },
@@ -5642,7 +5537,6 @@
      "intId": 19,
      "name": "trainToTrackRM_159",
      "composition": "ETCSTrainToTrackRM_159",
-     "multiplicity": "0..1",
      "info": "Session Established",
      "label": "TrainToTrackRM_159"
     }

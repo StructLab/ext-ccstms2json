@@ -96,7 +96,8 @@
       {
        "intId": 5,
        "name": "bgFunction",
-       "enumType": "BaliseGroupFunction"
+       "enumType": "BaliseGroupFunction",
+       "multiplicity": "1..*"
       },
       {
        "intId": 6,
@@ -532,20 +533,17 @@
       {
        "intId": 1,
        "name": "horizontalSegmentLine",
-       "composition": "HorizontalLine",
-       "multiplicity": "0..1"
+       "composition": "HorizontalLine"
       },
       {
        "intId": 2,
        "name": "horizontalSegmentArc",
-       "composition": "HorizontalArc",
-       "multiplicity": "0..1"
+       "composition": "HorizontalArc"
       },
       {
        "intId": 3,
        "name": "horizontalSegmentTransition",
-       "composition": "HorizontalTransition",
-       "multiplicity": "0..1"
+       "composition": "HorizontalTransition"
       }
      ]
     },
@@ -1305,20 +1303,17 @@
       {
        "intId": 1,
        "name": "otherCategoryReplacesCantDeficiencySSP",
-       "enumType": "OtherSpecificStaticSpeedProfileCategory",
-       "multiplicity": "0..1"
+       "enumType": "OtherSpecificStaticSpeedProfileCategory"
       },
       {
        "intId": 2,
        "name": "otherCategoryDoesNotReplaceCantDeficiencySSP",
-       "enumType": "OtherSpecificStaticSpeedProfileCategory",
-       "multiplicity": "0..1"
+       "enumType": "OtherSpecificStaticSpeedProfileCategory"
       },
       {
        "intId": 3,
        "name": "cantDeficiencyCategory",
-       "enumType": "CantDeficiencies",
-       "multiplicity": "0..1"
+       "enumType": "CantDeficiencies"
       }
      ]
     },
@@ -1469,20 +1464,17 @@
       {
        "intId": 1,
        "name": "etcsMarker",
-       "reference": "ETCSMarker",
-       "multiplicity": "0..1"
+       "reference": "ETCSMarker"
       },
       {
        "intId": 2,
        "name": "stopLocation",
-       "reference": "StopLocation",
-       "multiplicity": "0..1"
+       "reference": "StopLocation"
       },
       {
        "intId": 3,
        "name": "timeMeasurePoint",
-       "reference": "TravelTimeMeasurementPoint",
-       "multiplicity": "0..1"
+       "reference": "TravelTimeMeasurementPoint"
       }
      ]
     },
@@ -1834,14 +1826,12 @@
       {
        "intId": 1,
        "name": "verticalSegmentLine",
-       "composition": "VerticalLine",
-       "multiplicity": "0..1"
+       "composition": "VerticalLine"
       },
       {
        "intId": 2,
        "name": "verticalSegmentArc",
-       "composition": "VerticalArc",
-       "multiplicity": "0..1"
+       "composition": "VerticalArc"
       }
      ]
     }
@@ -2440,56 +2430,47 @@
       {
        "intId": 1,
        "name": "switch",
-       "reference": "infra.Switch",
-       "multiplicity": "0..1"
+       "reference": "infra.Switch"
       },
       {
        "intId": 2,
        "name": "etcsMarker",
-       "reference": "infra.ETCSMarker",
-       "multiplicity": "0..1"
+       "reference": "infra.ETCSMarker"
       },
       {
        "intId": 3,
        "name": "stopLocation",
-       "reference": "infra.StopLocation",
-       "multiplicity": "0..1"
+       "reference": "infra.StopLocation"
       },
       {
        "intId": 4,
        "name": "timingPoint",
-       "reference": "infra.TimingPoint",
-       "multiplicity": "0..1"
+       "reference": "infra.TimingPoint"
       },
       {
        "intId": 5,
        "name": "operationalPoint",
-       "reference": "infra.OperationalPoint",
-       "multiplicity": "0..1"
+       "reference": "infra.OperationalPoint"
       },
       {
        "intId": 6,
        "name": "balise",
-       "reference": "infra.Balise",
-       "multiplicity": "0..1"
+       "reference": "infra.Balise"
       },
       {
        "intId": 7,
        "name": "derailer",
-       "reference": "infra.Derailer",
-       "multiplicity": "0..1"
+       "reference": "infra.Derailer"
       },
       {
        "intId": 8,
        "name": "trainDetector",
-       "reference": "infra.TrainDetectionSystem",
-       "multiplicity": "0..1"
+       "reference": "infra.TrainDetectionSystem"
       },
       {
        "intId": 9,
        "name": "bufferStop",
-       "reference": "infra.BufferStop",
-       "multiplicity": "0..1"
+       "reference": "infra.BufferStop"
       }
      ]
     },
@@ -2931,26 +2912,22 @@
       {
        "intId": 1,
        "name": "joinActivity",
-       "composition": "MovementEventActivityJoin",
-       "multiplicity": "0..1"
+       "composition": "MovementEventActivityJoin"
       },
       {
        "intId": 2,
        "name": "splitActivity",
-       "composition": "MovementEventActivitySplit",
-       "multiplicity": "0..1"
+       "composition": "MovementEventActivitySplit"
       },
       {
        "intId": 3,
        "name": "meetActivity",
-       "composition": "MovementEventActivityMeet",
-       "multiplicity": "0..1"
+       "composition": "MovementEventActivityMeet"
       },
       {
        "intId": 4,
        "name": "trainUnitActivity",
-       "composition": "TrainUnitActivity",
-       "multiplicity": "0..1"
+       "composition": "TrainUnitActivity"
       }
      ]
     },
@@ -3178,20 +3155,17 @@
       {
        "intId": 1,
        "name": "movementEvent",
-       "reference": "MovementEvent",
-       "multiplicity": "0..1"
+       "reference": "MovementEvent"
       },
       {
        "intId": 2,
        "name": "restrictionEvent",
-       "reference": "UsageRestrictionEvent",
-       "multiplicity": "0..1"
+       "reference": "UsageRestrictionEvent"
       },
       {
        "intId": 3,
        "name": "warningMeasureEvent",
-       "reference": "WarningMeasureEvent",
-       "multiplicity": "0..1"
+       "reference": "WarningMeasureEvent"
       }
      ]
     },
@@ -3201,38 +3175,32 @@
       {
        "intId": 1,
        "name": "arrivalReport",
-       "composition": "MovementEventExecutionReport",
-       "multiplicity": "0..1"
+       "composition": "MovementEventExecutionReport"
       },
       {
        "intId": 2,
        "name": "departureReport",
-       "composition": "MovementEventExecutionReport",
-       "multiplicity": "0..1"
+       "composition": "MovementEventExecutionReport"
       },
       {
        "intId": 3,
        "name": "activationRestrictionReport",
-       "composition": "UsageRestrictionEventExecutionReport",
-       "multiplicity": "0..1"
+       "composition": "UsageRestrictionEventExecutionReport"
       },
       {
        "intId": 4,
        "name": "deactivationRestrictionReport",
-       "composition": "UsageRestrictionEventExecutionReport",
-       "multiplicity": "0..1"
+       "composition": "UsageRestrictionEventExecutionReport"
       },
       {
        "intId": 5,
        "name": "activationWarningMeasureReport",
-       "composition": "WarningMeasureEventExecutionReport",
-       "multiplicity": "0..1"
+       "composition": "WarningMeasureEventExecutionReport"
       },
       {
        "intId": 6,
        "name": "deactivationWarningMeasureReport",
-       "composition": "WarningMeasureEventExecutionReport",
-       "multiplicity": "0..1"
+       "composition": "WarningMeasureEventExecutionReport"
       }
      ]
     },
@@ -3317,20 +3285,17 @@
       {
        "intId": 1,
        "name": "movementResponse",
-       "composition": "MovementResponseCode",
-       "multiplicity": "0..1"
+       "composition": "MovementResponseCode"
       },
       {
        "intId": 2,
        "name": "usageRestrictionResponse",
-       "composition": "UsageRestrictionResponseCode",
-       "multiplicity": "0..1"
+       "composition": "UsageRestrictionResponseCode"
       },
       {
        "intId": 3,
        "name": "warningMeasureResponse",
-       "composition": "WarningMeasureResponseCode",
-       "multiplicity": "0..1"
+       "composition": "WarningMeasureResponseCode"
       }
      ]
     },
@@ -3567,81 +3532,68 @@
       {
        "intId": 1,
        "name": "speedRestriction",
-       "composition": "SpeedRestriction",
-       "multiplicity": "0..1"
+       "composition": "SpeedRestriction"
       },
       {
        "intId": 2,
        "name": "allowedDrivingModes",
-       "enumType": "OnboardOperatingMode",
-       "multiplicity": "0..1"
+       "enumType": "OnboardOperatingMode"
       },
       {
        "intId": 3,
        "name": "nonStandstill",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 4,
        "name": "trackClosure",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 5,
        "name": "operationalRadioHole",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 6,
        "name": "maxAdhesion",
-       "enumType": "AdhesionCategory",
-       "multiplicity": "0..1"
+       "enumType": "AdhesionCategory"
       },
       {
        "intId": 7,
        "name": "atoInhibition",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 8,
        "name": "maxCurrent",
        "dataType": "uint32",
-       "multiplicity": "0..1",
        "unit": "A"
       },
       {
        "intId": 9,
        "name": "soundHorn",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 10,
        "name": "nonSwitchability",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 11,
        "name": "safetyCriticalCommandOnly",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 12,
        "name": "manualOperationOnly",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 13,
        "name": "operationallyNonStandstill",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       }
      ]
     },
@@ -3667,39 +3619,33 @@
       {
        "intId": 1,
        "name": "speedRestriction",
-       "composition": "SpeedRestriction",
-       "multiplicity": "0..1"
+       "composition": "SpeedRestriction"
       },
       {
        "intId": 2,
        "name": "adhesionCategory",
-       "enumType": "AdhesionCategory",
-       "multiplicity": "0..1"
+       "enumType": "AdhesionCategory"
       },
       {
        "intId": 3,
        "name": "maxCurrent",
        "dataType": "uint32",
-       "multiplicity": "0..1",
        "unit": "A"
       },
       {
        "intId": 4,
        "name": "atoInhibition",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 5,
        "name": "dasInhibition",
-       "dataType": "boolean",
-       "multiplicity": "0..1"
+       "dataType": "boolean"
       },
       {
        "intId": 6,
        "name": "excludedSwitchableTracksideAssetsForFlankProtection",
-       "reference": "tp.SwitchableTracksideAsset",
-       "multiplicity": "0..1"
+       "reference": "tp.SwitchableTracksideAsset"
       }
      ]
     },
@@ -4664,26 +4610,22 @@
       {
        "intId": 1,
        "name": "switchConfigurationData",
-       "reference": "SwitchConfigurationData",
-       "multiplicity": "0..1"
+       "reference": "SwitchConfigurationData"
       },
       {
        "intId": 2,
        "name": "tvpSection",
-       "reference": "TvpSectionConfigurationData",
-       "multiplicity": "0..1"
+       "reference": "TvpSectionConfigurationData"
       },
       {
        "intId": 3,
        "name": "trainDetector",
-       "reference": "TrainDetectionSystemConfigurationData",
-       "multiplicity": "0..1"
+       "reference": "TrainDetectionSystemConfigurationData"
       },
       {
        "intId": 4,
        "name": "levelCrossing",
-       "reference": "LxConfigurationData",
-       "multiplicity": "0..1"
+       "reference": "LxConfigurationData"
       }
      ]
     },
@@ -5016,32 +4958,27 @@
       {
        "intId": 1,
        "name": "switch",
-       "reference": "infra.Switch",
-       "multiplicity": "0..1"
+       "reference": "infra.Switch"
       },
       {
        "intId": 2,
        "name": "slipCrossing",
-       "reference": "infra.SlipCrossing",
-       "multiplicity": "0..1"
+       "reference": "infra.SlipCrossing"
       },
       {
        "intId": 3,
        "name": "crossing",
-       "reference": "infra.Crossing",
-       "multiplicity": "0..1"
+       "reference": "infra.Crossing"
       },
       {
        "intId": 4,
        "name": "derailer",
-       "reference": "infra.Derailer",
-       "multiplicity": "0..1"
+       "reference": "infra.Derailer"
       },
       {
        "intId": 5,
        "name": "levelCrossing",
-       "reference": "infra.LevelCrossing",
-       "multiplicity": "0..1"
+       "reference": "infra.LevelCrossing"
       }
      ]
     },
@@ -8718,326 +8655,272 @@
       {
        "intId": 1,
        "name": "trackToTrainPacket_0",
-       "composition": "ETCSTrackToTrainPacket_0",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_0"
       },
       {
        "intId": 2,
        "name": "trackToTrainPacket_2",
-       "composition": "ETCSTrackToTrainPacket_2",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_2"
       },
       {
        "intId": 3,
        "name": "trackToTrainPacket_3",
-       "composition": "ETCSTrackToTrainPacket_3",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_3"
       },
       {
        "intId": 4,
        "name": "trackToTrainPacket_5",
-       "composition": "ETCSTrackToTrainPacket_5",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_5"
       },
       {
        "intId": 5,
        "name": "trackToTrainPacket_6",
-       "composition": "ETCSTrackToTrainPacket_6",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_6"
       },
       {
        "intId": 6,
        "name": "trackToTrainPacket_15",
-       "composition": "ETCSTrackToTrainPacket_15",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_15"
       },
       {
        "intId": 7,
        "name": "trackToTrainPacket_16",
-       "composition": "ETCSTrackToTrainPacket_16",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_16"
       },
       {
        "intId": 8,
        "name": "trackToTrainPacket_21",
-       "composition": "ETCSTrackToTrainPacket_21",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_21"
       },
       {
        "intId": 9,
        "name": "trackToTrainPacket_27",
-       "composition": "ETCSTrackToTrainPacket_27",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_27"
       },
       {
        "intId": 10,
        "name": "trackToTrainPacket_31",
-       "composition": "ETCSTrackToTrainPacket_31",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_31"
       },
       {
        "intId": 11,
        "name": "trackToTrainPacket_32",
-       "composition": "ETCSTrackToTrainPacket_32",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_32"
       },
       {
        "intId": 12,
        "name": "trackToTrainPacket_39",
-       "composition": "ETCSTrackToTrainPacket_39",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_39"
       },
       {
        "intId": 13,
        "name": "trackToTrainPacket_40",
-       "composition": "ETCSTrackToTrainPacket_40",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_40"
       },
       {
        "intId": 14,
        "name": "trackToTrainPacket_41",
-       "composition": "ETCSTrackToTrainPacket_41",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_41"
       },
       {
        "intId": 15,
        "name": "trackToTrainPacket_42",
-       "composition": "ETCSTrackToTrainPacket_42",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_42"
       },
       {
        "intId": 16,
        "name": "trackToTrainPacket_44",
-       "composition": "ETCSTrackToTrainPacket_44",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_44"
       },
       {
        "intId": 17,
        "name": "trackToTrainPacket_45",
-       "composition": "ETCSTrackToTrainPacket_45",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_45"
       },
       {
        "intId": 18,
        "name": "trackToTrainPacket_46",
-       "composition": "ETCSTrackToTrainPacket_46",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_46"
       },
       {
        "intId": 19,
        "name": "trackToTrainPacket_49",
-       "composition": "ETCSTrackToTrainPacket_49",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_49"
       },
       {
        "intId": 20,
        "name": "trackToTrainPacket_51",
-       "composition": "ETCSTrackToTrainPacket_51",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_51"
       },
       {
        "intId": 21,
        "name": "trackToTrainPacket_52",
-       "composition": "ETCSTrackToTrainPacket_52",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_52"
       },
       {
        "intId": 22,
        "name": "trackToTrainPacket_57",
-       "composition": "ETCSTrackToTrainPacket_57",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_57"
       },
       {
        "intId": 23,
        "name": "trackToTrainPacket_58",
-       "composition": "ETCSTrackToTrainPacket_58",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_58"
       },
       {
        "intId": 24,
        "name": "trackToTrainPacket_63",
-       "composition": "ETCSTrackToTrainPacket_63",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_63"
       },
       {
        "intId": 25,
        "name": "trackToTrainPacket_64",
-       "composition": "ETCSTrackToTrainPacket_64",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_64"
       },
       {
        "intId": 26,
        "name": "trackToTrainPacket_65",
-       "composition": "ETCSTrackToTrainPacket_65",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_65"
       },
       {
        "intId": 27,
        "name": "trackToTrainPacket_66",
-       "composition": "ETCSTrackToTrainPacket_66",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_66"
       },
       {
        "intId": 28,
        "name": "trackToTrainPacket_67",
-       "composition": "ETCSTrackToTrainPacket_67",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_67"
       },
       {
        "intId": 29,
        "name": "trackToTrainPacket_68",
-       "composition": "ETCSTrackToTrainPacket_68",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_68"
       },
       {
        "intId": 30,
        "name": "trackToTrainPacket_69",
-       "composition": "ETCSTrackToTrainPacket_69",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_69"
       },
       {
        "intId": 31,
        "name": "trackToTrainPacket_70",
-       "composition": "ETCSTrackToTrainPacket_70",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_70"
       },
       {
        "intId": 32,
        "name": "trackToTrainPacket_71",
-       "composition": "ETCSTrackToTrainPacket_71",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_71"
       },
       {
        "intId": 33,
        "name": "trackToTrainPacket_73",
-       "composition": "ETCSTrackToTrainPacket_73",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_73"
       },
       {
        "intId": 34,
        "name": "trackToTrainPacket_74",
-       "composition": "ETCSTrackToTrainPacket_74",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_74"
       },
       {
        "intId": 35,
        "name": "trackToTrainPacket_79",
-       "composition": "ETCSTrackToTrainPacket_79",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_79"
       },
       {
        "intId": 36,
        "name": "trackToTrainPacket_80",
-       "composition": "ETCSTrackToTrainPacket_80",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_80"
       },
       {
        "intId": 37,
        "name": "trackToTrainPacket_88",
-       "composition": "ETCSTrackToTrainPacket_88",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_88"
       },
       {
        "intId": 38,
        "name": "trackToTrainPacket_90",
-       "composition": "ETCSTrackToTrainPacket_90",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_90"
       },
       {
        "intId": 39,
        "name": "trackToTrainPacket_131",
-       "composition": "ETCSTrackToTrainPacket_131",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_131"
       },
       {
        "intId": 40,
        "name": "trackToTrainPacket_132",
-       "composition": "ETCSTrackToTrainPacket_132",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_132"
       },
       {
        "intId": 41,
        "name": "trackToTrainPacket_133",
-       "composition": "ETCSTrackToTrainPacket_133",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_133"
       },
       {
        "intId": 42,
        "name": "trackToTrainPacket_134",
-       "composition": "ETCSTrackToTrainPacket_134",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_134"
       },
       {
        "intId": 43,
        "name": "trackToTrainPacket_135",
-       "composition": "ETCSTrackToTrainPacket_135",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_135"
       },
       {
        "intId": 44,
        "name": "trackToTrainPacket_136",
-       "composition": "ETCSTrackToTrainPacket_136",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_136"
       },
       {
        "intId": 45,
        "name": "trackToTrainPacket_137",
-       "composition": "ETCSTrackToTrainPacket_137",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_137"
       },
       {
        "intId": 46,
        "name": "trackToTrainPacket_138",
-       "composition": "ETCSTrackToTrainPacket_138",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_138"
       },
       {
        "intId": 47,
        "name": "trackToTrainPacket_139",
-       "composition": "ETCSTrackToTrainPacket_139",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_139"
       },
       {
        "intId": 48,
        "name": "trackToTrainPacket_140",
-       "composition": "ETCSTrackToTrainPacket_140",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_140"
       },
       {
        "intId": 49,
        "name": "trackToTrainPacket_141",
-       "composition": "ETCSTrackToTrainPacket_141",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_141"
       },
       {
        "intId": 50,
        "name": "trackToTrainPacket_145",
-       "composition": "ETCSTrackToTrainPacket_145",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_145"
       },
       {
        "intId": 51,
        "name": "trackToTrainPacket_180",
-       "composition": "ETCSTrackToTrainPacket_180",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_180"
       },
       {
        "intId": 52,
        "name": "trackToTrainPacket_181",
-       "composition": "ETCSTrackToTrainPacket_181",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_181"
       },
       {
        "intId": 53,
        "name": "trackToTrainPacket_254",
-       "composition": "ETCSTrackToTrainPacket_254",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_254"
       },
       {
        "intId": 54,
        "name": "trackToTrainPacket_255",
-       "composition": "ETCSTrackToTrainPacket_255",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainPacket_255"
       }
      ]
     },
@@ -9047,140 +8930,117 @@
       {
        "intId": 1,
        "name": "trackToTrainRM_2",
-       "composition": "ETCSTrackToTrainRM_2",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_2"
       },
       {
        "intId": 2,
        "name": "trackToTrainRM_3",
-       "composition": "ETCSTrackToTrainRM_3",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_3"
       },
       {
        "intId": 3,
        "name": "trackToTrainRM_4",
-       "composition": "ETCSTrackToTrainRM_4",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_4"
       },
       {
        "intId": 4,
        "name": "trackToTrainRM_5",
-       "composition": "ETCSTrackToTrainRM_5",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_5"
       },
       {
        "intId": 5,
        "name": "trackToTrainRM_6",
-       "composition": "ETCSTrackToTrainRM_6",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_6"
       },
       {
        "intId": 6,
        "name": "trackToTrainRM_7",
-       "composition": "ETCSTrackToTrainRM_7",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_7"
       },
       {
        "intId": 7,
        "name": "trackToTrainRM_8",
-       "composition": "ETCSTrackToTrainRM_8",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_8"
       },
       {
        "intId": 8,
        "name": "trackToTrainRM_9",
-       "composition": "ETCSTrackToTrainRM_9",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_9"
       },
       {
        "intId": 9,
        "name": "trackToTrainRM_15",
-       "composition": "ETCSTrackToTrainRM_15",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_15"
       },
       {
        "intId": 10,
        "name": "trackToTrainRM_16",
-       "composition": "ETCSTrackToTrainRM_16",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_16"
       },
       {
        "intId": 11,
        "name": "trackToTrainRM_18",
-       "composition": "ETCSTrackToTrainRM_18",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_18"
       },
       {
        "intId": 12,
        "name": "trackToTrainRM_24",
-       "composition": "ETCSTrackToTrainRM_24",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_24"
       },
       {
        "intId": 13,
        "name": "trackToTrainRM_27",
-       "composition": "ETCSTrackToTrainRM_27",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_27"
       },
       {
        "intId": 14,
        "name": "trackToTrainRM_28",
-       "composition": "ETCSTrackToTrainRM_28",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_28"
       },
       {
        "intId": 15,
        "name": "trackToTrainRM_32",
-       "composition": "ETCSTrackToTrainRM_32",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_32"
       },
       {
        "intId": 16,
        "name": "trackToTrainRM_33",
-       "composition": "ETCSTrackToTrainRM_33",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_33"
       },
       {
        "intId": 17,
        "name": "trackToTrainRM_34",
-       "composition": "ETCSTrackToTrainRM_34",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_34"
       },
       {
        "intId": 18,
        "name": "trackToTrainRM_38",
-       "composition": "ETCSTrackToTrainRM_38",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_38"
       },
       {
        "intId": 19,
        "name": "trackToTrainRM_39",
-       "composition": "ETCSTrackToTrainRM_39",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_39"
       },
       {
        "intId": 20,
        "name": "trackToTrainRM_40",
-       "composition": "ETCSTrackToTrainRM_40",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_40"
       },
       {
        "intId": 21,
        "name": "trackToTrainRM_41",
-       "composition": "ETCSTrackToTrainRM_41",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_41"
       },
       {
        "intId": 22,
        "name": "trackToTrainRM_43",
-       "composition": "ETCSTrackToTrainRM_43",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_43"
       },
       {
        "intId": 23,
        "name": "trackToTrainRM_45",
-       "composition": "ETCSTrackToTrainRM_45",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrackToTrainRM_45"
       }
      ]
     },
@@ -9207,62 +9067,52 @@
       {
        "intId": 1,
        "name": "trainToTrackPacket_0",
-       "composition": "ETCSTrainToTrackPacket_0",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_0"
       },
       {
        "intId": 2,
        "name": "trainToTrackPacket_1",
-       "composition": "ETCSTrainToTrackPacket_1",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_1"
       },
       {
        "intId": 3,
        "name": "trainToTrackPacket_2",
-       "composition": "ETCSTrainToTrackPacket_2",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_2"
       },
       {
        "intId": 4,
        "name": "trainToTrackPacket_4",
-       "composition": "ETCSTrainToTrackPacket_4",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_4"
       },
       {
        "intId": 5,
        "name": "trainToTrackPacket_5",
-       "composition": "ETCSTrainToTrackPacket_5",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_5"
       },
       {
        "intId": 6,
        "name": "trainToTrackPacket_9",
-       "composition": "ETCSTrainToTrackPacket_9",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_9"
       },
       {
        "intId": 7,
        "name": "trainToTrackPacket_10",
-       "composition": "ETCSTrainToTrackPacket_10",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_10"
       },
       {
        "intId": 8,
        "name": "trainToTrackPacket_11",
-       "composition": "ETCSTrainToTrackPacket_11",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_11"
       },
       {
        "intId": 9,
        "name": "trainToTrackPacket_12",
-       "composition": "ETCSTrainToTrackPacket_12",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_12"
       },
       {
        "intId": 10,
        "name": "trainToTrackPacket_44",
-       "composition": "ETCSTrainToTrackPacket_44",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackPacket_44"
       }
      ]
     },
@@ -9272,116 +9122,97 @@
       {
        "intId": 1,
        "name": "trainToTrackRM_129",
-       "composition": "ETCSTrainToTrackRM_129",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_129"
       },
       {
        "intId": 2,
        "name": "trainToTrackRM_130",
-       "composition": "ETCSTrainToTrackRM_130",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_130"
       },
       {
        "intId": 3,
        "name": "trainToTrackRM_131",
-       "composition": "ETCSTrainToTrackRM_131",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_131"
       },
       {
        "intId": 4,
        "name": "trainToTrackRM_132",
-       "composition": "ETCSTrainToTrackRM_132",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_132"
       },
       {
        "intId": 5,
        "name": "trainToTrackRM_133",
-       "composition": "ETCSTrainToTrackRM_133",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_133"
       },
       {
        "intId": 6,
        "name": "trainToTrackRM_136",
-       "composition": "ETCSTrainToTrackRM_136",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_136"
       },
       {
        "intId": 7,
        "name": "trainToTrackRM_137",
-       "composition": "ETCSTrainToTrackRM_137",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_137"
       },
       {
        "intId": 8,
        "name": "trainToTrackRM_138",
-       "composition": "ETCSTrainToTrackRM_138",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_138"
       },
       {
        "intId": 9,
        "name": "trainToTrackRM_146",
-       "composition": "ETCSTrainToTrackRM_146",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_146"
       },
       {
        "intId": 10,
        "name": "trainToTrackRM_147",
-       "composition": "ETCSTrainToTrackRM_147",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_147"
       },
       {
        "intId": 11,
        "name": "trainToTrackRM_149",
-       "composition": "ETCSTrainToTrackRM_149",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_149"
       },
       {
        "intId": 12,
        "name": "trainToTrackRM_150",
-       "composition": "ETCSTrainToTrackRM_150",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_150"
       },
       {
        "intId": 13,
        "name": "trainToTrackRM_153",
-       "composition": "ETCSTrainToTrackRM_153",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_153"
       },
       {
        "intId": 14,
        "name": "trainToTrackRM_154",
-       "composition": "ETCSTrainToTrackRM_154",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_154"
       },
       {
        "intId": 15,
        "name": "trainToTrackRM_155",
-       "composition": "ETCSTrainToTrackRM_155",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_155"
       },
       {
        "intId": 16,
        "name": "trainToTrackRM_156",
-       "composition": "ETCSTrainToTrackRM_156",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_156"
       },
       {
        "intId": 17,
        "name": "trainToTrackRM_157",
-       "composition": "ETCSTrainToTrackRM_157",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_157"
       },
       {
        "intId": 18,
        "name": "trainToTrackRM_158",
-       "composition": "ETCSTrainToTrackRM_158",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_158"
       },
       {
        "intId": 19,
        "name": "trainToTrackRM_159",
-       "composition": "ETCSTrainToTrackRM_159",
-       "multiplicity": "0..1"
+       "composition": "ETCSTrainToTrackRM_159"
       }
      ]
     },

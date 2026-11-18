@@ -73,21 +73,92 @@ PLAIN_TYPES = [
     XSD + "double", XSD + "decimal", XSD + "boolean", XSD + "integer", XSD + "int",
     XSD + "nonNegativeInteger", XSD + "unsignedInt", XSD + "positiveInteger",
     XSD + "dateTime", XSD + "dateTimeStamp", XSD + "date", XSD + "base64Binary",
+    XSD + "unsignedLong", XSD + "unsignedShort", XSD + "unsignedByte",
+    XSD + "long", XSD + "short", XSD + "byte", XSD + "float",
 ]
 
-# xsd type in the SHACL (sh:datatype)  ->  name used in the JSON (same as in the existing JSON files)
-DATA_TYPE_NAMES = {
-    "string": "string", "boolean": "boolean", "decimal": "decimal", "double": "double",
-    "unsignedInt": "uint32", "int": "int32", "dateTime": "timestamp", "date": "date",
-    "base64Binary": "bytes",
+# Data types. Name in the JSON  ->  xsd type (the mapping we were given).
+JSON_TYPE_TO_XSD = {
+    "uint64":    "xsd:unsignedLong",
+    "uint32":    "xsd:unsignedInt",
+    "uint16":    "xsd:unsignedShort",
+    "uint8":     "xsd:unsignedByte",
+    "int64":     "xsd:long",
+    "int32":     "xsd:int",
+    "int16":     "xsd:short",
+    "int8":      "xsd:byte",
+    "boolean":   "xsd:boolean",
+    "bytes":     "xsd:base64Binary",
+    "timestamp": "xsd:dateTime",
+    "double":    "xsd:double",
+    "string":    "xsd:string",
+    "dateTime":  "xsd:dateTime",
+    "float":     "xsd:decimal",
+    "decimal":   "xsd:decimal",
+    "date":      "xsd:date",
 }
 
-# unit in the ontology (era:unitOfMeasure, last part of the address)  ->  symbol used in the JSON
-UNIT_SYMBOLS = {
-    "M": "m", "SEC": "s", "KiloM-PER-HR": "km/h", "MilliM-PER-M": "permill", "A": "A",
-    "PERCENT": "percent", "DEG": "degree", "MilliM": "mm", "KiloGM": "kg", "N": "N", "W": "W",
-    "M-PER-SEC2": "m/s2", "KiloN": "kN", "CentiM": "cm", "M2": "m2", "KiloM": "km", "DAY": "day",
+# Two names point to the same xsd type. These are the names we write (same as in the existing JSON files).
+PREFERRED_JSON_TYPE = {"xsd:dateTime": "timestamp", "xsd:decimal": "decimal"}
+
+# The program needs the other direction: xsd type in the SHACL (sh:datatype, last part)  ->  name in the JSON
+DATA_TYPE_NAMES = {}
+for json_name in JSON_TYPE_TO_XSD:
+    xsd_name = JSON_TYPE_TO_XSD[json_name]
+    if xsd_name in PREFERRED_JSON_TYPE and PREFERRED_JSON_TYPE[xsd_name] != json_name:
+        continue
+    DATA_TYPE_NAMES[xsd_name.split(":")[-1]] = json_name
+
+# Units. Symbol in the JSON  ->  unit in the ontology (era:unitOfMeasure, last part of the address).
+SYMBOL_TO_UNIT = {
+    "m":       "unit:M",
+    "mm":      "unit:MilliM",
+    "km/h":    "unit:KiloM-PER-HR",
+    "m/s":     "unit:M-PER-SEC",
+    "minute":  "unit:MIN",
+    "m/s2":    "unit:M-PER-SEC2",
+    "cm":      "unit:CentiM",
+    "m2":      "unit:M2",
+    "m3":      "unit:M3",
+    "kg":      "unit:KiloGM",
+    "kN":      "unit:KiloN",
+    "N":       "unit:N",
+    "s":       "unit:SEC",
+    "V":       "unit:V",
+    "W":       "unit:W",
+    "A":       "unit:A",
+    "Ohm":     "unit:OHM",
+    "K":       "unit:K",
+    "Hz":      "unit:HZ",
+    "degree":  "unit:DEG",
+    "rad":     "unit:RAD",
+    "W/m2":    "unit:W-PER-M2",
+    "permill": "unit:MilliM-PER-M",
+    "Pa":      "unit:PA",
+    "percent": "unit:PERCENT",
+    "1/m":     "unit:PER-M",
+    "bar":     "unit:BAR",
+    "ms":      "unit:MilliSEC",
+    "day":     "unit:DAY",
+    "km":      "unit:KiloM",
+    "kW":      "unit:KiloW",
+    "t":       "unit:TONNE",
+    "dB":      "unit:DeciB",
+    "dB(A)":   "unit:DeciB_A",
+    "kJ":      "unit:KiloJ",
+    "A/m":     "unit:A-PER-M",
+    "nF":      "unit:NanoFARAD",
+    "mH":      "unit:MilliH",
+    "g/s":     "unit:GM-PER-SEC",
 }
+
+# The program needs the other direction: unit in the ontology  ->  symbol in the JSON
+UNIT_SYMBOLS = {}
+for symbol in SYMBOL_TO_UNIT:
+    unit_name = SYMBOL_TO_UNIT[symbol]
+    if unit_name.startswith("unit:"):
+        unit_name = unit_name[len("unit:"):]
+    UNIT_SYMBOLS[unit_name] = symbol
 
 ID_INFO = "Identity of the object; used for referencing"
 
@@ -685,6 +756,19 @@ class SkosLabels:
         name = re.sub(r"_\d+(@[a-z]+)?$", "", name)   # remove the index at the end (and a stray @en after it)
         return name, True
 
+    def get_value_index(self, value_address):
+        """
+        The number at the end of the SKOS label: CCSTMS_CD_80mm_1 -> 1 (a stray @en after it is ignored).
+        Returns None if the value has no label or the label has no number at the end.
+        """
+        label = self.labels.get(value_address)
+        if label is None:
+            return None
+        found = re.search(r"_(\d+)(@[a-z]+)?$", label)
+        if found is None:
+            return None
+        return int(found.group(1))
+
 
 # ================================================================== the 7 steps
 def step1_find_domains(ontology):
@@ -920,12 +1004,14 @@ def step7_add_multiplicity(shacl, data):
     # Multiplicity is the next step after the numbers.
     # We write it for every attribute that has a SHACL rule (not for "id").
     written = 0
+    union_skipped = 0
     without_rule = []
     counts = {}
     for domain in data["domains"]:
         domain_name = domain["name"]
         for class_entry in domain["classes"]:
             class_name = class_entry["name"]
+            class_is_union = shacl.is_union(domain_name, class_name)
             for attribute in class_entry["attributes"]:
                 if attribute["name"] == "id":
                     continue
@@ -936,9 +1022,13 @@ def step7_add_multiplicity(shacl, data):
                 counts[multiplicity] = counts.get(multiplicity, 0) + 1
                 if multiplicity == "1..1":
                     continue                              # 1..1 is the normal case, it is not written
+                if class_is_union and multiplicity == "0..1":
+                    union_skipped = union_skipped + 1
+                    continue                              # union class: "at most one" is already said by union = true
                 attribute["multiplicity"] = multiplicity
                 written = written + 1
     print("   multiplicity written:", written, "(1..1 is not written)")
+    print("   0..1 not written in union classes (union = true says it):", union_skipped)
     print("   how often each value was found in the SHACL:")
     for multiplicity in sorted(counts, key=lambda text: -counts[text])[:8]:
         note = ""
@@ -1133,7 +1223,7 @@ def step10_add_texts(ontology, shacl, data):
 
     for name in counts:
         print("   %-15s %4d" % (name, counts[name]))
-    print("   attributes without an ontology comment (no info):", len(without_info))
+    print("   attributes without a SHACL description (no info):", len(without_info))
     for text in without_info[:8]:
         print("      ", text)
     return data
@@ -1144,6 +1234,8 @@ def step11_fill_value_lists(shacl, skos, data, wanted_domains):
     names_from_skos = 0
     names_from_code = []
     lists_without_values = []
+    ids_from_position = []                                # values without a number in the SKOS label
+    ids_used_twice = []                                   # a number used twice inside one list
 
     for domain in data["domains"]:
         domain_name = domain["name"]
@@ -1173,13 +1265,23 @@ def step11_fill_value_lists(shacl, skos, data, wanted_domains):
                 lists_without_values.append(domain_name + ": " + list_name)
 
             values = []
+            used_numbers = set()
             for position, address in enumerate(addresses):
                 value_name, found = skos.get_value_name(address)
                 if found:
                     names_from_skos = names_from_skos + 1
                 else:
                     names_from_code.append(list_name + ": " + value_name)
-                values.append({"intId": position, "name": value_name, "owl:sameAs": address})
+                # intId = the number at the end of the SKOS label (CCSTMS_CD_80mm_1 -> 1).
+                # Only if the value has no such number, the position in the SHACL list is used.
+                int_id = skos.get_value_index(address)
+                if int_id is None:
+                    int_id = position
+                    ids_from_position.append(list_name + ": " + value_name)
+                if int_id in used_numbers:
+                    ids_used_twice.append(domain_name + " " + list_name + ": intId " + str(int_id))
+                used_numbers.add(int_id)
+                values.append({"intId": int_id, "name": value_name, "owl:sameAs": address})
             enums.append({"name": list_name, "enumLiterals": values})
 
         # Write the final file of this domain.
@@ -1209,6 +1311,13 @@ def step11_fill_value_lists(shacl, skos, data, wanted_domains):
         print("      ", text)
     print("   lists with no values at all (no sh:in found):", len(lists_without_values))
     for text in lists_without_values[:8]:
+        print("      ", text)
+    print("   intId taken from the SKOS label number:", names_from_skos - len(ids_from_position))
+    print("   intId without a number in the SKOS label (position in the list is used):", len(ids_from_position))
+    for text in ids_from_position[:6]:
+        print("      ", text)
+    print("   a number used twice inside one list:", len(ids_used_twice))
+    for text in ids_used_twice[:8]:
         print("      ", text)
 
 

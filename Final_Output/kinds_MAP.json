@@ -65,7 +65,6 @@
      "intId": 1,
      "name": "switch",
      "reference": "infra.Switch",
-     "multiplicity": "0..1",
      "info": "refers to switch/simple point",
      "label": "Switch"
     },
@@ -73,7 +72,6 @@
      "intId": 2,
      "name": "etcsMarker",
      "reference": "infra.ETCSMarker",
-     "multiplicity": "0..1",
      "info": "refers to ETCS marker",
      "label": "ETCS Marker"
     },
@@ -81,7 +79,6 @@
      "intId": 3,
      "name": "stopLocation",
      "reference": "infra.StopLocation",
-     "multiplicity": "0..1",
      "info": "refers to stop location",
      "label": "Stop Location"
     },
@@ -89,7 +86,6 @@
      "intId": 4,
      "name": "timingPoint",
      "reference": "infra.TimingPoint",
-     "multiplicity": "0..1",
      "info": "Defines a reference to a timing point",
      "label": "Timing Point"
     },
@@ -97,7 +93,6 @@
      "intId": 5,
      "name": "operationalPoint",
      "reference": "infra.OperationalPoint",
-     "multiplicity": "0..1",
      "info": "Defines a reference to an operational point (station, siding etc).",
      "label": "Operational Point"
     },
@@ -105,7 +100,6 @@
      "intId": 6,
      "name": "balise",
      "reference": "infra.Balise",
-     "multiplicity": "0..1",
      "info": "Defines a reference to a functional balise",
      "label": "Balise"
     },
@@ -113,7 +107,6 @@
      "intId": 7,
      "name": "derailer",
      "reference": "infra.Derailer",
-     "multiplicity": "0..1",
      "info": "Defines a reference to a functional derailer",
      "label": "Derailer"
     },
@@ -121,7 +114,6 @@
      "intId": 8,
      "name": "trainDetector",
      "reference": "infra.TrainDetectionSystem",
-     "multiplicity": "0..1",
      "info": "Defines a reference to a train detector",
      "label": "Train Detector"
     },
@@ -129,7 +121,6 @@
      "intId": 9,
      "name": "bufferStop",
      "reference": "infra.BufferStop",
-     "multiplicity": "0..1",
      "info": "Defines a reference to a buffer stop",
      "label": "Buffer Stop"
     }

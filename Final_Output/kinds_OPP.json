@@ -427,7 +427,6 @@
      "intId": 1,
      "name": "joinActivity",
      "composition": "MovementEventActivityJoin",
-     "multiplicity": "0..1",
      "info": "Contains definition of Join-activity",
      "label": "Join Activity"
     },
@@ -435,7 +434,6 @@
      "intId": 2,
      "name": "splitActivity",
      "composition": "MovementEventActivitySplit",
-     "multiplicity": "0..1",
      "info": "Contains definition of Split-activity",
      "label": "Split Activity"
     },
@@ -443,7 +441,6 @@
      "intId": 3,
      "name": "meetActivity",
      "composition": "MovementEventActivityMeet",
-     "multiplicity": "0..1",
      "info": "Contains definition of train-meet-activity",
      "label": "Meet Activity"
     },
@@ -451,7 +448,6 @@
      "intId": 4,
      "name": "trainUnitActivity",
      "composition": "TrainUnitActivity",
-     "multiplicity": "0..1",
      "info": "Contains definition of Train-Unit-Activity",
      "label": "TrainUnitActivity"
     }
@@ -758,7 +754,6 @@
      "intId": 1,
      "name": "movementEvent",
      "reference": "MovementEvent",
-     "multiplicity": "0..1",
      "info": "refers a movement event including the movement plan",
      "label": "Movement Event"
     },
@@ -766,7 +761,6 @@
      "intId": 2,
      "name": "restrictionEvent",
      "reference": "UsageRestrictionEvent",
-     "multiplicity": "0..1",
      "info": "Refers a restriction event including restriction plan",
      "label": "Restriction Event"
     },
@@ -774,7 +768,6 @@
      "intId": 3,
      "name": "warningMeasureEvent",
      "reference": "WarningMeasureEvent",
-     "multiplicity": "0..1",
      "info": "Refers a warnning measure event including the warning plan",
      "label": "Warning Measure Event"
     }
@@ -789,7 +782,6 @@
      "intId": 1,
      "name": "arrivalReport",
      "composition": "MovementEventExecutionReport",
-     "multiplicity": "0..1",
      "info": "Defines the arrival reports. For passing only the departure reports are to be sent",
      "label": "Arrival Report"
     },
@@ -797,7 +789,6 @@
      "intId": 2,
      "name": "departureReport",
      "composition": "MovementEventExecutionReport",
-     "multiplicity": "0..1",
      "info": "Defines the result of departure attempt",
      "label": "Departure Report"
     },
@@ -805,7 +796,6 @@
      "intId": 3,
      "name": "activationRestrictionReport",
      "composition": "UsageRestrictionEventExecutionReport",
-     "multiplicity": "0..1",
      "info": "Defines the result of creation of a restriction",
      "label": "ActivationRestrictionReport"
     },
@@ -813,7 +803,6 @@
      "intId": 4,
      "name": "deactivationRestrictionReport",
      "composition": "UsageRestrictionEventExecutionReport",
-     "multiplicity": "0..1",
      "info": "Defines the result of removal of a restriction",
      "label": "DeactivationRestrictionReport"
     },
@@ -821,7 +810,6 @@
      "intId": 5,
      "name": "activationWarningMeasureReport",
      "composition": "WarningMeasureEventExecutionReport",
-     "multiplicity": "0..1",
      "info": "Defines the result of creation of a warning measure",
      "label": "ActivationWarningMeasureReport"
     },
@@ -829,7 +817,6 @@
      "intId": 6,
      "name": "deactivationWarningMeasureReport",
      "composition": "WarningMeasureEventExecutionReport",
-     "multiplicity": "0..1",
      "info": "Defines the result of removal of warning measure",
      "label": "DeactivationWarningMeasureReport"
     }
@@ -945,7 +932,6 @@
      "intId": 1,
      "name": "movementResponse",
      "composition": "MovementResponseCode",
-     "multiplicity": "0..1",
      "info": "Contains response from PES for a operationalPlanMovement",
      "label": "Movement Response"
     },
@@ -953,7 +939,6 @@
      "intId": 2,
      "name": "usageRestrictionResponse",
      "composition": "UsageRestrictionResponseCode",
-     "multiplicity": "0..1",
      "info": "Contains response from PES for a operationalPlanUsageRestriction",
      "label": "UsageRestrictionResponse"
     },
@@ -961,7 +946,6 @@
      "intId": 3,
      "name": "warningMeasureResponse",
      "composition": "WarningMeasureResponseCode",
-     "multiplicity": "0..1",
      "info": "Contains response from PES for a operationalPlanMeasureEvent",
      "label": "WarningMeasureResponse"
     }
@@ -1279,7 +1263,6 @@
      "intId": 1,
      "name": "speedRestriction",
      "composition": "SpeedRestriction",
-     "multiplicity": "0..1",
      "info": "Defines the allowed speed",
      "label": "Speed Restriction"
     },
@@ -1287,7 +1270,6 @@
      "intId": 2,
      "name": "allowedDrivingModes",
      "enumType": "OnboardOperatingMode",
-     "multiplicity": "0..1",
      "info": "Defines the allowed driving modes",
      "label": "Allowed Driving Modes"
     },
@@ -1295,7 +1277,6 @@
      "intId": 3,
      "name": "nonStandstill",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines the non stopping area. If true, the trains defined in trainGroupFilter shall not stop within restriction area.",
      "label": "Non Standstill"
     },
@@ -1303,7 +1284,6 @@
      "intId": 4,
      "name": "trackClosure",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines track closure information. If true, the trains defined in trainGroupFilter shall not enter restriction area",
      "label": "Track Closure"
     },
@@ -1311,7 +1291,6 @@
      "intId": 5,
      "name": "operationalRadioHole",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines the presence of operational radio holes. if true radio communication is restricted within restriction area",
      "label": "Operational Radio Hole"
     },
@@ -1319,7 +1298,6 @@
      "intId": 6,
      "name": "maxAdhesion",
      "enumType": "AdhesionCategory",
-     "multiplicity": "0..1",
      "info": "Defines the maximum adhesion",
      "label": "Max Adhesion"
     },
@@ -1327,7 +1305,6 @@
      "intId": 7,
      "name": "atoInhibition",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defined the ato inhibition zones. Exmaples: train section is not contantly monitored, or stimulate driver's attention, or approaching overcrouded station",
      "label": "Ato Inhibition"
     },
@@ -1335,7 +1312,6 @@
      "intId": 8,
      "name": "maxCurrent",
      "dataType": "uint32",
-     "multiplicity": "0..1",
      "unit": "A",
      "info": "Defines max current value. For ATO, SS126. Ignored by TrafficCS",
      "label": "Max Current"
@@ -1344,7 +1320,6 @@
      "intId": 9,
      "name": "soundHorn",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines that approaching trains needs to sound horn",
      "label": "Sound Horn"
     },
@@ -1352,7 +1327,6 @@
      "intId": 10,
      "name": "nonSwitchability",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines that Switchable Trackside Asset cannot be switched. To be clarified.",
      "label": "Non Switchability"
     },
@@ -1360,7 +1334,6 @@
      "intId": 11,
      "name": "safetyCriticalCommandOnly",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines that onlysafety critical commands are allowed",
      "label": "SafetyCriticalCommandOnly"
     },
@@ -1368,7 +1341,6 @@
      "intId": 12,
      "name": "manualOperationOnly",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines that onlymanual operation by operator or maintainer is allowed (no automatic operation by PES)",
      "label": "ManualOperationOnly"
     },
@@ -1376,7 +1348,6 @@
      "intId": 13,
      "name": "operationallyNonStandstill",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines the operationally non stopping area. If true, the trains defined in trainGroupFilter should not stop within the usage restriction due to operational reasons.",
      "label": "OperationallyNonStandstill"
     }
@@ -1413,7 +1384,6 @@
      "intId": 1,
      "name": "speedRestriction",
      "composition": "SpeedRestriction",
-     "multiplicity": "0..1",
      "info": "Defines max speed value allowed for the train",
      "label": "Speed Restriction"
     },
@@ -1421,7 +1391,6 @@
      "intId": 2,
      "name": "adhesionCategory",
      "enumType": "AdhesionCategory",
-     "multiplicity": "0..1",
      "info": "Defines the different adhesion categories applicable for the train as per track conditions",
      "label": "Adhesion Category"
     },
@@ -1429,7 +1398,6 @@
      "intId": 3,
      "name": "maxCurrent",
      "dataType": "uint32",
-     "multiplicity": "0..1",
      "unit": "A",
      "info": "Defines max current value, s. item 0.33 in SS126",
      "label": "Max Current"
@@ -1438,7 +1406,6 @@
      "intId": 4,
      "name": "atoInhibition",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "train section is not contantly monitored, or stimulate driver's attention, or approaching overcrouded station",
      "label": "Ato Inhibition"
     },
@@ -1446,7 +1413,6 @@
      "intId": 5,
      "name": "dasInhibition",
      "dataType": "boolean",
-     "multiplicity": "0..1",
      "info": "Defines the Driver advisory system inhibition zone",
      "label": "Das Inhibition"
     },
@@ -1454,7 +1420,6 @@
      "intId": 6,
      "name": "excludedSwitchableTracksideAssetsForFlankProtection",
      "reference": "tp.SwitchableTracksideAsset",
-     "multiplicity": "0..1",
      "info": "Defines the list of SwitchableTracksideAssets to be excluded from flank protection calculation.",
      "label": "ExcludedSwitchableTracksideAssetsForFlankProtection"
     }
@@ -2744,22 +2709,22 @@
    "name": "ATOGradeOfAutomation",
    "enumLiterals": [
     {
-     "intId": 0,
+     "intId": 1,
      "name": "GoA1",
      "owl:sameAs": "http://data.europa.eu/949/concepts/ato-grades-automation/1"
     },
     {
-     "intId": 1,
+     "intId": 2,
      "name": "GoA2",
      "owl:sameAs": "http://data.europa.eu/949/concepts/ato-grades-automation/2"
     },
     {
-     "intId": 2,
+     "intId": 3,
      "name": "GoA3",
      "owl:sameAs": "http://data.europa.eu/949/concepts/ato-grades-automation/3"
     },
     {
-     "intId": 3,
+     "intId": 4,
      "name": "GoA4",
      "owl:sameAs": "http://data.europa.eu/949/concepts/ato-grades-automation/4"
     }
@@ -2819,7 +2784,7 @@
      "owl:sameAs": "http://data.europa.eu/949/concepts/adhesion-category/extremelyLowAdhesion"
     },
     {
-     "intId": 6,
+     "intId": 255,
      "name": "unknownAdhesion",
      "owl:sameAs": "http://data.europa.eu/949/concepts/adhesion-category/unknownAdhesion"
     }

@@ -46,7 +46,6 @@
      "intId": 1,
      "name": "switchConfigurationData",
      "reference": "SwitchConfigurationData",
-     "multiplicity": "0..1",
      "info": "Reference to the Configuration for the Switch",
      "label": "SwitchConfigurationData"
     },
@@ -54,7 +53,6 @@
      "intId": 2,
      "name": "tvpSection",
      "reference": "TvpSectionConfigurationData",
-     "multiplicity": "0..1",
      "info": "Reference to the Configuration for the Tvp Section",
      "label": "TVP Section"
     },
@@ -62,7 +60,6 @@
      "intId": 3,
      "name": "trainDetector",
      "reference": "TrainDetectionSystemConfigurationData",
-     "multiplicity": "0..1",
      "info": "Reference to the Configuration for the Train Detection System",
      "label": "Train Detector"
     },
@@ -70,7 +67,6 @@
      "intId": 4,
      "name": "levelCrossing",
      "reference": "LxConfigurationData",
-     "multiplicity": "0..1",
      "info": "Reference to the Configuration for the Level Crossing",
      "label": "Level Crossing"
     }
@@ -523,7 +519,6 @@
      "intId": 1,
      "name": "switch",
      "reference": "infra.Switch",
-     "multiplicity": "0..1",
      "info": "References the infra switch",
      "label": "Switch"
     },
@@ -531,7 +526,6 @@
      "intId": 2,
      "name": "slipCrossing",
      "reference": "infra.SlipCrossing",
-     "multiplicity": "0..1",
      "info": "References the infra slip crossing",
      "label": "Slip Crossing"
     },
@@ -539,7 +533,6 @@
      "intId": 3,
      "name": "crossing",
      "reference": "infra.Crossing",
-     "multiplicity": "0..1",
      "info": "References the infra crossing",
      "label": "Crossing"
     },
@@ -547,7 +540,6 @@
      "intId": 4,
      "name": "derailer",
      "reference": "infra.Derailer",
-     "multiplicity": "0..1",
      "info": "References the infra derailer",
      "label": "Derailer"
     },
@@ -555,7 +547,6 @@
      "intId": 5,
      "name": "levelCrossing",
      "reference": "infra.LevelCrossing",
-     "multiplicity": "0..1",
      "info": "References the infra level crossing",
      "label": "Level Crossing"
     }

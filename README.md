@@ -77,10 +77,10 @@ Each domain uses the shapes file of its own domain (`infra-shapes_*.ttl` for INF
 ## Rules
 
 - **`id`:** every class that has attributes gets `id` with `intId 1`, except a class that has an attribute with `sh:order 1`. `id` is a global key.
-- **`multiplicity`:** `1..1` is not written.
+- **`multiplicity`:** `1..1` is not written. In a union class (`sh:xone`) the attributes get no multiplicity, because `union: true` already says that at most one is used.
 - **`sameKeyAs`:** only for a class in another domain that also has an `id` in INFRA (`infra.<ClassName>`).
 - **Value lists:** every domain file has a full copy of every list it uses.
-  - A value has `intId` (its position in the list, counted from 0), `name` and `owl:sameAs` (its address).
+  - A value has `intId` (the number at the end of the SKOS hidden label), `name` and `owl:sameAs` (its address).
   - The name is the SKOS label without `CCSTMS_` and without the index at the end (`CCSTMS_CD_80mm_1` becomes `CD_80mm`).
   - Without a label, the code at the end of the address is used.
 - **`subsetName`, `subPropertyOf`:** everything that is in the ontology is written. With more than one value the output is a list.

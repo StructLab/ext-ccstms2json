@@ -137,6 +137,7 @@
      "intId": 5,
      "name": "bgFunction",
      "enumType": "BaliseGroupFunction",
+     "multiplicity": "1..*",
      "info": "Defines the function of the balise. To be clarified, if derivable from baliseTelegram",
      "label": "Balise Group Function"
     },
@@ -746,7 +747,6 @@
      "intId": 1,
      "name": "horizontalSegmentLine",
      "composition": "HorizontalLine",
-     "multiplicity": "0..1",
      "info": "composes of lines",
      "label": "Horizontal Segment Line"
     },
@@ -754,7 +754,6 @@
      "intId": 2,
      "name": "horizontalSegmentArc",
      "composition": "HorizontalArc",
-     "multiplicity": "0..1",
      "info": "composes of arcs",
      "label": "Horizontal Segment Arc"
     },
@@ -762,7 +761,6 @@
      "intId": 3,
      "name": "horizontalSegmentTransition",
      "composition": "HorizontalTransition",
-     "multiplicity": "0..1",
      "info": "composes of transition curves",
      "label": "HorizontalSegmentTransition"
     }
@@ -1852,7 +1850,6 @@
      "intId": 1,
      "name": "otherCategoryReplacesCantDeficiencySSP",
      "enumType": "OtherSpecificStaticSpeedProfileCategory",
-     "multiplicity": "0..1",
      "info": "is of type other Category Replaces Cant Deficiency SSP",
      "label": "Other Category Replaces Cant Deficiency SSP"
     },
@@ -1860,7 +1857,6 @@
      "intId": 2,
      "name": "otherCategoryDoesNotReplaceCantDeficiencySSP",
      "enumType": "OtherSpecificStaticSpeedProfileCategory",
-     "multiplicity": "0..1",
      "info": "is of type other Category Replaces Cant Deficiency SSP",
      "label": "Other Category Does Not Replace Cant Deficiency SSP"
     },
@@ -1868,7 +1864,6 @@
      "intId": 3,
      "name": "cantDeficiencyCategory",
      "enumType": "CantDeficiencies",
-     "multiplicity": "0..1",
      "info": "is of type Cant Deficiency Category",
      "label": "Cant Deficiency Category",
      "subsetName": "NC_CDTRAIN"
@@ -2087,7 +2082,6 @@
      "intId": 1,
      "name": "etcsMarker",
      "reference": "ETCSMarker",
-     "multiplicity": "0..1",
      "info": "refers to ETCS marker",
      "label": "ETCS Marker"
     },
@@ -2095,7 +2089,6 @@
      "intId": 2,
      "name": "stopLocation",
      "reference": "StopLocation",
-     "multiplicity": "0..1",
      "info": "refers to stop location",
      "label": "Stop Location"
     },
@@ -2103,7 +2096,6 @@
      "intId": 3,
      "name": "timeMeasurePoint",
      "reference": "TravelTimeMeasurementPoint",
-     "multiplicity": "0..1",
      "info": "refers to travel time measurement point",
      "label": "Time Measure Point"
     }
@@ -2612,7 +2604,6 @@
      "intId": 1,
      "name": "verticalSegmentLine",
      "composition": "VerticalLine",
-     "multiplicity": "0..1",
      "info": "composes of lines",
      "label": "Vertical Segment Line"
     },
@@ -2620,7 +2611,6 @@
      "intId": 2,
      "name": "verticalSegmentArc",
      "composition": "VerticalArc",
-     "multiplicity": "0..1",
      "info": "composes of arcs",
      "label": "Vertical Segment Arc"
     }
@@ -3232,107 +3222,107 @@
    "name": "StopLocationTolerance",
    "enumLiterals": [
     {
-     "intId": 0,
+     "intId": 1,
      "name": "T_10cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_10cm"
     },
     {
-     "intId": 1,
+     "intId": 2,
      "name": "T_20cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_20cm"
     },
     {
-     "intId": 2,
+     "intId": 3,
      "name": "T_30cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_30cm"
     },
     {
-     "intId": 3,
+     "intId": 4,
      "name": "T_40cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_40cm"
     },
     {
-     "intId": 4,
+     "intId": 5,
      "name": "T_50cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_50cm"
     },
     {
-     "intId": 5,
+     "intId": 6,
      "name": "T_1m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_1m"
     },
     {
-     "intId": 6,
+     "intId": 7,
      "name": "T_150cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_150cm"
     },
     {
-     "intId": 7,
+     "intId": 8,
      "name": "T_2m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_2m"
     },
     {
-     "intId": 8,
+     "intId": 9,
      "name": "T_250cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_250cm"
     },
     {
-     "intId": 9,
+     "intId": 10,
      "name": "T_3m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_3m"
     },
     {
-     "intId": 10,
+     "intId": 11,
      "name": "T_5m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_5m"
     },
     {
-     "intId": 11,
+     "intId": 12,
      "name": "T_750cm",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_750cm"
     },
     {
-     "intId": 12,
+     "intId": 13,
      "name": "T_10m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_10m"
     },
     {
-     "intId": 13,
+     "intId": 14,
      "name": "T_15m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_15m"
     },
     {
-     "intId": 14,
+     "intId": 15,
      "name": "T_20m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_20m"
     },
     {
-     "intId": 15,
+     "intId": 16,
      "name": "T_25m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_25m"
     },
     {
-     "intId": 16,
+     "intId": 17,
      "name": "T_30m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_30m"
     },
     {
-     "intId": 17,
+     "intId": 18,
      "name": "T_50m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_50m"
     },
     {
-     "intId": 18,
+     "intId": 19,
      "name": "T_75m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_75m"
     },
     {
-     "intId": 19,
+     "intId": 20,
      "name": "T_100m",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_100m"
     },
     {
-     "intId": 20,
+     "intId": 0,
      "name": "T_Undefined",
      "owl:sameAs": "http://data.europa.eu/949/concepts/stop-location-tolerance/T_Undefined"
     }
