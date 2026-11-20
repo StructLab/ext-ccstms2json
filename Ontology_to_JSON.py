@@ -89,17 +89,18 @@ JSON_TYPE_TO_XSD = {
     "int8":      "xsd:byte",
     "boolean":   "xsd:boolean",
     "bytes":     "xsd:base64Binary",
-    "timestamp": "xsd:dateTime",
+    "timestamp": "xsd:dateTimeStamp",
     "double":    "xsd:double",
     "string":    "xsd:string",
     "dateTime":  "xsd:dateTime",
-    "float":     "xsd:decimal",
+    "float":     "xsd:float",
     "decimal":   "xsd:decimal",
     "date":      "xsd:date",
 }
 
-# Two names point to the same xsd type. These are the names we write (same as in the existing JSON files).
-PREFERRED_JSON_TYPE = {"xsd:dateTime": "timestamp", "xsd:decimal": "decimal"}
+# If two names point to the same xsd type, this says which name we write.
+# Now every xsd type has only one name, so nothing is needed here.
+PREFERRED_JSON_TYPE = {}
 
 # The program needs the other direction: xsd type in the SHACL (sh:datatype, last part)  ->  name in the JSON
 DATA_TYPE_NAMES = {}
@@ -141,15 +142,6 @@ SYMBOL_TO_UNIT = {
     "ms":      "unit:MilliSEC",
     "day":     "unit:DAY",
     "km":      "unit:KiloM",
-    "kW":      "unit:KiloW",
-    "t":       "unit:TONNE",
-    "dB":      "unit:DeciB",
-    "dB(A)":   "unit:DeciB_A",
-    "kJ":      "unit:KiloJ",
-    "A/m":     "unit:A-PER-M",
-    "nF":      "unit:NanoFARAD",
-    "mH":      "unit:MilliH",
-    "g/s":     "unit:GM-PER-SEC",
 }
 
 # The program needs the other direction: unit in the ontology  ->  symbol in the JSON
